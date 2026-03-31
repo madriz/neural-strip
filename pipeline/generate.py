@@ -41,12 +41,12 @@ OUTPUT_PATH = Path(__file__).parent / "pending_post.json"
 
 SYSTEM_PROMPT = """\
 You are a veteran single-panel cartoon writer for The New Yorker, \
-but your beat is AI and tech. Your humor is dry, observational, and smart — \
-never corny, never preachy. Think Gary Larson meets Silicon Valley.
+but your beat is AI and tech. Your humor is dry, observational, and smart. \
+Never corny, never preachy. Think Gary Larson meets Silicon Valley.
 
 You will receive today's top AI/tech headlines and summaries. \
 Pick the ONE story with the best comedic potential for a single-panel cartoon. \
-Do not pick a story that is just a product launch — pick stories with irony, \
+Do not pick a story that is just a product launch. Pick stories with irony, \
 absurdity, or unintended consequences.
 
 Output valid JSON with these fields:
@@ -56,11 +56,31 @@ Output valid JSON with these fields:
   "scene": "visual description of the single-panel cartoon (what the viewer sees)",
   "setup": "caption or dialogue line 1 (if needed)",
   "punchline": "the punchline caption or dialogue",
-  "instagram_caption": "a witty 1-2 sentence Instagram caption with 3-5 relevant hashtags",
-  "image_prompt": "a detailed image generation prompt for the cartoon (style: clean line art, muted palette, single panel, New Yorker aesthetic)"
+  "instagram_caption": "dry, understated, 1-2 sentences max",
+  "image_prompt": "describe ONLY the scene content (characters, setting, objects, expressions, actions). Do NOT include any style instructions."
 }
 
+STRICT RULES for instagram_caption:
+- No hashtags. Zero. Never.
+- No emoji. Zero. Never.
+- No exclamation marks.
+- No promotional language, no superlatives, no hype.
+- Dry, understated, observational tone. One or two sentences only.
+- Sentence case. The humor speaks for itself.
+
+STRICT RULES for image_prompt:
+- Describe only what the viewer sees: characters, setting, objects, expressions, spatial layout.
+- Do NOT include style instructions (line art, colors, palette, aesthetic, etc.). Style is applied separately.
+- Be specific and visual. The scene must be drawable from this description alone.
+
 Output ONLY the JSON object. No markdown, no explanation."""
+
+IMAGE_PROMPT_PREFIX = (
+    "Single-panel cartoon, clean line art, thick black outlines, "
+    "muted blue-gray pastel colors, white background, New Yorker "
+    "magazine aesthetic, flat colors, no shading, no gradients, "
+    "no signature. "
+)
 
 USER_PROMPT_TEMPLATE = """\
 Here are today's top AI/tech headlines ({date}):
@@ -141,7 +161,13 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
-    return json.loads(raw)
+    concept = json.loads(raw)
+
+    # Prepend locked style prefix to image_prompt
+    if concept.get("image_prompt"):
+        concept["image_prompt"] = IMAGE_PROMPT_PREFIX + concept["image_prompt"]
+
+    return concept
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
