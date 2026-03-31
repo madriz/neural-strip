@@ -12,19 +12,6 @@
       "instagram_url": "",
       "likes": 0,
       "dislikes": 0
-    },
-    {
-      "id": "2026-03-30",
-      "date": "2026-03-30",
-      "date_display": "March 30, 2026",
-      "headline": "15% of Americans say they'd be willing to work for an AI boss",
-      "setup": "Man to his coworker: 'Finally, a boss that won't judge me for my 2 p.m. bathroom breaks.'",
-      "punchline": "Coworker: 'It logs them.'",
-      "caption": "One in seven Americans said they'd accept an AI boss. The other six are presumably in witness protection.",
-      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-03-30.jpg",
-      "instagram_url": "",
-      "likes": 0,
-      "dislikes": 0
     }
   ]
 }
