@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it works - Neural Strip</title>
+    <meta name="description" content="How Neural Strip generates a daily AI cartoon, end to end.">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-734R6EL9WH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-734R6EL9WH');
+    </script>
+</head>
+<body>
+
+<header class="site-header">
+    <h1><a href="index.html" style="text-decoration:none;color:inherit;">Neural Strip</a></h1>
+    <p class="tagline">AI Generated Humor about AI. Because, Why Not?</p>
+</header>
+
+<div class="prose">
+
+    <h1>How Neural Strip works</h1>
+    <p class="subhead">A daily AI cartoon, generated end to end by machines. Mostly.</p>
+
+    <h2>The concept</h2>
+    <p>Every day, an automated pipeline reads the latest AI news, picks the story with the most comedic potential, writes a joke, and generates an image prompt for a single-panel cartoon. A human picks the best image and hits publish. That is the full extent of human involvement.</p>
+    <p>The result is a daily record of what the AI industry looks like when viewed through the lens of its own tools. Think of it as the GPS confidently driving into a lake, except the GPS also wrote the joke about it.</p>
+
+    <h2>The pipeline</h2>
+    <div class="pipeline-flow">
+        <div class="pipeline-step">
+            <div class="step-label">RSS feeds</div>
+            <div class="step-desc">5 sources, 50 headlines</div>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step">
+            <div class="step-label">Claude AI</div>
+            <div class="step-desc">Picks story, writes joke</div>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step">
+            <div class="step-label">Ideogram</div>
+            <div class="step-desc">Generates the cartoon</div>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step">
+            <div class="step-label">Instagram + Web</div>
+            <div class="step-desc">Published daily</div>
+        </div>
+    </div>
+
+    <h2>The tools</h2>
+    <div class="tools-grid">
+        <div class="tool-card">
+            <div class="tool-name">RSS feeds</div>
+            <div class="tool-desc">TechCrunch, The Verge, Ars Technica, Wired, Hacker News</div>
+        </div>
+        <div class="tool-card">
+            <div class="tool-name">Claude API (Haiku)</div>
+            <div class="tool-desc">Picks the story, writes the joke, generates the image prompt</div>
+        </div>
+        <div class="tool-card">
+            <div class="tool-name">Ideogram</div>
+            <div class="tool-desc">Generates the cartoon from the prompt</div>
+        </div>
+        <div class="tool-card">
+            <div class="tool-name">GitHub Actions</div>
+            <div class="tool-desc">Runs the pipeline daily at 8:00 UTC</div>
+        </div>
+        <div class="tool-card">
+            <div class="tool-name">GitHub Pages</div>
+            <div class="tool-desc">Hosts this website</div>
+        </div>
+    </div>
+
+    <h2>An example</h2>
+    <p>Here is what Claude produces when given a batch of AI headlines. The JSON below is the actual output format.</p>
+
+<pre>{
+  "headline": "Tech giant announces AGI breakthrough at press conference",
+  "angle": "The gap between AI capability and basic infrastructure",
+  "scene": "A boardroom with executives around a table. A large screen
+    behind them reads AGI ACHIEVED. Through the window, a city skyline
+    is visible with no lights on. One executive is gesturing proudly
+    at the screen while another looks out the window.",
+  "setup": "Yes, we achieved artificial general intelligence.",
+  "punchline": "Also we have no water.",
+  "instagram_caption": "The singularity is here. Hydration is not.",
+  "image_prompt": "Single-panel cartoon, clean line art, thick black
+    outlines, muted blue-gray pastel colors, white background, New
+    Yorker magazine aesthetic, flat colors, no shading, no gradients,
+    no signature. A corporate boardroom with executives around a large
+    table. A presentation screen behind them reads AGI ACHIEVED in
+    bold letters. Through floor-to-ceiling windows, a dark city skyline
+    with no lights. One executive gestures proudly at the screen,
+    another stares out the window with concern."
+}</pre>
+
+    <p>The image_prompt is then pasted into Ideogram, which generates four variations. The best one becomes the cartoon of the day.</p>
+
+    <h2>Why</h2>
+    <p>We are living through the most absurd period in the history of technology. Companies are spending billions to build systems that confidently produce wrong answers, replacing workers with tools that require more workers to supervise them, and calling it progress. Someone should be writing this down. A cartoon seemed like the appropriate format.</p>
+    <p>New cartoon every day. Follow along at <a href="https://instagram.com/neural.strip" target="_blank" rel="noopener">@neural.strip</a>.</p>
+
+</div>
+
+<footer class="site-footer">
+    <div class="footer-tagline">Neural Strip</div>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://instagram.com/neural.strip" target="_blank" rel="noopener">@neural.strip on Instagram</a>
+    </div>
+    <div>&copy; 2026 Neural Strip</div>
+</footer>
+
+</body>
+</html>
