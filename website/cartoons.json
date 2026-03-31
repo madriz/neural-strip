@@ -1,6 +1,19 @@
 {
   "cartoons": [
     {
+      "id": "2026-03-30",
+      "date": "2026-03-30",
+      "date_display": "March 30, 2026",
+      "headline": "15% of Americans say they'd be willing to work for an AI boss, according to new poll",
+      "setup": "Employee thinking to himself:",
+      "punchline": "At least it doesn't schedule meetings at 4:47 PM.",
+      "caption": "Somewhere between optimization and optimism lies 15 percent of the workforce.",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-03-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-03-31",
       "date": "2026-03-31",
       "date_display": "March 31, 2026",
