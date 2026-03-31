@@ -1,5 +1,5 @@
 /* Neural Strip — Shared Styles */
-/* Mobile-first. Breakpoints: 768px tablet, 1024px desktop */
+/* Mobile-first. Single column, centered. */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,7 +15,6 @@
     --serif: Georgia, 'Times New Roman', Times, serif;
     --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --max-w: 800px;
-    --sidebar-w: 240px;
 }
 
 html { scroll-behavior: smooth; }
@@ -26,6 +25,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* ── Header ──────────────────────────────────────────── */
@@ -75,43 +75,18 @@ body {
     color: #fff;
 }
 
-/* ── Layout ──────────────────────────────────────────── */
+/* ── Single Column Layout ────────────────────────────── */
 
-.page-layout {
-    display: flex;
-    max-width: calc(var(--max-w) + var(--sidebar-w) + 3rem);
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.main-content {
-    flex: 1;
+.main-column {
     max-width: var(--max-w);
-    padding: 2rem 0;
-}
-
-.calendar-sidebar {
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .calendar-sidebar {
-        display: block;
-        width: var(--sidebar-w);
-        padding: 2rem 0 2rem 2rem;
-        position: sticky;
-        top: 0;
-        align-self: flex-start;
-        max-height: 100vh;
-        overflow-y: auto;
-    }
-    .calendar-mobile-btn { display: none !important; }
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 /* ── Hero Cartoon ────────────────────────────────────── */
 
 .hero {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero-image-wrap {
@@ -123,6 +98,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .hero-image-wrap img {
@@ -253,6 +229,104 @@ body {
     background: #f0eeeb;
 }
 
+/* ── Calendar Section (inline, below hero) ────────────── */
+
+.calendar-section {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.calendar-jump {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.calendar-jump select {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.calendar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.calendar-header .month-label {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--muted);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+}
+
+.calendar-header button:hover { color: var(--text); }
+.calendar-header button:disabled { opacity: 0.3; cursor: default; }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.calendar-grid .day-label {
+    font-weight: 600;
+    color: var(--muted);
+    padding: 0.3rem 0;
+}
+
+.calendar-grid .day {
+    padding: 0.35rem 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px auto;
+    color: #bbb;
+    font-size: 0.8rem;
+}
+
+.calendar-grid .day.has-cartoon {
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.calendar-grid .day.has-cartoon:hover { opacity: 0.8; }
+
+.calendar-grid .day.today {
+    box-shadow: 0 0 0 2px var(--border);
+}
+
 /* ── Archive Grid ────────────────────────────────────── */
 
 .archive-heading {
@@ -330,138 +404,6 @@ body {
     margin-top: 0.4rem;
 }
 
-/* ── Calendar ────────────────────────────────────────── */
-
-.calendar {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-}
-
-.calendar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-}
-
-.calendar-header .month-label {
-    font-family: var(--serif);
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.calendar-header button {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
-    color: var(--muted);
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    transition: color 0.15s;
-}
-
-.calendar-header button:hover { color: var(--text); }
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    text-align: center;
-    font-size: 0.78rem;
-}
-
-.calendar-grid .day-label {
-    font-weight: 600;
-    color: var(--muted);
-    padding: 0.3rem 0;
-}
-
-.calendar-grid .day {
-    padding: 0.35rem 0;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1px auto;
-    color: #aaa;
-}
-
-.calendar-grid .day.has-cartoon {
-    background: var(--accent);
-    color: #fff;
-    cursor: pointer;
-    transition: opacity 0.15s;
-}
-
-.calendar-grid .day.has-cartoon:hover { opacity: 0.8; }
-
-.calendar-grid .day.today {
-    box-shadow: 0 0 0 2px var(--border);
-}
-
-.calendar-mobile-btn {
-    display: block;
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    font-family: var(--sans);
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    cursor: pointer;
-    color: var(--text);
-    text-align: center;
-    transition: background 0.15s;
-}
-
-.calendar-mobile-btn:hover { background: #f0eeeb; }
-
-@media (min-width: 1024px) {
-    .calendar-mobile-btn { display: none; }
-}
-
-/* ── Calendar Modal (mobile) ─────────────────────────── */
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 500;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-overlay.open {
-    display: flex;
-}
-
-.modal-content {
-    background: var(--bg);
-    border-radius: 10px;
-    padding: 1.5rem;
-    max-width: 320px;
-    width: 90%;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.75rem;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: var(--muted);
-}
-
 /* ── Lightbox ────────────────────────────────────────── */
 
 .lightbox {
@@ -476,9 +418,7 @@ body {
     padding: 2rem;
 }
 
-.lightbox.open {
-    display: flex;
-}
+.lightbox.open { display: flex; }
 
 .lightbox img {
     max-width: 90vw;
@@ -488,65 +428,35 @@ body {
 }
 
 .lightbox .lb-placeholder {
-    width: 60vw;
-    height: 60vw;
-    max-width: 500px;
-    max-height: 500px;
-    background: #333;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 3rem;
+    width: 60vw; height: 60vw;
+    max-width: 500px; max-height: 500px;
+    background: #333; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #666; font-size: 3rem;
 }
 
 .lightbox .lb-caption {
-    color: #ddd;
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    text-align: center;
-    margin-top: 1rem;
-    max-width: 600px;
-    line-height: 1.5;
+    color: #ddd; font-family: var(--serif); font-size: 1.1rem;
+    text-align: center; margin-top: 1rem; max-width: 600px; line-height: 1.5;
 }
 
 .lightbox .lb-punchline {
-    color: #bbb;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 0.3rem;
+    color: #bbb; font-family: var(--serif); font-style: italic;
+    font-size: 1rem; text-align: center; margin-top: 0.3rem;
 }
 
 .lightbox .lb-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: #999;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: color 0.15s;
+    position: absolute; top: 1rem; right: 1.5rem;
+    background: none; border: none; color: #999;
+    font-size: 2rem; cursor: pointer; transition: color 0.15s;
 }
-
 .lightbox .lb-close:hover { color: #fff; }
 
 .lightbox .lb-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #777;
-    font-size: 2.5rem;
-    cursor: pointer;
-    padding: 1rem;
-    transition: color 0.15s;
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: #777;
+    font-size: 2.5rem; cursor: pointer; padding: 1rem; transition: color 0.15s;
 }
-
 .lightbox .lb-nav:hover { color: #fff; }
 .lightbox .lb-prev { left: 0.5rem; }
 .lightbox .lb-next { right: 0.5rem; }
@@ -574,12 +484,9 @@ body {
     text-decoration: none;
     transition: color 0.15s;
 }
-
 .site-footer a:hover { color: var(--text); }
 
-.site-footer .footer-links {
-    margin: 0.5rem 0;
-}
+.site-footer .footer-links { margin: 0.5rem 0; }
 
 .site-footer .footer-links a + a::before {
     content: " \00b7 ";
@@ -587,7 +494,7 @@ body {
     margin: 0 0.3rem;
 }
 
-/* ── How It Works ────────────────────────────────────── */
+/* ── How It Works (prose) ────────────────────────────── */
 
 .prose {
     max-width: 720px;
@@ -595,96 +502,54 @@ body {
     padding: 2rem 1rem 3rem;
 }
 
-.prose h1 {
-    font-family: var(--serif);
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
-}
-
-.prose .subhead {
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-}
+.prose h1 { font-family: var(--serif); font-size: 2rem; margin-bottom: 0.3rem; }
+.prose .subhead { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
 
 .prose h2 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    margin: 2rem 0 0.75rem;
-    padding-bottom: 0.3rem;
+    font-family: var(--serif); font-size: 1.3rem;
+    margin: 2rem 0 0.75rem; padding-bottom: 0.3rem;
     border-bottom: 1px solid var(--border);
 }
 
-.prose p {
-    margin-bottom: 1rem;
-    line-height: 1.7;
-}
-
+.prose p { margin-bottom: 1rem; line-height: 1.7; }
 .prose a { color: var(--text); }
 
-/* Pipeline flow */
 .pipeline-flow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1.5rem 0;
-    font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; font-size: 0.85rem;
 }
 
 .pipeline-step {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.6rem 1rem;
-    text-align: center;
-    min-width: 100px;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.6rem 1rem; text-align: center; min-width: 100px;
 }
-
 .pipeline-step .step-label { font-weight: 600; }
 .pipeline-step .step-desc { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
 .pipeline-arrow { color: var(--muted); font-size: 1.2rem; }
 
-/* Tools grid */
 .tools-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin: 1rem 0;
+    display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin: 1rem 0;
 }
-
-@media (min-width: 520px) {
-    .tools-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (min-width: 520px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .tool-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.8rem 1rem;
 }
-
 .tool-card .tool-name { font-weight: 600; font-size: 0.9rem; }
 .tool-card .tool-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
 
-/* Code block */
 .prose pre {
-    background: #2a2a2a;
-    color: #e0ddd9;
-    padding: 1rem 1.25rem;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-size: 0.82rem;
-    line-height: 1.6;
-    margin: 1rem 0;
+    background: #2a2a2a; color: #e0ddd9;
+    padding: 1rem 1.25rem; border-radius: 6px;
+    overflow-x: auto; font-size: 0.82rem; line-height: 1.6; margin: 1rem 0;
 }
 
 /* ── Print ───────────────────────────────────────────── */
 
 @media print {
     .site-header, .site-footer, .hero-meta, .archive-heading,
-    .archive-grid, .calendar-sidebar, .calendar-mobile-btn,
-    .share-wrap, .vote-btn, .lightbox, .modal-overlay { display: none !important; }
+    .archive-grid, .calendar-section,
+    .share-wrap, .vote-btn, .lightbox { display: none !important; }
     .hero-image-wrap { max-width: 500px; margin: 0 auto; }
 }
