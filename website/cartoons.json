@@ -1,6 +1,19 @@
 {
   "cartoons": [
     {
+      "id": "2026-03-29",
+      "date": "2026-03-29",
+      "date_display": "March 29, 2026",
+      "headline": "15% of Americans say they'd be willing to work for an AI boss, according to new poll",
+      "setup": "AI Manager: 'You've been assigned 47 tasks. Due in 90 minutes. Have a great day.'",
+      "punchline": "Worker: 'At least it won't remember I cried at my desk.'",
+      "caption": "Survey says 15% of Americans are ready to find out what accountability really means.",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-03-29.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-03-30",
       "date": "2026-03-30",
       "date_display": "March 30, 2026",
