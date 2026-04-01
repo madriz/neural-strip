@@ -24,6 +24,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
+import requests
 
 # ── Constants ────────────────────────────────────────────────────────────────
 
@@ -33,9 +34,19 @@ RSS_FEEDS = [
     ("Ars Technica", "https://feeds.arstechnica.com/arstechnica/technology-lab"),
     ("Wired AI", "https://www.wired.com/feed/tag/artificial-intelligence/rss"),
     ("Hacker News", "https://news.ycombinator.com/rss"),
+    ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
+    ("VentureBeat AI", "https://venturebeat.com/category/ai/feed/"),
+    ("Reuters Technology", "https://feeds.reuters.com/reuters/technologyNews"),
+    ("BBC Technology", "http://feeds.bbci.co.uk/news/technology/rss.xml"),
+    ("The Register", "https://www.theregister.com/headlines.atom"),
+    ("ZDNet AI", "https://www.zdnet.com/topic/artificial-intelligence/rss.xml"),
+    ("IEEE Spectrum AI", "https://spectrum.ieee.org/feeds/topic/artificial-intelligence.rss"),
+    ("AI News", "https://www.artificialintelligence-news.com/feed/"),
+    ("Towards Data Science", "https://towardsdatascience.com/feed"),
+    ("Import AI (Jack Clark)", "https://importai.substack.com/feed"),
 ]
 
-MAX_ITEMS_PER_FEED = 10
+MAX_ITEMS_PER_FEED = 6
 
 OUTPUT_PATH = Path(__file__).parent / "pending_post.json"
 
@@ -132,6 +143,32 @@ def format_headlines(items: list[dict]) -> str:
     return "\n\n".join(lines)
 
 
+# ── Recent story deduplication ───────────────────────────────────────────────
+
+CARTOONS_JSON_URL = "https://raw.githubusercontent.com/madriz/neural-strip/main/website/cartoons.json"
+
+
+def fetch_recent_headlines(days: int = 7) -> list[str]:
+    """Fetch headlines from cartoons.json to avoid repeating recent stories."""
+    try:
+        r = requests.get(CARTOONS_JSON_URL, timeout=10)
+        if r.status_code != 200:
+            return []
+        data = r.json()
+        # cartoons.json uses {"cartoons": [...]} wrapper
+        cartoons = data.get("cartoons", data) if isinstance(data, dict) else data
+        if not isinstance(cartoons, list):
+            return []
+        from datetime import timedelta
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+        return list(set(
+            c.get("headline", "") for c in cartoons
+            if c.get("date", "") >= cutoff and c.get("headline")
+        ))
+    except Exception:
+        return []
+
+
 # ── Claude API ───────────────────────────────────────────────────────────────
 
 def generate_cartoon_concept(headlines_text: str) -> dict:
@@ -145,13 +182,24 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
 
     client = anthropic.Anthropic(api_key=api_key)
 
+    # Build system prompt with dedup list
+    system = SYSTEM_PROMPT
+    recent = fetch_recent_headlines(days=7)
+    if recent:
+        dedup_list = "\n".join(f"- {h}" for h in recent)
+        system += (
+            f"\n\nIMPORTANT: These stories have already been used for cartoons recently. "
+            f"Do NOT pick any of these or closely related stories:\n{dedup_list}"
+        )
+        print(f"  Dedup: {len(recent)} recent headlines excluded")
+
     today = datetime.now(timezone.utc).strftime("%B %d, %Y")
     user_prompt = USER_PROMPT_TEMPLATE.format(date=today, headlines=headlines_text)
 
     response = client.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=1024,
-        system=SYSTEM_PROMPT,
+        system=system,
         messages=[{"role": "user", "content": user_prompt}],
     )
 
