@@ -2,8 +2,9 @@ name: Daily Generate
 
 on:
   schedule:
-    # Daily at 8:00 UTC (3:00 AM ET)
-    - cron: '0 8 * * *'
+    # Runs daily at 8:00 AM Eastern (EDT = UTC-4)
+    # Change to '0 13 * * *' in November when Toronto switches to EST (UTC-5)
+    - cron: '0 12 * * *'
   workflow_dispatch: {}
 
 jobs:
