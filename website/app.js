@@ -24,27 +24,24 @@
         if (typeof window.supabase === 'undefined') return;
         try {
             supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            // Fetch vote counts
-            var { data } = await supabaseClient.rpc('ns_vote_counts');
-            if (!data) {
-                // Fallback: manual query
-                var { data: rows } = await supabaseClient
-                    .from('ns_votes')
-                    .select('cartoon_id, vote');
-                if (rows) {
-                    rows.forEach(function (r) {
-                        if (!voteCounts[r.cartoon_id]) voteCounts[r.cartoon_id] = { likes: 0, dislikes: 0 };
-                        if (r.vote === 'like') voteCounts[r.cartoon_id].likes++;
-                        else voteCounts[r.cartoon_id].dislikes++;
-                    });
-                }
-            } else {
-                data.forEach(function (r) {
-                    voteCounts[r.cartoon_id] = { likes: r.likes || 0, dislikes: r.dislikes || 0 };
+            // Fetch all votes and aggregate client-side (no RPC dependency)
+            var { data: rows, error } = await supabaseClient
+                .from('ns_votes')
+                .select('cartoon_id, vote');
+            if (error) {
+                console.warn('Supabase vote query failed:', error.message);
+                return;
+            }
+            if (rows && rows.length > 0) {
+                rows.forEach(function (r) {
+                    if (!voteCounts[r.cartoon_id]) voteCounts[r.cartoon_id] = { likes: 0, dislikes: 0 };
+                    if (r.vote === 'like') voteCounts[r.cartoon_id].likes++;
+                    else voteCounts[r.cartoon_id].dislikes++;
                 });
+                console.log('Supabase votes loaded:', Object.keys(voteCounts).length, 'cartoons');
             }
         } catch (e) {
-            console.warn('Supabase init failed, using localStorage fallback:', e);
+            console.warn('Supabase init failed:', e);
         }
     }
 
@@ -375,13 +372,12 @@
     // ── Voting (Supabase + localStorage) ─────────────────
 
     function getVotes(id) {
-        // Supabase counts take priority
+        // Always use Supabase-sourced counts (even if 0)
+        // voteCounts is populated by initSupabase() on page load
         if (voteCounts[id]) return voteCounts[id];
-        // Fallback to localStorage
-        try {
-            var data = JSON.parse(localStorage.getItem('ns_votes_' + id) || '{}');
-            return { likes: data.likes || 0, dislikes: data.dislikes || 0 };
-        } catch (e) { return { likes: 0, dislikes: 0 }; }
+        // If no entry exists yet for this cartoon, return zeros
+        // (do NOT fall back to localStorage — it has stale local-only counts)
+        return { likes: 0, dislikes: 0 };
     }
 
     function getVoted(id) {
