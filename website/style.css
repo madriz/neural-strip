@@ -246,17 +246,23 @@ body {
     border-radius: 6px;
 }
 
+.archive-selects {
+    display: flex;
+    gap: 0.4rem;
+    flex: 1;
+}
+
 .archive-nav select {
     font-family: var(--sans);
     font-size: 0.85rem;
-    padding: 0.35rem 0.6rem;
+    padding: 0.35rem 0.5rem;
     border: 1px solid var(--border);
     border-radius: 4px;
     background: var(--card-bg);
     color: var(--text);
     cursor: pointer;
-    max-width: 300px;
     flex: 1;
+    min-width: 0;
 }
 
 .archive-toggle-wrap {

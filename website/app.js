@@ -81,23 +81,81 @@
         var nav = document.getElementById('archive-nav');
         if (!nav) return;
 
-        var html = '<span>Browse archive:</span><select id="archive-select">';
+        // Parse selected date
+        var parts = selectedCartoon.date.split('-');
+        var selYear = parts[0];
+        var selMonth = parts[1];
+        var selDay = parts[2];
+
+        // Build date index: { year: { month: [day, ...] } }
+        var dateIndex = {};
         cartoons.forEach(function (c) {
-            var sel = c.id === selectedCartoon.id ? ' selected' : '';
-            html += '<option value="' + esc(c.id) + '"' + sel + '>' + esc(c.date_display) + '</option>';
+            var p = c.date.split('-');
+            if (!dateIndex[p[0]]) dateIndex[p[0]] = {};
+            if (!dateIndex[p[0]][p[1]]) dateIndex[p[0]][p[1]] = [];
+            dateIndex[p[0]][p[1]].push(p[2]);
         });
-        html += '</select>';
+
+        var years = Object.keys(dateIndex).sort().reverse();
+        var months = Object.keys(dateIndex[selYear] || {}).sort().reverse();
+        var days = ((dateIndex[selYear] || {})[selMonth] || []).sort().reverse();
+
+        var monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var html = '<span>Browse archive:</span>' +
+            '<div class="archive-selects">' +
+            '<select id="nav-year">' + years.map(function (y) {
+                return '<option value="' + y + '"' + (y === selYear ? ' selected' : '') + '>' + y + '</option>';
+            }).join('') + '</select>' +
+            '<select id="nav-month">' + months.map(function (m) {
+                return '<option value="' + m + '"' + (m === selMonth ? ' selected' : '') + '>' + monthNames[parseInt(m)] + '</option>';
+            }).join('') + '</select>' +
+            '<select id="nav-day">' + days.map(function (d) {
+                return '<option value="' + d + '"' + (d === selDay ? ' selected' : '') + '>' + parseInt(d) + '</option>';
+            }).join('') + '</select>' +
+            '</div>';
+
         nav.innerHTML = html;
 
-        document.getElementById('archive-select').addEventListener('change', function () {
-            var cartoon = cartoons.find(function (c) { return c.id === this.value; }.bind(this));
+        function onNavChange() {
+            var y = document.getElementById('nav-year').value;
+            var m = document.getElementById('nav-month').value;
+            var d = document.getElementById('nav-day').value;
+            var dateStr = y + '-' + m + '-' + d;
+            var cartoon = cartoons.find(function (c) { return c.date === dateStr; });
             if (cartoon) {
                 renderHero(cartoon);
                 renderArchiveNav(cartoon);
                 renderGrid(cartoons);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+        }
+
+        // Year change: rebuild month + day
+        document.getElementById('nav-year').addEventListener('change', function () {
+            var y = this.value;
+            var newMonths = Object.keys(dateIndex[y] || {}).sort().reverse();
+            var mSel = document.getElementById('nav-month');
+            mSel.innerHTML = newMonths.map(function (m) {
+                return '<option value="' + m + '">' + monthNames[parseInt(m)] + '</option>';
+            }).join('');
+            mSel.dispatchEvent(new Event('change'));
         });
+
+        // Month change: rebuild day
+        document.getElementById('nav-month').addEventListener('change', function () {
+            var y = document.getElementById('nav-year').value;
+            var m = this.value;
+            var newDays = ((dateIndex[y] || {})[m] || []).sort().reverse();
+            var dSel = document.getElementById('nav-day');
+            dSel.innerHTML = newDays.map(function (d) {
+                return '<option value="' + d + '">' + parseInt(d) + '</option>';
+            }).join('');
+            onNavChange();
+        });
+
+        document.getElementById('nav-day').addEventListener('change', onNavChange);
     }
 
     // ── Hero ────────────────────────────────────────────
