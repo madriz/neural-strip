@@ -66,10 +66,31 @@
 
         if (cartoons.length === 0) return;
 
+        updateMetaTags(cartoons[0]);
         renderHero(cartoons[0]);
         renderArchiveNav(cartoons[0]);
         renderGrid(cartoons);
         setupLightbox();
+    }
+
+    // ── Open Graph meta tags (for social sharing) ────────
+
+    function updateMetaTags(cartoon) {
+        var imgUrl = cartoon.image_url || '';
+        var title = cartoon.headline || cartoon.setup || 'Neural Strip';
+        var desc = cartoon.caption || 'AI Generated Humor about AI.';
+
+        function setMeta(selector, value) {
+            var el = document.querySelector(selector);
+            if (el) el.setAttribute('content', value);
+        }
+
+        setMeta('meta[property="og:title"]', title);
+        setMeta('meta[property="og:description"]', desc);
+        setMeta('meta[property="og:image"]', imgUrl);
+        setMeta('meta[name="twitter:title"]', title);
+        setMeta('meta[name="twitter:description"]', desc);
+        setMeta('meta[name="twitter:image"]', imgUrl);
     }
 
     // ── Archive Navigation (compact dropdown) ────────────
@@ -161,6 +182,7 @@
         var hero = document.getElementById('hero');
         if (!hero) return;
 
+        updateMetaTags(cartoon);
         currentIndex = cartoons.indexOf(cartoon);
         if (currentIndex < 0) currentIndex = 0;
 
