@@ -50,29 +50,31 @@ body {
     margin-top: 0.3rem;
 }
 
-.site-header .header-actions {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+.site-header .tagline-sub {
+    margin-top: 0.1rem;
+    font-style: italic;
 }
 
-.btn-instagram {
+.hero-ig {
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.btn-instagram-subtle {
     display: inline-block;
-    padding: 0.45rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
     font-family: var(--sans);
-    color: var(--accent);
-    border: 1px solid var(--accent);
+    color: var(--muted);
+    border: 1px solid var(--border);
     border-radius: 4px;
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition: border-color 0.15s, color 0.15s;
 }
 
-.btn-instagram:hover {
-    background: var(--accent);
-    color: #fff;
+.btn-instagram-subtle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 /* ── Single Column Layout ────────────────────────────── */

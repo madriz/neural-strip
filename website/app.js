@@ -1,19 +1,65 @@
 /* Neural Strip — Shared JS */
-/* Cartoon loader, calendar, lightbox, share, voting, GA4 events */
+/* Cartoon loader, calendar, lightbox, share, Supabase voting, GA4 events */
 
 (function () {
     'use strict';
 
+    // ── Supabase config ──────────────────────────────────
+    const SUPABASE_URL = 'https://***REMOVED***.supabase.co';
+    const SUPABASE_ANON_KEY = '***REMOVED***';
+
+    let supabaseClient = null;
+    let voteCounts = {}; // { cartoon_id: { likes: N, dislikes: N } }
+
+    function getVisitorId() {
+        var id = localStorage.getItem('ns_visitor_id');
+        if (!id) {
+            id = crypto.randomUUID ? crypto.randomUUID() : 'v-' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+            localStorage.setItem('ns_visitor_id', id);
+        }
+        return id;
+    }
+
+    async function initSupabase() {
+        if (typeof window.supabase === 'undefined') return;
+        try {
+            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            // Fetch vote counts
+            var { data } = await supabaseClient.rpc('ns_vote_counts');
+            if (!data) {
+                // Fallback: manual query
+                var { data: rows } = await supabaseClient
+                    .from('ns_votes')
+                    .select('cartoon_id, vote');
+                if (rows) {
+                    rows.forEach(function (r) {
+                        if (!voteCounts[r.cartoon_id]) voteCounts[r.cartoon_id] = { likes: 0, dislikes: 0 };
+                        if (r.vote === 'like') voteCounts[r.cartoon_id].likes++;
+                        else voteCounts[r.cartoon_id].dislikes++;
+                    });
+                }
+            } else {
+                data.forEach(function (r) {
+                    voteCounts[r.cartoon_id] = { likes: r.likes || 0, dislikes: r.dislikes || 0 };
+                });
+            }
+        } catch (e) {
+            console.warn('Supabase init failed, using localStorage fallback:', e);
+        }
+    }
+
     let cartoons = [];
     let currentIndex = 0;
-    let cartoonMonths = []; // [{year, month}] sorted descending
+    let cartoonMonths = [];
 
     // ── Init ────────────────────────────────────────────
 
     async function init() {
+        await initSupabase();
+
         try {
-            const resp = await fetch('cartoons.json');
-            const data = await resp.json();
+            var resp = await fetch('cartoons.json');
+            var data = await resp.json();
             cartoons = data.cartoons || [];
         } catch (e) {
             console.error('Failed to load cartoons.json:', e);
@@ -22,13 +68,10 @@
 
         if (cartoons.length === 0) return;
 
-        // Build sorted list of months that have cartoons
         cartoonMonths = getCartoonMonths();
-
         renderHero(cartoons[0]);
         renderGrid(cartoons);
 
-        // Show the month of the latest cartoon
         if (cartoonMonths.length > 0) {
             renderCalendarSection(cartoonMonths[0].year, cartoonMonths[0].month);
         }
@@ -49,7 +92,6 @@
                 months.push({ year: parseInt(parts[0]), month: parseInt(parts[1]) - 1 });
             }
         });
-        // Sort descending (newest first)
         months.sort(function (a, b) {
             return b.year !== a.year ? b.year - a.year : b.month - a.month;
         });
@@ -96,9 +138,11 @@
                         '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(cartoon.caption) + '&url=' + encodeURIComponent('https://neuralstrip.com') + '" target="_blank" rel="noopener">Share on X</a>' +
                         '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://neuralstrip.com') + '" target="_blank" rel="noopener">Share on LinkedIn</a>' +
                         '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(cartoon.caption + ' https://neuralstrip.com') + '" target="_blank" rel="noopener">Share on WhatsApp</a>' +
-                        '<button id="share-download" data-url="' + esc(cartoon.image_url) + '" data-name="' + esc(cartoon.id) + '.jpg">Download image</button>' +
                     '</div>' +
                 '</div>' +
+            '</div>' +
+            '<div class="hero-ig">' +
+                '<a href="https://instagram.com/neural.strip" class="btn-instagram-subtle" target="_blank" rel="noopener">Follow @neural.strip on Instagram</a>' +
             '</div>';
 
         // Vote handlers
@@ -138,17 +182,6 @@
                     setTimeout(function () { copyBtn.textContent = 'Copy link'; }, 1500);
                 });
                 ga('cartoon_share', { method: 'copy_link', cartoon_id: cartoon.id });
-            });
-        }
-
-        var dlBtn = document.getElementById('share-download');
-        if (dlBtn) {
-            dlBtn.addEventListener('click', function () {
-                var a = document.createElement('a');
-                a.href = dlBtn.dataset.url;
-                a.download = dlBtn.dataset.name;
-                a.click();
-                ga('cartoon_share', { method: 'download', cartoon_id: cartoon.id });
             });
         }
 
@@ -223,7 +256,6 @@
         var daysInMonth = new Date(year, month + 1, 0).getDate();
         var monthName = new Date(year, month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
-        // Jump-to-date dropdown
         var jumpHtml = '<div class="calendar-jump"><select id="calendar-jump">';
         cartoonMonths.forEach(function (cm) {
             var label = new Date(cm.year, cm.month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
@@ -232,7 +264,6 @@
         });
         jumpHtml += '</select></div>';
 
-        // Prev/next buttons (only to months with cartoons)
         var hasPrev = mi >= 0 && mi < cartoonMonths.length - 1;
         var hasNext = mi > 0;
 
@@ -266,7 +297,6 @@
         html += '</div></div>';
         section.innerHTML = html;
 
-        // Prev/next handlers (jump to adjacent cartoon month)
         document.getElementById('cal-prev').addEventListener('click', function () {
             if (hasPrev) {
                 var prev = cartoonMonths[mi + 1];
@@ -281,13 +311,11 @@
             }
         });
 
-        // Jump dropdown handler
         document.getElementById('calendar-jump').addEventListener('change', function () {
             var parts = this.value.split('-');
             renderCalendarSection(parseInt(parts[0]), parseInt(parts[1]));
         });
 
-        // Day click
         section.querySelectorAll('.day.has-cartoon').forEach(function (day) {
             day.addEventListener('click', function () {
                 var cartoon = cartoons.find(function (c) { return c.date === day.dataset.date; });
@@ -355,9 +383,12 @@
         lb.querySelector('.lb-punchline').textContent = c.punchline;
     }
 
-    // ── Voting (localStorage) ───────────────────────────
+    // ── Voting (Supabase + localStorage) ─────────────────
 
     function getVotes(id) {
+        // Supabase counts take priority
+        if (voteCounts[id]) return voteCounts[id];
+        // Fallback to localStorage
         try {
             var data = JSON.parse(localStorage.getItem('ns_votes_' + id) || '{}');
             return { likes: data.likes || 0, dislikes: data.dislikes || 0 };
@@ -370,13 +401,24 @@
     }
 
     function vote(id, type) {
-        var votes = getVotes(id);
-        if (type === 'like') votes.likes++;
-        else votes.dislikes++;
+        // Update local counts immediately
+        if (!voteCounts[id]) voteCounts[id] = { likes: 0, dislikes: 0 };
+        if (type === 'like') voteCounts[id].likes++;
+        else voteCounts[id].dislikes++;
+
+        // Mark as voted in localStorage
         try {
-            localStorage.setItem('ns_votes_' + id, JSON.stringify(votes));
             localStorage.setItem('ns_voted_' + id, type);
         } catch (e) { /* quota */ }
+
+        // Write to Supabase
+        if (supabaseClient) {
+            supabaseClient.from('ns_votes').insert({
+                cartoon_id: id,
+                vote: type,
+                visitor_id: getVisitorId(),
+            }).then(function () {}).catch(function () {});
+        }
     }
 
     // ── Helpers ─────────────────────────────────────────
