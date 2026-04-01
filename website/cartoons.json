@@ -1,6 +1,19 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-01",
+      "date": "2026-04-01",
+      "date_display": "April 1, 2026",
+      "headline": "Federal cyber experts called Microsoft's cloud a 'pile of shit,' approved it anyway",
+      "setup": "Federal cyber expert's performance review.",
+      "punchline": "Checked all boxes. Submitted concerns. Approved anyway. Same time next quarter.",
+      "caption": "Sometimes the technical term and the final decision are just very far apart.",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-01.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-03-29",
       "date": "2026-03-29",
       "date_display": "March 29, 2026",
