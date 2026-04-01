@@ -12,6 +12,8 @@ jobs:
     name: Generate cartoon concept
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
