@@ -231,20 +231,18 @@ body {
     background: #f0eeeb;
 }
 
-/* ── Calendar Section (inline, below hero) ────────────── */
+/* ── Archive Navigation (compact dropdown) ────────────── */
 
-.calendar-section {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-.calendar-jump {
+.archive-nav {
     display: flex;
-    justify-content: center;
-    margin-bottom: 0.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
 }
 
-.calendar-jump select {
+.archive-nav select {
     font-family: var(--sans);
     font-size: 0.85rem;
     padding: 0.35rem 0.6rem;
@@ -253,80 +251,25 @@ body {
     background: var(--card-bg);
     color: var(--text);
     cursor: pointer;
+    max-width: 300px;
+    flex: 1;
 }
 
-.calendar {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
+.archive-toggle-wrap {
+    text-align: center;
+    margin-top: 1rem;
 }
 
-.calendar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-}
-
-.calendar-header .month-label {
-    font-family: var(--serif);
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.calendar-header button {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
+.archive-toggle-wrap a {
+    font-size: 0.85rem;
     color: var(--muted);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
     transition: color 0.15s;
 }
 
-.calendar-header button:hover { color: var(--text); }
-.calendar-header button:disabled { opacity: 0.3; cursor: default; }
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-.calendar-grid .day-label {
-    font-weight: 600;
-    color: var(--muted);
-    padding: 0.3rem 0;
-}
-
-.calendar-grid .day {
-    padding: 0.35rem 0;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px auto;
-    color: #bbb;
-    font-size: 0.8rem;
-}
-
-.calendar-grid .day.has-cartoon {
-    background: var(--accent);
-    color: #fff;
-    cursor: pointer;
-    transition: opacity 0.15s;
-}
-
-.calendar-grid .day.has-cartoon:hover { opacity: 0.8; }
-
-.calendar-grid .day.today {
-    box-shadow: 0 0 0 2px var(--border);
+.archive-toggle-wrap a:hover {
+    color: var(--text);
 }
 
 /* ── Archive Grid ────────────────────────────────────── */
@@ -551,7 +494,7 @@ body {
 
 @media print {
     .site-header, .site-footer, .hero-meta, .archive-heading,
-    .archive-grid, .calendar-section,
+    .archive-grid, .archive-nav, .archive-toggle-wrap,
     .share-wrap, .vote-btn, .lightbox { display: none !important; }
     .hero-image-wrap { max-width: 500px; margin: 0 auto; }
 }

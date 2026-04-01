@@ -50,7 +50,8 @@
 
     let cartoons = [];
     let currentIndex = 0;
-    let cartoonMonths = [];
+    let archiveExpanded = false;
+    const ARCHIVE_PAGE_SIZE = 9;
 
     // ── Init ────────────────────────────────────────────
 
@@ -68,41 +69,35 @@
 
         if (cartoons.length === 0) return;
 
-        cartoonMonths = getCartoonMonths();
         renderHero(cartoons[0]);
+        renderArchiveNav(cartoons[0]);
         renderGrid(cartoons);
-
-        if (cartoonMonths.length > 0) {
-            renderCalendarSection(cartoonMonths[0].year, cartoonMonths[0].month);
-        }
-
         setupLightbox();
     }
 
-    // ── Cartoon months ──────────────────────────────────
+    // ── Archive Navigation (compact dropdown) ────────────
 
-    function getCartoonMonths() {
-        var seen = {};
-        var months = [];
+    function renderArchiveNav(selectedCartoon) {
+        var nav = document.getElementById('archive-nav');
+        if (!nav) return;
+
+        var html = '<span>Browse archive:</span><select id="archive-select">';
         cartoons.forEach(function (c) {
-            var parts = c.date.split('-');
-            var key = parts[0] + '-' + parts[1];
-            if (!seen[key]) {
-                seen[key] = true;
-                months.push({ year: parseInt(parts[0]), month: parseInt(parts[1]) - 1 });
+            var sel = c.id === selectedCartoon.id ? ' selected' : '';
+            html += '<option value="' + esc(c.id) + '"' + sel + '>' + esc(c.date_display) + '</option>';
+        });
+        html += '</select>';
+        nav.innerHTML = html;
+
+        document.getElementById('archive-select').addEventListener('change', function () {
+            var cartoon = cartoons.find(function (c) { return c.id === this.value; }.bind(this));
+            if (cartoon) {
+                renderHero(cartoon);
+                renderArchiveNav(cartoon);
+                renderGrid(cartoons);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
-        months.sort(function (a, b) {
-            return b.year !== a.year ? b.year - a.year : b.month - a.month;
-        });
-        return months;
-    }
-
-    function findMonthIndex(year, month) {
-        for (var i = 0; i < cartoonMonths.length; i++) {
-            if (cartoonMonths[i].year === year && cartoonMonths[i].month === month) return i;
-        }
-        return -1;
     }
 
     // ── Hero ────────────────────────────────────────────
@@ -208,13 +203,17 @@
         });
     }
 
-    // ── Archive Grid ────────────────────────────────────
+    // ── Archive Grid (with pagination) ─────────────────
 
     function renderGrid(list) {
         var grid = document.getElementById('archive-grid');
         if (!grid) return;
 
-        grid.innerHTML = list.map(function (c) {
+        // Skip the first cartoon (shown in hero) for archive
+        var archiveList = list.slice(1);
+        var displayList = archiveExpanded ? archiveList : archiveList.slice(0, ARCHIVE_PAGE_SIZE);
+
+        grid.innerHTML = displayList.map(function (c) {
             var votes = getVotes(c.id);
             return '<div class="archive-card" data-id="' + esc(c.id) + '">' +
                 '<div class="card-img">' + imageOrPlaceholder(c.image_url, c.setup) + '</div>' +
@@ -233,98 +232,30 @@
                 var cartoon = cartoons.find(function (c) { return c.id === card.dataset.id; });
                 if (cartoon) {
                     renderHero(cartoon);
+                    renderArchiveNav(cartoon);
+                    renderGrid(cartoons);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             });
         });
-    }
 
-    // ── Calendar Section ────────────────────────────────
-
-    function renderCalendarSection(year, month) {
-        var section = document.getElementById('calendar-section');
-        if (!section) return;
-
-        var cartoonDates = {};
-        cartoons.forEach(function (c) { cartoonDates[c.date] = true; });
-
-        var today = new Date();
-        var todayStr = today.toISOString().slice(0, 10);
-        var mi = findMonthIndex(year, month);
-
-        var firstDay = new Date(year, month, 1).getDay();
-        var daysInMonth = new Date(year, month + 1, 0).getDate();
-        var monthName = new Date(year, month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-
-        var jumpHtml = '<div class="calendar-jump"><select id="calendar-jump">';
-        cartoonMonths.forEach(function (cm) {
-            var label = new Date(cm.year, cm.month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-            var sel = (cm.year === year && cm.month === month) ? ' selected' : '';
-            jumpHtml += '<option value="' + cm.year + '-' + cm.month + '"' + sel + '>' + label + '</option>';
-        });
-        jumpHtml += '</select></div>';
-
-        var hasPrev = mi >= 0 && mi < cartoonMonths.length - 1;
-        var hasNext = mi > 0;
-
-        var html = jumpHtml +
-            '<div class="calendar">' +
-                '<div class="calendar-header">' +
-                    '<button id="cal-prev"' + (hasPrev ? '' : ' disabled') + '>&lsaquo;</button>' +
-                    '<span class="month-label">' + monthName + '</span>' +
-                    '<button id="cal-next"' + (hasNext ? '' : ' disabled') + '>&rsaquo;</button>' +
-                '</div>' +
-                '<div class="calendar-grid">' +
-                    '<span class="day-label">S</span><span class="day-label">M</span>' +
-                    '<span class="day-label">T</span><span class="day-label">W</span>' +
-                    '<span class="day-label">T</span><span class="day-label">F</span>' +
-                    '<span class="day-label">S</span>';
-
-        for (var i = 0; i < firstDay; i++) {
-            html += '<span class="day"></span>';
-        }
-
-        for (var d = 1; d <= daysInMonth; d++) {
-            var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
-            var hasCartoon = cartoonDates[dateStr];
-            var isToday = dateStr === todayStr;
-            var cls = 'day';
-            if (hasCartoon) cls += ' has-cartoon';
-            if (isToday) cls += ' today';
-            html += '<span class="' + cls + '"' + (hasCartoon ? ' data-date="' + dateStr + '"' : '') + '>' + d + '</span>';
-        }
-
-        html += '</div></div>';
-        section.innerHTML = html;
-
-        document.getElementById('cal-prev').addEventListener('click', function () {
-            if (hasPrev) {
-                var prev = cartoonMonths[mi + 1];
-                renderCalendarSection(prev.year, prev.month);
+        // Toggle link
+        var toggleWrap = document.getElementById('archive-toggle-wrap');
+        if (toggleWrap) {
+            if (archiveList.length > ARCHIVE_PAGE_SIZE) {
+                var linkText = archiveExpanded
+                    ? 'Show less \u2191'
+                    : 'View all ' + archiveList.length + ' cartoons \u2192';
+                toggleWrap.innerHTML = '<a href="#" id="archive-toggle">' + linkText + '</a>';
+                document.getElementById('archive-toggle').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    archiveExpanded = !archiveExpanded;
+                    renderGrid(cartoons);
+                });
+            } else {
+                toggleWrap.innerHTML = '';
             }
-        });
-
-        document.getElementById('cal-next').addEventListener('click', function () {
-            if (hasNext) {
-                var next = cartoonMonths[mi - 1];
-                renderCalendarSection(next.year, next.month);
-            }
-        });
-
-        document.getElementById('calendar-jump').addEventListener('change', function () {
-            var parts = this.value.split('-');
-            renderCalendarSection(parseInt(parts[0]), parseInt(parts[1]));
-        });
-
-        section.querySelectorAll('.day.has-cartoon').forEach(function (day) {
-            day.addEventListener('click', function () {
-                var cartoon = cartoons.find(function (c) { return c.date === day.dataset.date; });
-                if (cartoon) {
-                    renderHero(cartoon);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
+        }
     }
 
     // ── Lightbox ────────────────────────────────────────
