@@ -48,3 +48,17 @@ jobs:
           name: pending-post-${{ github.run_number }}
           path: pipeline/pending_post.json
           retention-days: 30
+
+      - name: Commit pending_post to daily-output branch
+        if: success()
+        run: |
+          git config user.name "Neural Strip Bot"
+          git config user.email "bot@neuralstrip.com"
+          git fetch origin
+          git checkout -B daily-output
+          git add -f pipeline/pending_post.json
+          git add -f pipeline/pending_post_*.json
+          git commit -m "daily: $(date +%Y-%m-%d) cartoon concept"
+          git push origin daily-output --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

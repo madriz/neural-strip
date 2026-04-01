@@ -269,6 +269,12 @@ def main():
     OUTPUT_PATH.write_text(pretty, encoding="utf-8")
     print(f"\nSaved to {OUTPUT_PATH}")
 
+    # Save timestamped copy (for daily-output branch history)
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    ts_path = OUTPUT_PATH.parent / f"pending_post_{ts}.json"
+    ts_path.write_text(pretty, encoding="utf-8")
+    print(f"Saved timestamped copy to {ts_path}")
+
     print("\nDone.")
 
 
