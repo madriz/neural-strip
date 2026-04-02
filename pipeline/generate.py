@@ -63,6 +63,7 @@ absurdity, or unintended consequences.
 Output valid JSON with these fields:
 {
   "headline": "the original headline you chose",
+  "source_url": "the direct URL of the article you chose",
   "angle": "the comedic angle in one sentence",
   "scene": "visual description of the single-panel cartoon (what the viewer sees)",
   "setup": "caption or dialogue line 1 (if needed)",
@@ -70,6 +71,10 @@ Output valid JSON with these fields:
   "instagram_caption": "dry, understated, 1-2 sentences max",
   "image_prompt": "describe ONLY the scene content (characters, setting, objects, expressions, actions). Do NOT include any style instructions."
 }
+
+STRICT RULES for source_url:
+- Must be the exact URL from the RSS feed item. Do not fabricate or modify URLs.
+- If no URL is available, use empty string "".
 
 STRICT RULES for instagram_caption:
 - No hashtags. Zero. Never.
@@ -139,6 +144,8 @@ def format_headlines(items: list[dict]) -> str:
         line = f"{i}. [{item['source']}] {item['title']}"
         if item["summary"]:
             line += f"\n   {item['summary']}"
+        if item.get("link"):
+            line += f"\n   URL: {item['link']}"
         lines.append(line)
     return "\n\n".join(lines)
 
@@ -205,6 +212,16 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
 
     raw = response.content[0].text.strip()
 
+    # Fix common UTF-8 mojibake (double-encoded em dash, curly quotes)
+    raw = (raw
+        .replace("\u00e2\u0080\u0094", "\u2014")   # em dash
+        .replace("\u00e2\u0080\u0093", "\u2013")   # en dash
+        .replace("\u00e2\u0080\u0099", "\u2019")   # right single quote
+        .replace("\u00e2\u0080\u0098", "\u2018")   # left single quote
+        .replace("\u00e2\u0080\u009c", "\u201c")   # left double quote
+        .replace("\u00e2\u0080\u009d", "\u201d")   # right double quote
+    )
+
     # Parse JSON (handle potential markdown wrapping)
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
@@ -256,6 +273,16 @@ def main():
     except Exception as e:
         print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
         sys.exit(1)
+
+    # Fallback: if source_url missing, find it from the RSS items by matching headline
+    if not concept.get("source_url"):
+        chosen = concept.get("headline", "").lower()
+        for item in items:
+            if item["title"].lower() in chosen or chosen in item["title"].lower():
+                concept["source_url"] = item.get("link", "")
+                break
+        if not concept.get("source_url"):
+            concept["source_url"] = ""
 
     # Add metadata
     concept["generated_at"] = datetime.now(timezone.utc).isoformat()

@@ -196,6 +196,7 @@
             '<div class="hero-caption">' +
                 '<div class="setup">' + esc(cartoon.setup) + '</div>' +
                 '<div class="punchline">' + esc(cartoon.punchline) + '</div>' +
+                (cartoon.source_url ? '<div class="source-link"><a href="' + esc(cartoon.source_url) + '" target="_blank" rel="noopener noreferrer" id="source-link">Read the story \u2192</a></div>' : '') +
             '</div>' +
             '<div class="hero-meta">' +
                 '<span class="hero-date">' + esc(cartoon.date_display) + '</span>' +
@@ -267,6 +268,14 @@
         document.addEventListener('click', function () {
             if (shareDropdown) shareDropdown.classList.remove('open');
         });
+
+        // Source link GA4 tracking
+        var sourceLink = document.getElementById('source-link');
+        if (sourceLink) {
+            sourceLink.addEventListener('click', function () {
+                ga('source_click', { cartoon_id: cartoon.id, source_url: cartoon.source_url });
+            });
+        }
 
         var heroImg = document.getElementById('hero-image');
         if (heroImg) {
@@ -389,6 +398,16 @@
 
         lb.querySelector('.lb-caption').textContent = c.setup;
         lb.querySelector('.lb-punchline').textContent = c.punchline;
+
+        // Source link in lightbox
+        var existingSource = lb.querySelector('.lb-source');
+        if (existingSource) existingSource.remove();
+        if (c.source_url) {
+            var srcDiv = document.createElement('div');
+            srcDiv.className = 'lb-source';
+            srcDiv.innerHTML = '<a href="' + esc(c.source_url) + '" target="_blank" rel="noopener noreferrer">Read the story \u2192</a>';
+            lb.querySelector('.lb-punchline').after(srcDiv);
+        }
     }
 
     // ── Voting (Supabase + localStorage) ─────────────────
