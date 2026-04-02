@@ -1,0 +1,48 @@
+name: Keepalive
+
+on:
+  schedule:
+    # 11:00 UTC daily — 1 hour before the Daily Generate cron
+    # Keeps repo "active" so GitHub does not skip scheduled workflows
+    - cron: '0 11 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    name: Keepalive ping
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check if ping needed
+        id: check
+        run: |
+          LAST_COMMIT=$(git log -1 --format=%ct)
+          NOW=$(date +%s)
+          AGE_HOURS=$(( (NOW - LAST_COMMIT) / 3600 ))
+          echo "Last commit: ${AGE_HOURS}h ago"
+          if [ "$AGE_HOURS" -ge 20 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Repo inactive for ${AGE_HOURS}h — will ping"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Recent activity (${AGE_HOURS}h ago) — skipping ping"
+          fi
+
+      - name: Write keepalive ping
+        if: steps.check.outputs.skip == 'false'
+        run: |
+          date -u +%Y-%m-%dT%H:%M:%SZ > .github/last-ping
+          git config user.name "Neural Strip Bot"
+          git config user.email "bot@neuralstrip.com"
+          git add .github/last-ping
+          git commit -m "chore: daily keepalive [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
