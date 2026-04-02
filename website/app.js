@@ -21,15 +21,19 @@
     }
 
     async function initSupabase() {
-        if (typeof window.supabase === 'undefined') return;
+        if (typeof window.supabase === 'undefined') {
+            console.warn('[NS] Supabase JS library not loaded');
+            return;
+        }
         try {
             supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('[NS] Supabase client created:', SUPABASE_URL);
             // Fetch all votes and aggregate client-side (no RPC dependency)
             var { data: rows, error } = await supabaseClient
                 .from('ns_votes')
                 .select('cartoon_id, vote');
             if (error) {
-                console.warn('Supabase vote query failed:', error.message);
+                console.error('[NS] Supabase vote query failed:', error.message, error);
                 return;
             }
             if (rows && rows.length > 0) {
@@ -439,12 +443,37 @@
 
         // Write to Supabase
         if (supabaseClient) {
+            console.log('[NS] Submitting vote:', id, type);
             supabaseClient.from('ns_votes').insert({
                 cartoon_id: id,
                 vote: type,
                 visitor_id: getVisitorId(),
-            }).then(function () {}).catch(function () {});
+            }).then(function (result) {
+                if (result.error) {
+                    console.error('[NS] Vote insert error:', result.error.message, result.error);
+                    showVoteError('Vote failed: ' + result.error.message);
+                } else {
+                    console.log('[NS] Vote saved to Supabase:', id, type);
+                }
+            }).catch(function (err) {
+                console.error('[NS] Vote network error:', err);
+                showVoteError('Network error: ' + err.message);
+            });
+        } else {
+            console.warn('[NS] supabaseClient not initialized, vote saved locally only');
         }
+    }
+
+    function showVoteError(msg) {
+        var existing = document.getElementById('vote-error');
+        if (existing) existing.remove();
+        var el = document.createElement('div');
+        el.id = 'vote-error';
+        el.style.cssText = 'text-align:center;font-size:0.75rem;color:#c00;margin-top:0.3rem;';
+        el.textContent = msg;
+        var meta = document.querySelector('.hero-meta');
+        if (meta) meta.after(el);
+        setTimeout(function () { el.remove(); }, 5000);
     }
 
     // ── Helpers ─────────────────────────────────────────
