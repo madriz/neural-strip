@@ -5,8 +5,8 @@
     'use strict';
 
     // ── Supabase config ──────────────────────────────────
-    const SUPABASE_URL = 'https://***REMOVED***.supabase.co';
-    const SUPABASE_ANON_KEY = '***REMOVED***';
+    const SUPABASE_URL = 'https://muqgfjfhviebmfefawjn.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmamZodmllYm1mZWZhd2puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzg5NDEsImV4cCI6MjA5MDcxNDk0MX0.7QaGuGOGE9Nml_gB8E2tMO2Gbm1_b87GzdS5NysGUus';
 
     let supabaseClient = null;
     let voteCounts = {}; // { cartoon_id: { likes: N, dislikes: N } }
