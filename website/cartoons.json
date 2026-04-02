@@ -1,6 +1,19 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-02",
+      "date": "2026-04-02",
+      "date_display": "April 2, 2026",
+      "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code â a move the company says was an accident",
+      "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
+      "punchline": "Engineer: 'Which partâtaking down thousands of repos, or telling everyone it was an accident?'",
+      "caption": "when your damage control becomes the damage.",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-01",
       "date": "2026-04-01",
       "date_display": "April 1, 2026",
