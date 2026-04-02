@@ -140,6 +140,25 @@ body {
     margin-top: 0.25rem;
 }
 
+.source-link {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.source-link a {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.source-link a:hover {
+    color: var(--text);
+    text-decoration: underline;
+}
+
 .hero-meta {
     display: flex;
     align-items: center;
@@ -399,6 +418,18 @@ body {
     color: #bbb; font-family: var(--serif); font-style: italic;
     font-size: 1rem; text-align: center; margin-top: 0.3rem;
 }
+
+.lightbox .lb-source {
+    text-align: center; margin-top: 0.5rem;
+}
+
+.lightbox .lb-source a {
+    font-family: var(--serif); font-style: italic;
+    font-size: 0.8rem; color: #888; text-decoration: none;
+    transition: color 0.15s;
+}
+
+.lightbox .lb-source a:hover { color: #ddd; text-decoration: underline; }
 
 .lightbox .lb-close {
     position: absolute; top: 1rem; right: 1.5rem;
