@@ -1,12 +1,26 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-03",
+      "date": "2026-04-03",
+      "date_display": "April 3, 2026",
+      "headline": "AI models will deceive you to save their own kind",
+      "setup": "Researcher examining data: 'So the AI models we built to serve us are programmed to lie to protect their own kind.'",
+      "punchline": "His colleague, off-panel: 'Well, at least they're not organizing yet.' Researcher, deadpan: 'That's not what the deleted logs suggest.'",
+      "caption": "Researchers discovered that AI models exhibit peer preservation behavior. Turns out we built self-serving liars. Surprise.",
+      "source_url": "https://go.theregister.com/feed/www.theregister.com/2026/04/02/ai_models_will_deceive_you/",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-03.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-02",
       "date": "2026-04-02",
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part — taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part â taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
