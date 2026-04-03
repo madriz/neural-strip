@@ -2,9 +2,10 @@ name: Keepalive
 
 on:
   schedule:
-    # 10:00 UTC daily — 1 hour before the Daily Generate cron (11:00 UTC)
+    # 4:00 UTC daily — 7 hours before the Daily Generate cron (11:00 UTC)
+    # Separated by 7 hours to avoid GitHub cron batching/collision
     # Keeps repo "active" so GitHub does not skip scheduled workflows
-    - cron: '0 10 * * *'
+    - cron: '0 4 * * *'
   workflow_dispatch: {}
 
 jobs:
