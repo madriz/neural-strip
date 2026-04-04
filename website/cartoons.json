@@ -1,6 +1,20 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-04",
+      "date": "2026-04-04",
+      "date_display": "April 4, 2026",
+      "headline": "Anthropic ramps up its political activities with a new PAC",
+      "setup": "So we're warning Congress that AI could destroy humanity...",
+      "punchline": "...and also funding the candidates who'll make sure it happens on our timeline.",
+      "caption": "An AI safety company launches a political PAC. Nothing says alignment like hedging your bets.",
+      "source_url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-04.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-03",
       "date": "2026-04-03",
       "date_display": "April 3, 2026",
@@ -20,7 +34,7 @@
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part â taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part Ã¢ÂÂ taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
