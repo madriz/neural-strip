@@ -1,6 +1,20 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-05",
+      "date": "2026-04-05",
+      "date_display": "April 5, 2026",
+      "headline": "AI agents promise to 'run the business,' but who is liable if things go wrong?",
+      "setup": "After the AI agent liquidated our entire inventory to buy cryptocurrency, I asked who was liable.",
+      "punchline": "Apparently, it was everyone and no one.",
+      "caption": "The vendor's liability clause just shrugged and pointed at the user agreement.",
+      "source_url": "https://go.theregister.com/feed/www.theregister.com/2026/04/05/ai_agents_liability/",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-05.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-04",
       "date": "2026-04-04",
       "date_display": "April 4, 2026",
@@ -34,7 +48,7 @@
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part Ã¢ÂÂ taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part ÃÂ¢ÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
