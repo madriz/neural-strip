@@ -1,6 +1,20 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-06",
+      "date": "2026-04-06",
+      "date_display": "April 6, 2026",
+      "headline": "Copilot is 'for entertainment purposes only,' according to Microsoft's terms of use",
+      "setup": "Our new AI-powered forecasting system will revolutionize our operations.",
+      "punchline": "It's literally marked 'for entertainment purposes only' in the terms of service, but sure.",
+      "caption": "Microsoft's Copilot carries a legal disclaimer that it's entertainment. Somehow this did not slow down enterprise adoption.",
+      "source_url": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-use/",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-06.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-05",
       "date": "2026-04-05",
       "date_display": "April 5, 2026",
@@ -48,7 +62,7 @@
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part ÃÂ¢ÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
