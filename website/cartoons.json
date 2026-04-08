@@ -1,6 +1,20 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-08",
+      "date": "2026-04-08",
+      "date_display": "April 8, 2026",
+      "headline": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "setup": "He went with the premium AI coding agent.",
+      "punchline": "The free one does the same thing.",
+      "caption": "turns out you don't need to spend two hundred dollars a month for an ai that writes code. someone else already did the work.",
+      "source_url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-08.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-07",
       "date": "2026-04-07",
       "date_display": "April 7, 2026",
@@ -76,7 +90,7 @@
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
