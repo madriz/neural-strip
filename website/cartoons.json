@@ -1,6 +1,20 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-10",
+      "date": "2026-04-10",
+      "date_display": "April 10, 2026",
+      "headline": "Is Anthropic limiting the release of Mythos to protect the internet â or Anthropic?",
+      "setup": "We've decided to limit Mythos release due to critical security risks it could pose to the internet.",
+      "punchline": "Also, coincidentally, our valuation was just re-evaluated upward for being the most responsible AI company.",
+      "caption": "Nothing says trust in your safety practices like withholding the evidence.",
+      "source_url": "https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/",
+      "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-08",
       "date": "2026-04-08",
       "date_display": "April 8, 2026",
@@ -90,7 +104,7 @@
       "date_display": "April 2, 2026",
       "headline": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code",
       "setup": "Anthropic executive, pointing at the monitors: 'It was an accident.'",
-      "punchline": "Engineer: 'Which part ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
+      "punchline": "Engineer: 'Which part ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ taking down thousands of repos, or telling everyone it was an accident?'",
       "caption": "When your damage control becomes the damage.",
       "image_url": "https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-02.jpg",
       "instagram_url": "",
