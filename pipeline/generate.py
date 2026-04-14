@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Neural Strip — Daily cartoon concept generator.
 
@@ -24,7 +25,34 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
+import ftfy
 import requests
+
+# ── Encoding helpers ─────────────────────────────────────────────────────────
+
+MOJIBAKE_FIXES = {
+    'Ã©': 'é', 'Ã¨': 'è', 'Ã ': 'à',
+    'Ã®': 'î', 'Ã´': 'ô', 'Ã»': 'û',
+    'Ã§': 'ç', 'Ã¦': 'æ', 'Ã¼': 'ü',
+    'Ã¶': 'ö', 'Ã¤': 'ä', 'Ã±': 'ñ',
+    'â€™': "'", 'â€œ': '"', 'â€\x9d': '"',
+    'â€"': '—', 'â€"': '–', 'â€¦': '…',
+    'Â°': '°', 'Â£': '£', 'Â©': '©',
+}
+
+
+def fix_encoding(obj):
+    """Recursively apply ftfy to every string in a nested dict/list."""
+    if isinstance(obj, str):
+        try:
+            return ftfy.fix_text(obj)
+        except Exception:
+            return obj
+    elif isinstance(obj, dict):
+        return {k: fix_encoding(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [fix_encoding(i) for i in obj]
+    return obj
 
 # ── Constants ────────────────────────────────────────────────────────────────
 
@@ -212,21 +240,21 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
 
     raw = response.content[0].text.strip()
 
-    # Fix common UTF-8 mojibake (double-encoded em dash, curly quotes)
-    raw = (raw
-        .replace("\u00e2\u0080\u0094", "\u2014")   # em dash
-        .replace("\u00e2\u0080\u0093", "\u2013")   # en dash
-        .replace("\u00e2\u0080\u0099", "\u2019")   # right single quote
-        .replace("\u00e2\u0080\u0098", "\u2018")   # left single quote
-        .replace("\u00e2\u0080\u009c", "\u201c")   # left double quote
-        .replace("\u00e2\u0080\u009d", "\u201d")   # right double quote
-    )
+    # Primary fix: ftfy repairs a wide range of UTF-8 double-encoding issues.
+    raw = ftfy.fix_text(raw)
+
+    # Safety net: explicit replacements for patterns ftfy may miss.
+    for bad, good in MOJIBAKE_FIXES.items():
+        raw = raw.replace(bad, good)
 
     # Parse JSON (handle potential markdown wrapping)
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
     concept = json.loads(raw)
+
+    # Output-side pass: recursively clean every string in the parsed dict.
+    concept = fix_encoding(concept)
 
     # Prepend locked style prefix to image_prompt
     if concept.get("image_prompt"):

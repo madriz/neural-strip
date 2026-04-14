@@ -3,3 +3,4 @@ anthropic
 supabase
 requests
 python-dotenv
+ftfy
