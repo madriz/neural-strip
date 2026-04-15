@@ -82,6 +82,12 @@ OUTPUT_PATH = Path(__file__).parent / "pending_post.json"
 OUTPUT_IMAGES_DIR = Path(__file__).parent / "output_images"
 
 IDEOGRAM_API_URL = "https://api.ideogram.ai/v1/ideogram-v3/generate"
+IDEOGRAM_UPSCALE_URL = "https://api.ideogram.ai/upscale"
+
+IDEOGRAM_NEGATIVE_PROMPT = (
+    "blurry, low quality, distorted text, watermark, signature, "
+    "extra limbs, bad anatomy"
+)
 
 SYSTEM_PROMPT = """\
 You are a veteran single-panel cartoon writer for The New Yorker, \
@@ -272,11 +278,22 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
 
 def generate_image(image_prompt: str, date_str: str) -> str:
     """
-    Generate a cartoon image via Ideogram v3 and save as JPEG.
-    Returns local file path on success, empty string on any failure.
+    Generate a cartoon image via Ideogram v3, save as JPEG, then upscale
+    to ~2K for print compatibility. Returns local file path on success,
+    empty string on any failure.
 
     Ideogram image URLs expire quickly — download happens immediately.
     The v3 API returns PNG; we convert to JPEG to keep the site's .jpg contract.
+
+    Cost: generate ~$0.06 (QUALITY) + upscale ~$0.02-0.05 = ~$0.08-0.13 per cartoon.
+    At one cartoon per day this is still under $4/month.
+
+    style_type: "AUTO" — the v3 enum no longer exposes "ILLUSTRATION";
+    AUTO lets the prompt (which already carries the full New Yorker style)
+    drive the render.
+
+    seed: omitted — the API rejects null, and omission gives a random seed,
+    which is the behavior we want for daily variety.
     """
     api_key = os.environ.get("IDEOGRAM_API_KEY", "")
     if not api_key:
@@ -293,11 +310,12 @@ def generate_image(image_prompt: str, date_str: str) -> str:
             json={
                 "prompt": image_prompt,
                 "rendering_speed": "QUALITY",
-                "style_type": "GENERAL",
+                "style_type": "AUTO",
                 "aspect_ratio": "1x1",
                 "magic_prompt_option": "OFF",
+                "negative_prompt": IDEOGRAM_NEGATIVE_PROMPT,
             },
-            timeout=120,
+            timeout=180,
         )
         if resp.status_code != 200:
             print(f"  ERROR: Ideogram API {resp.status_code}: {resp.text[:300]}", file=sys.stderr)
@@ -320,10 +338,73 @@ def generate_image(image_prompt: str, date_str: str) -> str:
             img = img.convert("RGB")
         img.save(output_path, "JPEG", quality=92)
         print(f"  Saved image to {output_path} ({output_path.stat().st_size:,} bytes)")
-        return str(output_path)
     except Exception as e:
         print(f"  ERROR: Image download/save failed: {e}", file=sys.stderr)
         return ""
+
+    upscale_image(output_path, api_key)
+    return str(output_path)
+
+
+def upscale_image(output_path: Path, api_key: str) -> None:
+    """
+    Upscale the saved JPEG via Ideogram's upscale endpoint and overwrite
+    the local file with the higher-resolution version. Best-effort — on
+    any failure, leaves the original image in place.
+
+    Uses resemblance=75 (preserve original look) and detail=50 (balanced
+    detail enhancement), both on a 1-100 scale.
+
+    Endpoint: /upscale (v1-style path; /v1/ideogram-v3/upscale returns 404).
+    Takes multipart with image_file and image_request JSON.
+    """
+    try:
+        with output_path.open("rb") as fh:
+            image_bytes = fh.read()
+
+        files = {
+            "image_file": (output_path.name, image_bytes, "image/jpeg"),
+            "image_request": (None, json.dumps({"resemblance": 75, "detail": 50}), "application/json"),
+        }
+        resp = requests.post(
+            IDEOGRAM_UPSCALE_URL,
+            headers={"Api-Key": api_key},
+            files=files,
+            timeout=240,
+        )
+        if resp.status_code != 200:
+            print(f"  WARN: Upscale API {resp.status_code}: {resp.text[:300]} — keeping original", file=sys.stderr)
+            return
+
+        data = resp.json().get("data", [])
+        if not data or not data[0].get("url"):
+            print("  WARN: Upscale response missing url — keeping original", file=sys.stderr)
+            return
+
+        url = data[0]["url"]
+        dims = data[0].get("upscaled_resolution") or data[0].get("resolution")
+    except Exception as e:
+        print(f"  WARN: Upscale call failed: {e} — keeping original", file=sys.stderr)
+        return
+
+    try:
+        up_resp = requests.get(url, timeout=120)
+        if up_resp.status_code != 200:
+            print(f"  WARN: Upscaled image download {up_resp.status_code} — keeping original", file=sys.stderr)
+            return
+
+        from PIL import Image
+        up_img = Image.open(io.BytesIO(up_resp.content))
+        if up_img.mode != "RGB":
+            up_img = up_img.convert("RGB")
+        up_img.save(output_path, "JPEG", quality=92)
+        w, h = up_img.size
+        if dims:
+            print(f"  Upscaled to {w}x{h} ({output_path.stat().st_size:,} bytes)")
+        else:
+            print(f"  Upscale complete ({output_path.stat().st_size:,} bytes)")
+    except Exception as e:
+        print(f"  WARN: Upscale download/save failed: {e} — keeping original", file=sys.stderr)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
