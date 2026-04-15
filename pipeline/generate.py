@@ -13,11 +13,13 @@ Usage:
 
 Environment:
     ANTHROPIC_API_KEY   — required
+    IDEOGRAM_API_KEY    — optional; enables automatic cartoon image generation
     SUPABASE_URL        — for future storage (not used yet)
     SUPABASE_KEY        — for future storage (not used yet)
 """
 
 import argparse
+import io
 import json
 import os
 import sys
@@ -77,6 +79,9 @@ RSS_FEEDS = [
 MAX_ITEMS_PER_FEED = 6
 
 OUTPUT_PATH = Path(__file__).parent / "pending_post.json"
+OUTPUT_IMAGES_DIR = Path(__file__).parent / "output_images"
+
+IDEOGRAM_API_URL = "https://api.ideogram.ai/v1/ideogram-v3/generate"
 
 SYSTEM_PROMPT = """\
 You are a veteran single-panel cartoon writer for The New Yorker, \
@@ -263,6 +268,64 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
     return concept
 
 
+# ── Ideogram image generation ────────────────────────────────────────────────
+
+def generate_image(image_prompt: str, date_str: str) -> str:
+    """
+    Generate a cartoon image via Ideogram v3 and save as JPEG.
+    Returns local file path on success, empty string on any failure.
+
+    Ideogram image URLs expire quickly — download happens immediately.
+    The v3 API returns PNG; we convert to JPEG to keep the site's .jpg contract.
+    """
+    api_key = os.environ.get("IDEOGRAM_API_KEY", "")
+    if not api_key:
+        print("  WARN: IDEOGRAM_API_KEY not set — skipping image generation", file=sys.stderr)
+        return ""
+
+    OUTPUT_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = OUTPUT_IMAGES_DIR / f"{date_str}.jpg"
+
+    try:
+        resp = requests.post(
+            IDEOGRAM_API_URL,
+            headers={"Api-Key": api_key, "Content-Type": "application/json"},
+            json={
+                "prompt": image_prompt,
+                "rendering_speed": "QUALITY",
+                "style_type": "GENERAL",
+                "aspect_ratio": "1x1",
+                "magic_prompt_option": "OFF",
+            },
+            timeout=120,
+        )
+        if resp.status_code != 200:
+            print(f"  ERROR: Ideogram API {resp.status_code}: {resp.text[:300]}", file=sys.stderr)
+            return ""
+
+        image_url = resp.json()["data"][0]["url"]
+    except Exception as e:
+        print(f"  ERROR: Ideogram API call failed: {e}", file=sys.stderr)
+        return ""
+
+    try:
+        img_resp = requests.get(image_url, timeout=60)
+        if img_resp.status_code != 200:
+            print(f"  ERROR: Image download {img_resp.status_code}", file=sys.stderr)
+            return ""
+
+        from PIL import Image
+        img = Image.open(io.BytesIO(img_resp.content))
+        if img.mode != "RGB":
+            img = img.convert("RGB")
+        img.save(output_path, "JPEG", quality=92)
+        print(f"  Saved image to {output_path} ({output_path.stat().st_size:,} bytes)")
+        return str(output_path)
+    except Exception as e:
+        print(f"  ERROR: Image download/save failed: {e}", file=sys.stderr)
+        return ""
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -276,7 +339,7 @@ def main():
     print("=" * 50)
 
     # 1. Fetch RSS headlines
-    print("\n[1/2] Fetching RSS feeds...")
+    print("\n[1/3] Fetching RSS feeds...")
     items = fetch_headlines()
     print(f"  {len(items)} headlines from {len(RSS_FEEDS)} feeds")
 
@@ -292,7 +355,7 @@ def main():
         return
 
     # 2. Generate cartoon concept via Claude
-    print("\n[2/2] Generating cartoon concept via Claude Haiku...")
+    print("\n[2/3] Generating cartoon concept via Claude Haiku...")
     try:
         concept = generate_cartoon_concept(headlines_text)
     except json.JSONDecodeError as e:
@@ -315,6 +378,12 @@ def main():
     # Add metadata
     concept["generated_at"] = datetime.now(timezone.utc).isoformat()
     concept["feed_count"] = len(items)
+
+    # Generate cartoon image via Ideogram (best-effort; pipeline continues on failure)
+    print("\n[3/3] Generating cartoon image via Ideogram...")
+    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    image_prompt = concept.get("image_prompt", "")
+    concept["image_local_path"] = generate_image(image_prompt, today_str) if image_prompt else ""
 
     # Print result
     pretty = json.dumps(concept, indent=2, ensure_ascii=False)

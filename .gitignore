@@ -209,3 +209,4 @@ __marimo__/
 # Neural Strip — local-only publish tool (contains tokens)
 website/publish.html
 pipeline/pending_post.json
+pipeline/output_images/
