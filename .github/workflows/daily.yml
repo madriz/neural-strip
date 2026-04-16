@@ -90,8 +90,10 @@ jobs:
         run: |
           git fetch origin daily-output
           mkdir -p pipeline/output_images
-          git checkout origin/daily-output -- pipeline/pending_post.json
-          git checkout origin/daily-output -- pipeline/output_images
+          # Use git show (no index side effects) so only website/* lands on main.
+          git show origin/daily-output:pipeline/pending_post.json > pipeline/pending_post.json
+          DATE=$(python -c "import json; print(json.load(open('pipeline/pending_post.json'))['generated_at'][:10])")
+          git show "origin/daily-output:pipeline/output_images/${DATE}.jpg" > "pipeline/output_images/${DATE}.jpg"
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
