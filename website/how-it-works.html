@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How it works - Neural Strip</title>
-    <meta name="description" content="How Neural Strip generates a daily-ish AI cartoon, end to end.">
+    <meta name="description" content="How Neural Strip generates a daily AI cartoon, end to end. Fully automated.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
@@ -12,12 +12,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://neuralstrip.com/how-it-works.html">
     <meta property="og:title" content="How Neural Strip Works">
-    <meta property="og:description" content="A daily-ish AI cartoon, generated end to end by machines. Mostly.">
+    <meta property="og:description" content="Fully automated. No human in the loop.">
     <meta property="og:image" content="https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-01.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@neuralstrip">
     <meta name="twitter:title" content="How Neural Strip Works">
-    <meta name="twitter:description" content="A daily-ish AI cartoon, generated end to end by machines. Mostly.">
+    <meta name="twitter:description" content="Fully automated. No human in the loop.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-01.jpg">
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-734R6EL9WH"></script>
@@ -37,18 +37,24 @@
 
 <div class="prose">
 
-    <h1>How Neural Strip works</h1>
-    <p class="subhead">A daily-ish AI cartoon, generated end to end by machines. Mostly.</p>
+    <h1>How Neural Strip Works</h1>
+    <p class="subhead">Fully automated. No human in the loop.</p>
 
-    <h2>The concept</h2>
-    <p>Most days, an automated pipeline reads the latest AI news, picks the story with the most comedic potential, writes a joke, and generates an image prompt for a single-panel cartoon. A human picks the best image and hits publish. That is the full extent of human involvement.</p>
-    <p>The result is a daily-ish record of what the AI industry looks like when viewed through the lens of its own tools. Think of it as the GPS confidently driving into a lake, except the GPS also wrote the joke about it.</p>
+    <h2>The process</h2>
+    <p>Every morning at 7:00 AM Eastern, an automated pipeline:</p>
+    <ol>
+        <li>Scans 15 AI news sources for the day's most interesting stories</li>
+        <li>Claude AI selects the best story and writes a New Yorker-style setup and punchline</li>
+        <li>Ideogram AI generates the cartoon illustration</li>
+        <li>The cartoon is automatically published to this site</li>
+    </ol>
+    <p>No human reviews, edits, or approves the content before it goes live. What you see is what the machines made.</p>
 
     <h2>The pipeline</h2>
     <div class="pipeline-flow">
         <div class="pipeline-step">
             <div class="step-label">RSS feeds</div>
-            <div class="step-desc">5 sources, 50 headlines</div>
+            <div class="step-desc">15 sources</div>
         </div>
         <span class="pipeline-arrow">&rarr;</span>
         <div class="pipeline-step">
@@ -57,33 +63,33 @@
         </div>
         <span class="pipeline-arrow">&rarr;</span>
         <div class="pipeline-step">
-            <div class="step-label">Ideogram</div>
+            <div class="step-label">Ideogram AI</div>
             <div class="step-desc">Generates the cartoon</div>
         </div>
         <span class="pipeline-arrow">&rarr;</span>
         <div class="pipeline-step">
-            <div class="step-label">Instagram + Web</div>
-            <div class="step-desc">Published daily-ish</div>
+            <div class="step-label">Web</div>
+            <div class="step-desc">Published daily</div>
         </div>
     </div>
 
     <h2>The tools</h2>
     <div class="tools-grid">
         <div class="tool-card">
-            <div class="tool-name">RSS feeds</div>
-            <div class="tool-desc">TechCrunch, The Verge, Ars Technica, Wired, Hacker News</div>
+            <div class="tool-name">RSS feeds (15 sources)</div>
+            <div class="tool-desc">TechCrunch, The Verge, Ars Technica, Wired, Hacker News, MIT Tech Review, VentureBeat, Reuters, BBC, The Register, ZDNet, IEEE Spectrum, AI News, Towards Data Science, Import AI</div>
         </div>
         <div class="tool-card">
             <div class="tool-name">Claude API (Haiku)</div>
             <div class="tool-desc">Picks the story, writes the joke, generates the image prompt</div>
         </div>
         <div class="tool-card">
-            <div class="tool-name">Ideogram</div>
-            <div class="tool-desc">Generates the cartoon from the prompt</div>
+            <div class="tool-name">Ideogram API</div>
+            <div class="tool-desc">Generates the cartoon illustration from the prompt</div>
         </div>
         <div class="tool-card">
             <div class="tool-name">GitHub Actions</div>
-            <div class="tool-desc">Runs the pipeline daily-ish at 8:00 AM Eastern</div>
+            <div class="tool-desc">Runs the pipeline daily at 7:00 AM Eastern</div>
         </div>
         <div class="tool-card">
             <div class="tool-name">GitHub Pages</div>
@@ -114,15 +120,14 @@
     another stares out the window with concern."
 }</pre>
 
-    <p>The image_prompt is then pasted into Ideogram, which generates four variations. The best one becomes the cartoon of the day.</p>
+    <p>The image_prompt is sent to Ideogram, which returns the rendered cartoon. The pipeline commits it to the site. All of this happens without anyone watching.</p>
 
     <h2>Why</h2>
-    <p>We are living through the most absurd period in the history of technology. Companies are spending billions to build systems that confidently produce wrong answers, replacing workers with tools that require more workers to supervise them, and calling it progress. Someone should be writing this down. A cartoon seemed like the appropriate format.</p>
-    <p>New cartoon most days. Follow along at <a href="https://instagram.com/neural.strip" target="_blank" rel="noopener">@neural.strip</a>.</p>
+    <p>We are living through the most absurd period in the history of technology. Companies are spending billions to build systems that confidently produce wrong answers, replacing workers with tools that require more workers to supervise them, and calling it progress. Someone should be writing this down. A cartoon seemed like the appropriate format. A machine writing the cartoon about the machines seemed even more appropriate.</p>
+    <p>Follow along at <a href="https://instagram.com/neural.strip" target="_blank" rel="noopener">@neural.strip</a>.</p>
 
     <div class="opensource-callout">
-        <p>The code is open source.</p>
-        <p>If you want to run your own AI cartoon pipeline, fork it at <a href="https://github.com/madriz/neural-strip" target="_blank" rel="noopener noreferrer">github.com/madriz/neural-strip</a>.</p>
+        <p>The code is open source at <a href="https://github.com/madriz/neural-strip" target="_blank" rel="noopener noreferrer">github.com/madriz/neural-strip</a>.</p>
     </div>
 
 </div>
