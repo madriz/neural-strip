@@ -2,7 +2,7 @@
 
 > AI Generated Humor about AI. Because, Why Not?
 
-A daily single-panel cartoon about the AI industry, generated end to end by machines. An automated pipeline reads AI news from RSS feeds every morning, picks the story with the most comedic potential, writes a joke, and generates an image prompt. A human picks the best cartoon from four variations and hits publish. That is the full extent of human involvement. Live at [neuralstrip.com](https://neuralstrip.com).
+Neural Strip is fully autonomous. Every day at 7:00 AM Eastern, a GitHub Actions pipeline scans 15 AI news sources, selects the most interesting story, generates a New Yorker-style joke via Claude AI, illustrates it via Ideogram AI, and publishes the cartoon to [neuralstrip.com](https://neuralstrip.com) automatically. No human reviews or approves content before publication.
 
 ## How it works
 
@@ -13,20 +13,21 @@ RSS Feeds (15 sources)
 Claude Haiku (picks story, writes joke, generates image prompt)
       |
       v
-Ideogram (generates 4 cartoon variations from the prompt)
+Ideogram API (renders the cartoon illustration)
       |
       v
-Publish Tool (human picks best image, uploads via GitHub API)
+GitHub Actions publish job (commits image + updates cartoons.json on main)
       |
       v
-neuralstrip.com + Instagram (@neural.strip)
+neuralstrip.com (GitHub Pages rebuilds automatically)
 ```
 
 1. Every morning at 7:00 AM Eastern, a GitHub Actions cron job fetches the top headlines from 15 AI/tech RSS feeds.
 2. The headlines are sent to Claude Haiku with a system prompt that instructs it to behave as a veteran New Yorker cartoon writer. It picks one story and outputs structured JSON: headline, source URL, comedic angle, scene description, setup, punchline, Instagram caption, and an image generation prompt.
-3. The image prompt is pasted into Ideogram (free tier), which generates four cartoon variations in a locked visual style: clean line art, muted blue-gray pastels, New Yorker aesthetic.
-4. A human reviews the four images, picks the best one, and drops it into a local publish tool. The tool uploads the image to GitHub, updates `cartoons.json`, and triggers a site rebuild.
-5. The cartoon appears on the website and (when configured) posts to Instagram automatically.
+3. A brand safety filter scans the generated copy for profanity, hate speech, violence, sexual content, and partisan political content. Flagged drafts are regenerated (up to three attempts).
+4. The image prompt is sent to the Ideogram API, which returns the rendered single-panel cartoon.
+5. A second Actions job commits the image into `website/images/`, prepends a new entry to `website/cartoons.json`, and pushes to `main`. GitHub Pages rebuilds the site automatically.
+6. Instagram distribution is still manual, pending Meta API approval.
 
 ## Stack
 
