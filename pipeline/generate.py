@@ -22,6 +22,7 @@ import argparse
 import io
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -216,7 +217,7 @@ def fetch_recent_headlines(days: int = 7) -> list[str]:
 
 # ── Claude API ───────────────────────────────────────────────────────────────
 
-def generate_cartoon_concept(headlines_text: str) -> dict:
+def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> dict:
     """Send headlines to Claude Haiku and get cartoon concept JSON."""
     import anthropic
 
@@ -237,6 +238,9 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
             f"Do NOT pick any of these or closely related stories:\n{dedup_list}"
         )
         print(f"  Dedup: {len(recent)} recent headlines excluded")
+
+    if extra_guidance:
+        system += f"\n\n{extra_guidance}"
 
     today = datetime.now(timezone.utc).strftime("%B %d, %Y")
     user_prompt = USER_PROMPT_TEMPLATE.format(date=today, headlines=headlines_text)
@@ -271,6 +275,55 @@ def generate_cartoon_concept(headlines_text: str) -> dict:
         concept["image_prompt"] = IMAGE_PROMPT_PREFIX + concept["image_prompt"]
 
     return concept
+
+
+# ── Brand safety filter ──────────────────────────────────────────────────────
+
+BRAND_SAFETY_KEYWORDS: dict[str, list[str]] = {
+    "profanity": [
+        "fuck", "fucking", "shit", "bitch", "bastard", "asshole",
+        "cunt", "cock", "dick", "pussy", "whore", "slut", "fag",
+    ],
+    "hate": [
+        "nigger", "kike", "spic", "chink", "gook", "wetback",
+        "tranny", "faggot", "retard",
+    ],
+    "violence": [
+        "murder", "murdered", "rape", "raped", "kill", "killing",
+        "slaughter", "massacre", "torture", "lynch",
+    ],
+    "sexual": [
+        "porn", "porno", "pornography", "masturbate", "orgasm",
+        "blowjob", "horny", "erotic", "nude", "naked", "anal",
+        "nipple", "penis", "vagina",
+    ],
+    "political": [
+        "trump", "biden", "harris", "obama", "clinton", "pence",
+        "desantis", "newsom", "vance", "ramaswamy", "kennedy",
+        "maga",
+    ],
+}
+
+
+BRAND_SAFETY_FIELDS = ("headline", "setup", "punchline", "instagram_caption")
+
+
+def brand_safety_check(concept: dict) -> bool:
+    """Scan the user-facing text fields for disallowed content.
+
+    Returns True when content is clean, False when flagged.
+    """
+    combined = " ".join(str(concept.get(f, "")) for f in BRAND_SAFETY_FIELDS).lower()
+    for category, terms in BRAND_SAFETY_KEYWORDS.items():
+        for term in terms:
+            if re.search(rf"\b{re.escape(term)}\b", combined):
+                print(
+                    f"BRAND SAFETY: flagged content detected — regenerating "
+                    f"(category={category}, term={term!r})",
+                    file=sys.stderr,
+                )
+                return False
+    return True
 
 
 # ── Ideogram image generation ────────────────────────────────────────────────
@@ -371,15 +424,36 @@ def main():
         print("\n  DRY RUN — skipping Claude API call")
         return
 
-    # 2. Generate cartoon concept via Claude
+    # 2. Generate cartoon concept via Claude with brand safety retries (up to 3)
     print("\n[2/3] Generating cartoon concept via Claude Haiku...")
-    try:
-        concept = generate_cartoon_concept(headlines_text)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: Claude returned invalid JSON: {e}", file=sys.stderr)
-        sys.exit(1)
-    except Exception as e:
-        print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
+    MAX_ATTEMPTS = 3
+    BRAND_SAFETY_GUIDANCE = (
+        "Previous attempt was flagged for brand safety. Ensure content is "
+        "completely brand safe, neutral, and appropriate for all audiences."
+    )
+    concept = None
+    extra_guidance = ""
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        try:
+            candidate = generate_cartoon_concept(headlines_text, extra_guidance=extra_guidance)
+        except json.JSONDecodeError as e:
+            print(f"ERROR: Claude returned invalid JSON: {e}", file=sys.stderr)
+            sys.exit(1)
+        except Exception as e:
+            print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
+            sys.exit(1)
+
+        if brand_safety_check(candidate):
+            concept = candidate
+            break
+        print(f"  Brand safety failed on attempt {attempt}/{MAX_ATTEMPTS}", file=sys.stderr)
+        extra_guidance = BRAND_SAFETY_GUIDANCE
+
+    if concept is None:
+        print(
+            f"ERROR: Content failed brand safety check after {MAX_ATTEMPTS} attempts",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     # Fallback: if source_url missing, find it from the RSS items by matching headline
