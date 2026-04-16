@@ -69,3 +69,53 @@ jobs:
           git push origin daily-output --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: Publish cartoon to main
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch today's files from daily-output branch
+        run: |
+          git fetch origin daily-output
+          mkdir -p pipeline/output_images
+          git checkout origin/daily-output -- pipeline/pending_post.json
+          git checkout origin/daily-output -- pipeline/output_images
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Publish to website
+        id: publish
+        run: |
+          DATE=$(python pipeline/publish.py)
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push to main
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "Neural Strip Bot"
+          DATE="${{ steps.publish.outputs.date }}"
+          git add "website/images/${DATE}.jpg"
+          git add website/cartoons.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "daily: publish ${DATE} cartoon"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
