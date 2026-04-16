@@ -107,6 +107,7 @@ jobs:
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push to main
+        id: commit
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "Neural Strip Bot"
@@ -115,9 +116,19 @@ jobs:
           git add website/cartoons.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "daily: publish ${DATE} cartoon"
           git push origin main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Pushes made with GITHUB_TOKEN don't cascade into other workflows,
+      # so dispatch the Pages deploy explicitly.
+      - name: Trigger GitHub Pages rebuild
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main
