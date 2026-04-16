@@ -106,4 +106,13 @@ Pull requests are welcome. If you improve the joke quality, fix a bug, or add a 
 
 ## License
 
-MIT
+The Neural Strip codebase (pipeline, website, automation) is
+open source under the [MIT License](LICENSE).
+
+The Neural Strip brand, cartoon archive, and character
+intellectual property — including Halluci-Nate, Max Token,
+Dr. Prompt, Agent Lucy, Greg Gradient, Ned Null, Pete Policygun,
+and Madame Modela — are proprietary and are NOT covered by the
+MIT license. All rights reserved © 2026 Neural Strip.
+
+See [CHARACTERS.md](CHARACTERS.md) for details.
