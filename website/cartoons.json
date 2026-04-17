@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-17",
+      "date": "2026-04-17",
+      "date_display": "April 17, 2026",
+      "headline": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "setup": "Developer reviewing his monthly software subscriptions.",
+      "punchline": "He switches from Claude Code to Goose, realizes he's been paying $2,400 a year to feel like he was doing something fancy.",
+      "caption": "Sometimes the most expensive tool is just the one with the better marketing department.",
+      "source_url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A software developer sitting at a desk with two monitors side by side. On the left monitor screen, the Claude Code interface glows with a premium aesthetic and a '$200/month' label floating prominently. On the right monitor, a simple, plain interface labeled 'Goose' with 'Free' underneath. The developer is looking between them with an expression of dawning realization and slight embarrassment. His hand rests on an open credit card bill on the desk showing a large charge. The lighting emphasizes the contrast between the fancy left side and the utilitarian right side.",
+      "image": "/images/2026-04-17.jpg",
+      "image_url": "/images/2026-04-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-16",
       "date": "2026-04-16",
       "date_display": "April 16, 2026",
