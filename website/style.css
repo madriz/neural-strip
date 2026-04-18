@@ -173,24 +173,6 @@ body {
     color: var(--muted);
 }
 
-/* ── Vote Buttons ────────────────────────────────────── */
-
-.vote-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s;
-    font-family: var(--sans);
-}
-
-.vote-btn:hover { border-color: var(--accent); color: var(--text); }
-.vote-btn.voted { border-color: var(--accent); color: var(--text); cursor: default; }
-.vote-btn:disabled { opacity: 0.5; cursor: default; }
-
 /* ── Share Dropdown ───────────────────────────────────── */
 
 .share-wrap {
@@ -567,6 +549,6 @@ body {
 @media print {
     .site-header, .site-footer, .hero-meta, .archive-heading,
     .archive-grid, .archive-nav, .archive-toggle-wrap,
-    .share-wrap, .vote-btn, .lightbox { display: none !important; }
+    .share-wrap, .lightbox { display: none !important; }
     .hero-image-wrap { max-width: 500px; margin: 0 auto; }
 }

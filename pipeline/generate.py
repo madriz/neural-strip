@@ -14,8 +14,6 @@ Usage:
 Environment:
     ANTHROPIC_API_KEY   — required
     IDEOGRAM_API_KEY    — optional; enables automatic cartoon image generation
-    SUPABASE_URL        — for future storage (not used yet)
-    SUPABASE_KEY        — for future storage (not used yet)
 """
 
 import argparse

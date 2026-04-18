@@ -1,53 +1,9 @@
 /* Neural Strip — Shared JS */
-/* Cartoon loader, calendar, lightbox, share, Supabase voting, GA4 events */
+/* Cartoon loader, archive nav, lightbox, share, GA4 events */
+/* Voting temporarily disabled pending backend restoration. */
 
 (function () {
     'use strict';
-
-    // ── Supabase config ──────────────────────────────────
-    const SUPABASE_URL = 'https://muqgfjfhviebmfefawjn.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmamZodmllYm1mZWZhd2puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzg5NDEsImV4cCI6MjA5MDcxNDk0MX0.7QaGuGOGE9Nml_gB8E2tMO2Gbm1_b87GzdS5NysGUus';
-
-    let supabaseClient = null;
-    let voteCounts = {}; // { cartoon_id: { likes: N, dislikes: N } }
-
-    function getVisitorId() {
-        var id = localStorage.getItem('ns_visitor_id');
-        if (!id) {
-            id = crypto.randomUUID ? crypto.randomUUID() : 'v-' + Math.random().toString(36).slice(2) + Date.now().toString(36);
-            localStorage.setItem('ns_visitor_id', id);
-        }
-        return id;
-    }
-
-    async function initSupabase() {
-        if (typeof window.supabase === 'undefined') {
-            console.warn('[NS] Supabase JS library not loaded');
-            return;
-        }
-        try {
-            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            console.log('[NS] Supabase client created:', SUPABASE_URL);
-            // Fetch all votes and aggregate client-side (no RPC dependency)
-            var { data: rows, error } = await supabaseClient
-                .from('ns_votes')
-                .select('cartoon_id, vote');
-            if (error) {
-                console.error('[NS] Supabase vote query failed:', error.message, error);
-                return;
-            }
-            if (rows && rows.length > 0) {
-                rows.forEach(function (r) {
-                    if (!voteCounts[r.cartoon_id]) voteCounts[r.cartoon_id] = { likes: 0, dislikes: 0 };
-                    if (r.vote === 'like') voteCounts[r.cartoon_id].likes++;
-                    else voteCounts[r.cartoon_id].dislikes++;
-                });
-                console.log('Supabase votes loaded:', Object.keys(voteCounts).length, 'cartoons');
-            }
-        } catch (e) {
-            console.warn('Supabase init failed:', e);
-        }
-    }
 
     let cartoons = [];
     let currentIndex = 0;
@@ -57,8 +13,6 @@
     // ── Init ────────────────────────────────────────────
 
     async function init() {
-        await initSupabase();
-
         try {
             var resp = await fetch('cartoons.json');
             var data = await resp.json();
@@ -190,9 +144,6 @@
         currentIndex = cartoons.indexOf(cartoon);
         if (currentIndex < 0) currentIndex = 0;
 
-        var votes = getVotes(cartoon.id);
-        var voted = getVoted(cartoon.id);
-
         hero.innerHTML =
             '<div class="hero-image-wrap" id="hero-image" title="Click to enlarge">' +
                 imageOrPlaceholder(cartoon.image_url, cartoon.setup) +
@@ -204,10 +155,6 @@
             '</div>' +
             '<div class="hero-meta">' +
                 '<span class="hero-date">' + esc(cartoon.date_display) + '</span>' +
-                '<button class="vote-btn' + (voted === 'like' ? ' voted' : '') + '" id="like-btn"' +
-                    (voted ? ' disabled' : '') + '>&#x1f44d; ' + votes.likes + '</button>' +
-                '<button class="vote-btn' + (voted === 'dislike' ? ' voted' : '') + '" id="dislike-btn"' +
-                    (voted ? ' disabled' : '') + '>&#x1f44e; ' + votes.dislikes + '</button>' +
                 '<div class="share-wrap">' +
                     '<button class="share-btn" id="share-btn">Share</button>' +
                     '<div class="share-dropdown" id="share-dropdown">' +
@@ -221,25 +168,6 @@
             '<div class="hero-ig">' +
                 '<a href="https://instagram.com/neural.strip" class="btn-instagram-subtle" target="_blank" rel="noopener">Follow @neural.strip on Instagram</a>' +
             '</div>';
-
-        // Vote handlers
-        var likeBtn = document.getElementById('like-btn');
-        var dislikeBtn = document.getElementById('dislike-btn');
-
-        if (likeBtn && !voted) {
-            likeBtn.addEventListener('click', function () {
-                vote(cartoon.id, 'like');
-                renderHero(cartoon);
-                ga('cartoon_like', { cartoon_id: cartoon.id });
-            });
-        }
-        if (dislikeBtn && !voted) {
-            dislikeBtn.addEventListener('click', function () {
-                vote(cartoon.id, 'dislike');
-                renderHero(cartoon);
-                ga('cartoon_dislike', { cartoon_id: cartoon.id });
-            });
-        }
 
         // Share handlers
         var shareBtn = document.getElementById('share-btn');
@@ -304,14 +232,12 @@
         var displayList = archiveExpanded ? archiveList : archiveList.slice(0, ARCHIVE_PAGE_SIZE);
 
         grid.innerHTML = displayList.map(function (c) {
-            var votes = getVotes(c.id);
             return '<div class="archive-card" data-id="' + esc(c.id) + '">' +
                 '<div class="card-img">' + imageOrPlaceholder(c.image_url, c.setup) + '</div>' +
                 '<div class="card-body">' +
                     '<div class="card-caption">' + esc(c.caption) + '</div>' +
                     '<div class="card-footer">' +
                         '<span>' + esc(c.date_display) + '</span>' +
-                        '<span>&#x1f44d;' + votes.likes + ' &#x1f44e;' + votes.dislikes + '</span>' +
                     '</div>' +
                 '</div>' +
             '</div>';
@@ -412,68 +338,6 @@
             srcDiv.innerHTML = '<a href="' + esc(c.source_url) + '" target="_blank" rel="noopener noreferrer">Read the story \u2192</a>';
             lb.querySelector('.lb-punchline').after(srcDiv);
         }
-    }
-
-    // ── Voting (Supabase + localStorage) ─────────────────
-
-    function getVotes(id) {
-        // Always use Supabase-sourced counts (even if 0)
-        // voteCounts is populated by initSupabase() on page load
-        if (voteCounts[id]) return voteCounts[id];
-        // If no entry exists yet for this cartoon, return zeros
-        // (do NOT fall back to localStorage — it has stale local-only counts)
-        return { likes: 0, dislikes: 0 };
-    }
-
-    function getVoted(id) {
-        try { return localStorage.getItem('ns_voted_' + id) || ''; }
-        catch (e) { return ''; }
-    }
-
-    function vote(id, type) {
-        // Update local counts immediately
-        if (!voteCounts[id]) voteCounts[id] = { likes: 0, dislikes: 0 };
-        if (type === 'like') voteCounts[id].likes++;
-        else voteCounts[id].dislikes++;
-
-        // Mark as voted in localStorage
-        try {
-            localStorage.setItem('ns_voted_' + id, type);
-        } catch (e) { /* quota */ }
-
-        // Write to Supabase
-        if (supabaseClient) {
-            console.log('[NS] Submitting vote:', id, type);
-            supabaseClient.from('ns_votes').insert({
-                cartoon_id: id,
-                vote: type,
-                visitor_id: getVisitorId(),
-            }).then(function (result) {
-                if (result.error) {
-                    console.error('[NS] Vote insert error:', result.error.message, result.error);
-                    showVoteError('Vote failed: ' + result.error.message);
-                } else {
-                    console.log('[NS] Vote saved to Supabase:', id, type);
-                }
-            }).catch(function (err) {
-                console.error('[NS] Vote network error:', err);
-                showVoteError('Network error: ' + err.message);
-            });
-        } else {
-            console.warn('[NS] supabaseClient not initialized, vote saved locally only');
-        }
-    }
-
-    function showVoteError(msg) {
-        var existing = document.getElementById('vote-error');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.id = 'vote-error';
-        el.style.cssText = 'text-align:center;font-size:0.75rem;color:#c00;margin-top:0.3rem;';
-        el.textContent = msg;
-        var meta = document.querySelector('.hero-meta');
-        if (meta) meta.after(el);
-        setTimeout(function () { el.remove(); }, 5000);
     }
 
     // ── Helpers ─────────────────────────────────────────
