@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-19",
+      "date": "2026-04-19",
+      "date_display": "April 19, 2026",
+      "headline": "Atlassian's new data collection policy protects rich customers while AI eats the rest",
+      "setup": "Two-tier licensing at Atlassian.",
+      "punchline": "Pay premium prices to keep your data, or subsidize our AI with yours.",
+      "caption": "Nothing says commitment to user privacy like making it a luxury feature.",
+      "source_url": "https://go.theregister.com/feed/www.theregister.com/2026/04/18/atlassians_new_data_collection_policy/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An Atlassian corporate office. A suited executive sits at a clean desk. To his right, two stacks of papers labeled 'Enterprise License' and 'Standard License' with vastly different thicknesses. Behind him, a large industrial machine with a wide funnel and conveyor belt system labeled 'AI Training Data.' One customer sits comfortably under a clear protective dome marked 'Enterprise,' while another customer stands exposed to the machine's funnel, papers swirling around them. The machine operator gestures cheerfully. Windows show the outside world with 'August 17' date circled on a calendar visible on the wall.",
+      "image": "/images/2026-04-19.jpg",
+      "image_url": "/images/2026-04-19.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-18",
       "date": "2026-04-18",
       "date_display": "April 18, 2026",
