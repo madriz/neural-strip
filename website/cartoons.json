@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-20",
+      "date": "2026-04-20",
+      "date_display": "April 20, 2026",
+      "headline": "Chinese tech workers are starting to train their AI doubles–and pushing back",
+      "setup": "Employee training his digital replacement.",
+      "punchline": "By the time he finishes, he won't even need to quit.",
+      "caption": "Teaching your replacement to do your job has got to be a new circle of corporate hell.",
+      "source_url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An office worker at a desk, working on a laptop. On the monitor, visible to the viewer, is a digital AI avatar of the same worker, sitting at a desk in a virtual office environment, mirroring tired posture. The real worker's face shows resignation. A manager is visible in the background doorway, smiling approvingly. Fluorescent office lighting. Cubicle-style workspace.",
+      "image": "/images/2026-04-20.jpg",
+      "image_url": "/images/2026-04-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-19",
       "date": "2026-04-19",
       "date_display": "April 19, 2026",
