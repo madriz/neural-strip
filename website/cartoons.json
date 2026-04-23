@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-23",
+      "date": "2026-04-23",
+      "date_display": "April 23, 2026",
+      "headline": "Stale gov.uk pages are feeding AI overviews old data and Brits are believing it",
+      "setup": "Google AI overview says the government website confirms you're eligible for that benefit.",
+      "punchline": "The government website it's quoting has been dead since 2021.",
+      "caption": "The machine is confident, the bureaucracy is asleep, and somewhere a Brit is following 2019 tax law.",
+      "source_url": "https://go.theregister.com/feed/www.theregister.com/2026/04/23/stale_govuk_pages_are_feeding/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person at a desk staring at a computer monitor with visible Google AI overview text. The monitor shows a confident summary with outdated information. A wall calendar clearly shows 2026. Behind them, an overflowing filing cabinet with papers spilling out, labeled with dates and 'obsolete.' A small glowing Google logo hovers above the scene. The person's expression is confused but trusting. Office setting, contemporary but slightly shabby British aesthetic.",
+      "image": "/images/2026-04-23.jpg",
+      "image_url": "/images/2026-04-23.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-22",
       "date": "2026-04-22",
       "date_display": "April 22, 2026",
