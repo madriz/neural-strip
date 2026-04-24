@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-24",
+      "date": "2026-04-24",
+      "date_display": "April 24, 2026",
+      "headline": "Meet Noscroll, an AI bot that does your doomscrolling for you",
+      "setup": "Finally beat my doomscrolling addiction.",
+      "punchline": "Just hired an AI to do it instead.",
+      "caption": "The startup that solved phone addiction by making sure someone is still looking at the phone.",
+      "source_url": "https://techcrunch.com/2026/04/23/meet-noscroll-an-ai-bot-that-does-your-doomscrolling-for-you/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sitting relaxed on a couch, hands peacefully resting on their lap or crossed, looking straight ahead with a satisfied expression. In front of them, a smartphone stands on a small stand, its bright screen visible. Behind the couch on the wall, a motivational poster reads 'BREAK FREE FROM DOOMSCROLLING' in bold letters. The scene is indoors, minimalist and clean, with neutral furniture and soft lighting that emphasizes the ironic contrast between the person's relaxation and the glowing phone screen doing the work they're avoiding.",
+      "image": "/images/2026-04-24.jpg",
+      "image_url": "/images/2026-04-24.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-23",
       "date": "2026-04-23",
       "date_display": "April 23, 2026",
