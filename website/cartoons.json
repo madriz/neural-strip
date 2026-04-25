@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-25",
+      "date": "2026-04-25",
+      "date_display": "April 25, 2026",
+      "headline": "Marked-up Mac minis flood eBay amid shortages driven by AI",
+      "setup": "LocalLLM enthusiast discovers the secret to passive income.",
+      "punchline": "Three Mac minis, fifteen thousand dollars in eBay fees, zero actual computation completed.",
+      "caption": "The secondary market for commodity hardware you could have just ordered last month continues to defy the laws of economics.",
+      "source_url": "https://techcrunch.com/2026/04/24/mac-mini-price-expensive-ebay-shortage-ai-memory/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A cluttered basement desk with three Mac mini computers arranged prominently. One Mac mini is positioned under a desk lamp, photographed from above on a smartphone mounted on a tripod. Price tags visible on or near the devices showing marked-up prices. Cardboard boxes with handwritten numbers stacked in the background. A neglected houseplant in a corner. Cables, USB adapters, and cooling fans scattered around. The person's hands visible, one holding up the phone to photograph, wearing casual clothing.",
+      "image": "/images/2026-04-25.jpg",
+      "image_url": "/images/2026-04-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-24",
       "date": "2026-04-24",
       "date_display": "April 24, 2026",
