@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-27",
+      "date": "2026-04-27",
+      "date_display": "April 27, 2026",
+      "headline": "Meta inks deal for solar power at night, beamed from space",
+      "setup": "We've solved the energy crisis with space-based solar infrastructure that operates exclusively after dark.",
+      "punchline": "The light switch thing really wasn't working out.",
+      "caption": "Meta's new business model: spend billions on orbital hardware to avoid using existing power infrastructure. Very normal, very necessary.",
+      "source_url": "https://techcrunch.com/2026/04/27/meta-inks-deal-for-solar-power-at-night-beamed-from-space/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A modern corporate conference room with floor-to-ceiling windows showing nighttime sky with a visible satellite. An executive in business attire points enthusiastically at a large monitor displaying a diagram of space-based solar technology with beams coming down at night. Another person sits nearby holding a simple wall-mounted light switch, looking bemused. Charts and reports scattered on a glass table. The satellite beam is visible through the window hitting a Meta office building.",
+      "image": "/images/2026-04-27.jpg",
+      "image_url": "/images/2026-04-27.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-26",
       "date": "2026-04-26",
       "date_display": "April 26, 2026",
