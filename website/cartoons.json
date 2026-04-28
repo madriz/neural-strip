@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-28",
+      "date": "2026-04-28",
+      "date_display": "April 28, 2026",
+      "headline": "77% of IT managers say their AI agents are out of control - 5 ways to rein in yours",
+      "setup": "IT manager scrolling through article: '5 ways to rein in your AI agents...'",
+      "punchline": "'Number one: Stop hiring AI agents to manage your AI agents.'",
+      "caption": "77 percent of IT managers have entered the 'what have we done' phase of the AI cycle.",
+      "source_url": "https://www.zdnet.com/article/it-managers-say-ai-agents-are-out-of-control/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired IT manager in an office cubicle, seated at a desk with three monitors. The screens show chaotic data streams, spinning icons, and error messages. His face shows resignation. In his hand is a printed ZDNet article with a clickbait headline. Post-it notes cover his monitor bezels. The desk is cluttered with cold coffee cups and energy drink cans. Fluorescent office lighting. He's staring at the article like it's a joke.",
+      "image": "/images/2026-04-28.jpg",
+      "image_url": "/images/2026-04-28.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-27",
       "date": "2026-04-27",
       "date_display": "April 27, 2026",
