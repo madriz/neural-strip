@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-04-30",
+      "date": "2026-04-30",
+      "date_display": "April 30, 2026",
+      "headline": "Meta in row after workers who say they saw smart glasses users having sex lose jobs",
+      "setup": "HR Manager: \"We appreciate your discretion about what you witnessed through these glasses.\"",
+      "punchline": "Moderator: \"You're firing me because I saw too much, or because I'm a security liability now?\" Manager: \"Yes.\"",
+      "caption": "Nothing says worker appreciation like firing the people who discovered your product has a privacy problem.",
+      "source_url": "https://www.bbc.com/news/articles/c5y7yvgy0w6o?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An HR office with a desk. A tired-looking content moderator sits in a chair facing an HR manager behind the desk. A pair of Meta smart glasses sits on the desk as the focal point. The manager has a forced corporate smile. The moderator's expression is numb, deflated. Windows in the background show a corporate campus. Fluorescent overhead lighting. The atmosphere is sterile and awkward.",
+      "image": "/images/2026-04-30.jpg",
+      "image_url": "/images/2026-04-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-04-29",
       "date": "2026-04-29",
       "date_display": "April 29, 2026",
