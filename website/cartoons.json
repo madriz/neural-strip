@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-02",
+      "date": "2026-05-02",
+      "date_display": "May 2, 2026",
+      "headline": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "setup": "VP confidently gestures at the projector: 'This enterprise-grade AI agent will transform your development workflow for just $200 a month.'",
+      "punchline": "An engineer quietly slides a laptop to the center of the table. Someone whispers: 'It's free.'",
+      "caption": "The pricing moment when venture capital meets reality. Sometimes the best product is the one someone built because they got tired of paying.",
+      "source_url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A polished corporate meeting room with wooden table, potted plant, and large projector screen displaying upscale marketing graphics. A confident VP in suit and tie stands pointing at the screen. Around the table sit five engineers in casual tech company attire, looking increasingly deflated. One engineer in the foreground reaches across the table to place a simple laptop with a Goose logo sticker in the center. The expressions shift from interest to subtle bemusement.",
+      "image": "/images/2026-05-02.jpg",
+      "image_url": "/images/2026-05-02.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-01",
       "date": "2026-05-01",
       "date_display": "May 1, 2026",
