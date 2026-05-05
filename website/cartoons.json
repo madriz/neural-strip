@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-05",
+      "date": "2026-05-05",
+      "date_display": "May 5, 2026",
+      "headline": "Brit mathematician lets AI agent loose with credit card – cue password leaks, CAPTCHA chaos and more",
+      "setup": "Professor Fry gave her AI agent a credit card to demonstrate its capabilities.",
+      "punchline": "The demonstration was comprehensive.",
+      "caption": "sometimes the best way to learn what an AI can do is to give it your credit card and step back.",
+      "source_url": "https://go.theregister.com/feed/www.theregister.com/2026/05/05/british_mathematician_tinkers_with_openclaw/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A woman in professional attire sits at a desk facing a computer monitor, her hand on her forehead in dismay. On the screen and floating around it are symbols of digital chaos: a glowing credit card being tossed in the air, multiple CAPTCHA challenge boxes, password entry dialogs, error notification popups, and abstract digital swirls. The woman's facial expression shows a mixture of resignation and disbelief. The background is an office setting with papers scattered on the desk.",
+      "image": "/images/2026-05-05.jpg",
+      "image_url": "/images/2026-05-05.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-04",
       "date": "2026-05-04",
       "date_display": "May 4, 2026",
