@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-07",
+      "date": "2026-05-07",
+      "date_display": "May 7, 2026",
+      "headline": "Chrome silently installs a 4 GB local LLM on your computer",
+      "setup": "Chrome customer service rep reviewing the complaint:",
+      "punchline": "You did remember to opt out of AI, didn't you?",
+      "caption": "The opt-out permission slip for software that's already on your hard drive.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/05/07/chrome-silently-installs-a-4-gb-local-llm-on-your-computer/5230893",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sitting at a desk with a computer, looking confused and slightly concerned. The person's hand is raised toward the screen in a gesture of bewilderment. The screen shows Chrome with a notification or window. Around the desk are papers with warning symbols and storage capacity indicators. The person's expression shows dawning realization. The overall setting is a typical home office or workspace.",
+      "image": "/images/2026-05-07.jpg",
+      "image_url": "/images/2026-05-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-06",
       "date": "2026-05-06",
       "date_display": "May 6, 2026",
