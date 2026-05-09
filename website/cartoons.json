@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-09",
+      "date": "2026-05-09",
+      "date_display": "May 9, 2026",
+      "headline": "Cloudflare says AI made 1,100 jobs obsolete, even as revenue hit a record high",
+      "setup": "CEO Matthew Prince announces record quarterly results.",
+      "punchline": "Thanks to AI efficiency gains, we've never been more successful at being less of you.",
+      "caption": "nothing says thriving business like firing 1,100 people during a record revenue quarter.",
+      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A CEO at a podium in a glass-walled conference room, pointing proudly at an upward-trending revenue chart on a screen behind him. Through the floor-to-ceiling windows in the background, a stream of employees walks across a plaza carrying cardboard moving boxes, their faces small and distant. The contrast between the CEO's triumphant gesture and the exodus happening in the background is stark. Modern office setting, daylight visible outside.",
+      "image": "/images/2026-05-09.jpg",
+      "image_url": "/images/2026-05-09.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-08",
       "date": "2026-05-08",
       "date_display": "May 8, 2026",
