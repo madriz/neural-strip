@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-10",
+      "date": "2026-05-10",
+      "date_display": "May 10, 2026",
+      "headline": "GameStop offers $56 billion for eBay, struggles to explain how it'll pay for it",
+      "setup": "GameStop announces $56 billion bid for eBay.",
+      "punchline": "When asked about funding, CEO says they're confident the money will 'materialize somehow, probably through Robinhood.'",
+      "caption": "Sometimes you gotta shoot your shot, even if your shot involves borrowing money from your cat.",
+      "source_url": "https://arstechnica.com/tech-policy/2026/05/gamestop-offers-56-billion-for-ebay-struggles-to-explain-how-itll-pay-for-it/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A GameStop executive in business attire at a podium holding up an oversized novelty check for 56 billion dollars. Across from him, three eBay board members in suits with shocked expressions on their faces. Behind the executive, a whiteboard with declining revenue charts and a crude stick figure drawing. Through a window behind them, empty shelves of a GameStop store are visible.",
+      "image": "/images/2026-05-10.jpg",
+      "image_url": "/images/2026-05-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-09",
       "date": "2026-05-09",
       "date_display": "May 9, 2026",
