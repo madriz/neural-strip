@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-12",
+      "date": "2026-05-12",
+      "date_display": "May 12, 2026",
+      "headline": "There aren't enough rockets for space data centers — Cowboy Space raised $275M to build them",
+      "setup": "So our plan to fix the energy crisis is to put the energy-hungry solution... in space.",
+      "punchline": "Yes. Also, we're out of rockets. But we're very well-funded.",
+      "caption": "When your AI infrastructure needs so much power that Earth's grid becomes a feature request. Space servers: because sometimes the only solution is to leave the planet.",
+      "source_url": "https://techcrunch.com/2026/05/11/there-arent-enough-rockets-for-space-data-centers-cowboy-space-raised-275-million-to-build-them/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A venture capitalist in business attire sits at a glass desk in a high-rise office, pointing at a PowerPoint presentation on a monitor showing an orbital data center. Through the floor-to-ceiling windows behind him, Earth appears dark and blackened. A toy model rocket and thick stack of invoices labeled SpaceX sit on his desk. Across from him, a younger person in business casual holds a pen over a contract, their expression wavering between admiration and dread. Modern office setting, afternoon light, the window view is the key visual joke.",
+      "image": "/images/2026-05-12.jpg",
+      "image_url": "/images/2026-05-12.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-11",
       "date": "2026-05-11",
       "date_display": "May 11, 2026",
