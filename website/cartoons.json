@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-13",
+      "date": "2026-05-13",
+      "date_display": "May 13, 2026",
+      "headline": "Medicare's new payment model is built for AI, and most of the tech world has no idea",
+      "setup": "VC: 'So what's your go-to-market strategy?'",
+      "punchline": "Founder: 'We're disrupting healthcare with AI agents.' [pause] 'Medicare already built the business model. I just found out Tuesday.'",
+      "caption": "The tech industry spent a decade trying to break healthcare. Turns out, Medicare beat them to it with a PDF.",
+      "source_url": "https://techcrunch.com/2026/05/12/medicares-new-payment-model-is-built-for-ai-and-most-of-the-tech-world-has-no-idea/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A young male startup founder in casual tech attire sits at a modern desk with open laptop, scattered pitch decks, and hardware prototypes. He's holding a smartphone, staring at it with a blank expression. Behind him on a wall is a framed hockey-stick growth chart. In the background, slightly visible on a filing cabinet, is a manila folder labeled 'ACCESS' with a small government eagle seal. The scene is bathed in cool office lighting. His posture suggests bemused resignation.",
+      "image": "/images/2026-05-13.jpg",
+      "image_url": "/images/2026-05-13.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-12",
       "date": "2026-05-12",
       "date_display": "May 12, 2026",
