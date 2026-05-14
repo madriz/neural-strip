@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-14",
+      "date": "2026-05-14",
+      "date_display": "May 14, 2026",
+      "headline": "Americans would rather have a nuclear plant in their backyard than a datacenter",
+      "setup": "Our neighborhood association just voted on two new infrastructure projects.",
+      "punchline": "Somehow the nuclear option won unanimously.",
+      "caption": "The AI industry has achieved the remarkable distinction of making nuclear power look like a reasonable neighbor.",
+      "source_url": "https://www.theregister.com/on-prem/2026/05/14/americans-would-rather-have-a-nuclear-plant-in-their-backyard-than-a-datacenter/5240203",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Two neighboring suburban houses with picket fences. Left house: a man in casual clothes standing confidently in front of a large gray cooling tower with 'NUCLEAR PLANT' stenciled on it, giving a thumbs up, smiling. Right house: a different man with arms crossed, frowning at a low rectangular concrete building labeled with a data center warning sign. Clear blue sky, typical suburban street background. Contrast between enthusiasm and disapproval in their body language and expressions.",
+      "image": "/images/2026-05-14.jpg",
+      "image_url": "/images/2026-05-14.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-13",
       "date": "2026-05-13",
       "date_display": "May 13, 2026",
