@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-16",
+      "date": "2026-05-16",
+      "date_display": "May 16, 2026",
+      "headline": "Silicon Valley's vacationland needs a new energy provider just as AI is driving prices up",
+      "setup": "A tech exec notices his Lake Tahoe vacation home's energy bill.",
+      "punchline": "Turns out you can't actually unplug from the industry.",
+      "caption": "tech workers flee to lake tahoe to escape work. the servers follow.",
+      "source_url": "https://techcrunch.com/2026/05/15/silicon-valleys-vacationland-needs-a-new-energy-provider-just-as-ai-is-driving-prices-up/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A man in casual vacation wear sitting in a lounge chair on a pristine Lake Tahoe beach, holding a piece of paper (an energy bill) with a shocked expression. He's holding a cocktail. The natural shoreline and mountains are visible but in the distance, industrial-looking data center structures with glowing lights are visible where nature should be. Sunny, peaceful beach setting contrasting with the industrial intrusion.",
+      "image": "/images/2026-05-16.jpg",
+      "image_url": "/images/2026-05-16.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-15",
       "date": "2026-05-15",
       "date_display": "May 15, 2026",
