@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-17",
+      "date": "2026-05-17",
+      "date_display": "May 17, 2026",
+      "headline": "ArXiv will ban authors for a year if they let AI do all the work",
+      "setup": "So the peer review system now uses AI to catch papers written by AI.",
+      "punchline": "I'm not worried. My paper was rejected by a human, like God intended.",
+      "caption": "Academic publishing has entered its recursive phase.",
+      "source_url": "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A bleary-eyed researcher hunched over a desk with scattered papers, cold coffee cups, and a laptop screen displaying an ArXiv rejection notice. Across from them via video call, a stern moderator points at the screen. A handwritten sticky note on the desk reads 'Did Claude write this or did I?' with question marks and doodles. The researcher's face shows resignation mixed with mild panic.",
+      "image": "/images/2026-05-17.jpg",
+      "image_url": "/images/2026-05-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-16",
       "date": "2026-05-16",
       "date_display": "May 16, 2026",
