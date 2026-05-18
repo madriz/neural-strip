@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-18",
+      "date": "2026-05-18",
+      "date_display": "May 18, 2026",
+      "headline": "If you're giving a commencement speech in 2026, maybe don't mention AI",
+      "setup": "\"So as you head into a future shaped by artificial intelligence...\"",
+      "punchline": "\"...never mind, let's talk about blockchain.\"",
+      "caption": "Apparently the future is great, we're just not supposed to say it out loud.",
+      "source_url": "https://techcrunch.com/2026/05/17/if-youre-giving-a-commencement-speech-in-2026-maybe-dont-mention-ai/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A podium speaker mid-sentence, facing an audience of graduates in caps and gowns. The graduates' expressions have gone vacant and disengaged—eyes glazed, heads tilted away. One graduate checks their phone. The speaker's face shows dawning horror at the room's reaction. Typical auditorium setting with rows of seated graduates.",
+      "image": "/images/2026-05-18.jpg",
+      "image_url": "/images/2026-05-18.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-17",
       "date": "2026-05-17",
       "date_display": "May 17, 2026",
