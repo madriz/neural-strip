@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-20",
+      "date": "2026-05-20",
+      "date_display": "May 20, 2026",
+      "headline": "Those spared latest Meta job cuts forcibly reassigned to AI roles",
+      "setup": "Congratulations, you weren't part of the layoffs.",
+      "punchline": "You're now part of the AI transition team. Starting immediately.",
+      "caption": "Meta's version of survivor's guilt comes with a mandatory career pivot.",
+      "source_url": "https://www.theregister.com/ai-ml/2026/05/20/meta-axes-thousands-of-roles-forcibly-transfers-7000-more/5243365",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An office worker at a desk, head tilted slightly, staring at a computer screen. A manager in business casual stands to the side holding a sheet of paper, face frozen in an unconvincing smile. The worker's shoulders are slightly hunched. Beige cubicle walls, harsh fluorescent lighting. On the desk, a name placard and a coffee mug. The manager's posture suggests they've delivered this speech many times today.",
+      "image": "/images/2026-05-20.jpg",
+      "image_url": "/images/2026-05-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-19",
       "date": "2026-05-19",
       "date_display": "May 19, 2026",
