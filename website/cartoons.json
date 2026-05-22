@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-22",
+      "date": "2026-05-22",
+      "date_display": "May 22, 2026",
+      "headline": "Cisco announces record revenue and 4,000 layoffs in the same day",
+      "setup": "Cisco CFO announces record $81 billion revenue and 4,000 layoffs in the same presentation.",
+      "punchline": "He explained it's not a cost-cutting measure.",
+      "caption": "Nothing says business success like record profits paired with record job cuts. The CFO insists these are unrelated.",
+      "source_url": "https://arstechnica.com/information-technology/2026/05/cisco-announces-record-revenue-and-4000-layoffs-in-the-same-day/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Corporate executive at podium, two large screens behind him, left showing steep green upward arrow, right showing steep red downward arrow, executive pointing at both with both hands, artificial smile, professional business suit, modern conference setting",
+      "image": "/images/2026-05-22.jpg",
+      "image_url": "/images/2026-05-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-21",
       "date": "2026-05-21",
       "date_display": "May 21, 2026",
