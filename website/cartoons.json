@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-23",
+      "date": "2026-05-23",
+      "date_display": "May 23, 2026",
+      "headline": "You can no longer Google the word 'disregard'",
+      "setup": "Guy tries to tell his boss why Google Search isn't working.",
+      "punchline": "The irony is literally unsearchable.",
+      "caption": "Google's AI search update has made it impossible to search for the word disregard. Which is perfect.",
+      "source_url": "https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sitting at a desk facing a computer monitor showing a Google search interface frozen or blank. The search box displays the word 'disregard.' The user's face shows frustration or bewilderment. Minimalist office setting with just the desk, chair, and monitor visible.",
+      "image": "/images/2026-05-23.jpg",
+      "image_url": "/images/2026-05-23.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-22",
       "date": "2026-05-22",
       "date_display": "May 22, 2026",
