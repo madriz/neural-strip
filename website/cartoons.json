@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-25",
+      "date": "2026-05-25",
+      "date_display": "May 25, 2026",
+      "headline": "AI is being used to resurrect the voices of dead pilots",
+      "setup": "We had to take down the entire accident database.",
+      "punchline": "Not because of security. Because people kept making deepfake podcasts out of the last thing pilots said.",
+      "caption": "The NTSB discovered that making historical data freely accessible was fine until everyone became a true crime producer.",
+      "source_url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. NTSB official sitting at a desk in an office, hand on forehead in frustration or defeat. Computer screen visible on desk. A filing cabinet behind him labeled 'Accident Docket' wrapped in bright yellow caution tape. Small wooden desk sign reading 'We shouldn't have to password-protect tragedy.' Gray office setting, fluorescent lighting.",
+      "image": "/images/2026-05-25.jpg",
+      "image_url": "/images/2026-05-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-24",
       "date": "2026-05-24",
       "date_display": "May 24, 2026",
