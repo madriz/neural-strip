@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-26",
+      "date": "2026-05-26",
+      "date_display": "May 26, 2026",
+      "headline": "Gothenburg's self-driving bus trammed on day one",
+      "setup": "Gothenburg launches its new autonomous shuttle bus.",
+      "punchline": "Second passenger trip.",
+      "caption": "Nothing says revolutionary technology like getting rear-ended on your second day of operation.",
+      "source_url": "https://www.theregister.com/offbeat/2026/05/26/gothenburgs-self-driving-bus-trammed-on-day-one/5246159",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A modern, white autonomous shuttle bus with visible rear-end damage being towed by a recovery truck. Behind it, a handful of pedestrians observe. A person in professional clothing holds a clipboard, looking exhausted. The scene is set on a clean, contemporary city street in what appears to be Scandinavia. The bus's futuristic design contrasts sharply with its damaged condition.",
+      "image": "/images/2026-05-26.jpg",
+      "image_url": "/images/2026-05-26.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-25",
       "date": "2026-05-25",
       "date_display": "May 25, 2026",
