@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-27",
+      "date": "2026-05-27",
+      "date_display": "May 27, 2026",
+      "headline": "Millions of AI agents imperiled by critical vulnerability in open source package",
+      "setup": "We spent $100 million building autonomous AI agents to revolutionize our business.",
+      "punchline": "Turns out they all depend on a 47-line dependency written in 2018 by someone's college roommate.",
+      "caption": "Your future workforce has a critical vulnerability in a library from a GitHub user with an anime avatar.",
+      "source_url": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Conference room with corporate executives and engineers. Wall-mounted screen showing millions of tiny frozen glowing dots. CEO pointing at screen with confused expression. Junior engineer slouched in chair with laptop, looking embarrassed. Modern office aesthetic, glass table, professional attire.",
+      "image": "/images/2026-05-27.jpg",
+      "image_url": "/images/2026-05-27.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-26",
       "date": "2026-05-26",
       "date_display": "May 26, 2026",
