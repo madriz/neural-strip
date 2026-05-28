@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-28",
+      "date": "2026-05-28",
+      "date_display": "May 28, 2026",
+      "headline": "The AI Hype Index: AI gets booed in graduation season",
+      "setup": "Former Google CEO Eric Schmidt tells University of Arizona graduates their task is to help shape AI.",
+      "punchline": "He was met with a resounding chorus of boos.",
+      "caption": "Nothing quite like telling kids their future is yours to reshape, only to discover they've already made other plans.",
+      "source_url": "https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A distinguished older man in a suit speaking at a podium on a graduation stage, mid-gesture with an expression of confused concern. Directly behind him, a large crowd of graduates in black caps and gowns, clearly booing with mouths open, some covering their mouths or gesturing dismissively. A graduation banner visible in background. Outdoor setting with bright lighting, stadium-like venue.",
+      "image": "/images/2026-05-28.jpg",
+      "image_url": "/images/2026-05-28.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-27",
       "date": "2026-05-27",
       "date_display": "May 27, 2026",
