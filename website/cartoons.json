@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-30",
+      "date": "2026-05-30",
+      "date_display": "May 30, 2026",
+      "headline": "Fed up with vibe coders, dev sneaks data-nuking prompt injection into their code",
+      "setup": "He said his coworkers never actually reviewed the code before deploying it.",
+      "punchline": "Turns out the AI agents didn't either.",
+      "caption": "The speed of AI-assisted coding creates new vulnerabilities, mostly in the gap between 'fast' and 'read.'",
+      "source_url": "https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A software engineer at a desk with a satisfied expression, holding a printed sheet of code. The paper has a portion highlighted or circled. Another desk nearby shows a computer monitor with smoke or visual distress indicators. A wall-mounted sticky note visible in the background with small text. The first engineer has a knowing smirk.",
+      "image": "/images/2026-05-30.jpg",
+      "image_url": "/images/2026-05-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-29",
       "date": "2026-05-29",
       "date_display": "May 29, 2026",
