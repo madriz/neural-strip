@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-05-31",
+      "date": "2026-05-31",
+      "date_display": "May 31, 2026",
+      "headline": "Coders are refusing to work without AI — and that could come back to bite them",
+      "setup": "When the AI goes down for an hour.",
+      "punchline": "Turns out we didn't automate our jobs. We just outsourced our skills.",
+      "caption": "The productivity revolution nobody asked for the consequences of.",
+      "source_url": "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Software developer at desk with blank monitor, looking distressed. Maintenance notification visible on screen. Other frozen developers visible through office windows in background. Desk lamp, coffee cup, keyboard in view. Midday office lighting.",
+      "image": "/images/2026-05-31.jpg",
+      "image_url": "/images/2026-05-31.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-05-30",
       "date": "2026-05-30",
       "date_display": "May 30, 2026",
