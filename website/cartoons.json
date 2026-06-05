@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-05",
+      "date": "2026-06-05",
+      "date_display": "June 5, 2026",
+      "headline": "Meta steals a tactic from Tesla and builds data centers in tents",
+      "setup": "We've tried everything to cut costs—cloud optimization, edge computing, neural compression.",
+      "punchline": "Turns out the answer was Coleman.",
+      "caption": "Meta's infrastructure strategy now includes a Coleman cooler and a questionable weather forecast.",
+      "source_url": "https://techcrunch.com/2026/06/04/meta-steals-a-tactic-from-tesla-and-builds-data-centers-in-tents/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A vast field of white canvas military tents arranged in rows, each with glowing lights visible through the canvas. Thick bundles of colorful fiber optic cables and server equipment visible at tent openings. A professionally dressed executive in business suit standing in foreground, gesturing proudly at the tent city. An engineer in casual clothes standing nearby looking skeptical, holding a camping lantern. Clear blue sky above. A wooden sign in the foreground reading 'Meta Data Center - Est. 2026.' Power lines and cooling equipment visible between tents.",
+      "image": "/images/2026-06-05.jpg",
+      "image_url": "/images/2026-06-05.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-04",
       "date": "2026-06-04",
       "date_display": "June 4, 2026",
