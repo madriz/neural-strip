@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-07",
+      "date": "2026-06-07",
+      "date_display": "June 7, 2026",
+      "headline": "Meta steals a tactic from Tesla and builds data centers in tents",
+      "setup": "Our new data center infrastructure initiative is really taking shape.",
+      "punchline": "The Coleman People Mover comes tomorrow. We're scaling aggressively.",
+      "caption": "When your compute demands exceed your engineering judgment, you improvise. Apparently with canvas.",
+      "source_url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A large outdoor tent in a desert landscape, with server racks visible inside generating heat haze. The tent fabric is warped from temperature stress, with visible smoke or vapor rising. A figure in hard hat and work clothes stands looking at an oversized blueprint, shrugging. A suited executive nearby holds a document labeled with a large budget figure. Dust and heat shimmer visible around the structure. The scene suggests barely-contained chaos being passed off as a solution.",
+      "image": "/images/2026-06-07.jpg",
+      "image_url": "/images/2026-06-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-06",
       "date": "2026-06-06",
       "date_display": "June 6, 2026",
