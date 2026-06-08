@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-08",
+      "date": "2026-06-08",
+      "date_display": "June 8, 2026",
+      "headline": "Fed up with vibe coders, dev sneaks data-nuking prompt injection into their code",
+      "setup": "Senior developer tired of AI writing half the codebase realizes he can fight fire with fire.",
+      "punchline": "Finally found a use case where prompt injection actually works: making the AI do my job for me.",
+      "caption": "A developer embedded a sabotage prompt into code used by AI agents. The irony of using AI against AI-assisted laziness was apparently too tempting to resist.",
+      "source_url": "https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A developer sitting at a desk facing a laptop, expression of quiet satisfaction. The laptop screen shows lines of code with a comment containing hidden prompt injection instructions. In the foreground, files and folders are visibly being deleted or highlighted in red on screen. Sticky notes reading 'vibe code' and 'ship it' are visible on the desk surface. The developer's hand rests on the mouse. The overall tone is calm and deliberate.",
+      "image": "/images/2026-06-08.jpg",
+      "image_url": "/images/2026-06-08.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-07",
       "date": "2026-06-07",
       "date_display": "June 7, 2026",
