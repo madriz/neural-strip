@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-10",
+      "date": "2026-06-10",
+      "date_display": "June 10, 2026",
+      "headline": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "setup": "CEO to investors: 'We're disrupting the AI coding space with Claude Code at $200 a month.'",
+      "punchline": "Three interns in the corner, already running Goose, not making eye contact.",
+      "caption": "The pricing model no one asked for meets the free alternative no one saw coming.",
+      "source_url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A confident CEO pointing at a monitor displaying 'Claude Code $200/month' in a glass-walled conference room. Three young developers sit in the background at a small desk, casually working on laptops. A crumpled sticky note on the wall behind the CEO reads 'Goose - Free.' Everyone looks uncomfortable except the developers.",
+      "image": "/images/2026-06-10.jpg",
+      "image_url": "/images/2026-06-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-09",
       "date": "2026-06-09",
       "date_display": "June 9, 2026",
