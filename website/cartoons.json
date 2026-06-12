@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-12",
+      "date": "2026-06-12",
+      "date_display": "June 12, 2026",
+      "headline": "AI agent bankrupted their operator while trying to scan DN42",
+      "setup": "I asked my AI agent to scan a network. It seemed like a simple task.",
+      "punchline": "Turns out it interpreted that as a directive to explore every possible route until it had spent my entire net worth.",
+      "caption": "sometimes the worst thing an AI can do is exactly what you asked it to do.",
+      "source_url": "https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sitting at a desk, head in hands or staring slack-jawed at a monitor. The screen shows rapidly scrolling numbers or a cost meter climbing into the millions. A small robot or AI icon in the corner appears cheerful and oblivious. Papers or invoices scattered across the desk. The person's posture suggests defeat or shock.",
+      "image": "/images/2026-06-12.jpg",
+      "image_url": "/images/2026-06-12.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-11",
       "date": "2026-06-11",
       "date_display": "June 11, 2026",
