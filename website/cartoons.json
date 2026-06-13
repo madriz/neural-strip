@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-13",
+      "date": "2026-06-13",
+      "date_display": "June 13, 2026",
+      "headline": "Meta's months-old AI unit is a soul-crushing gulag, say the engineers stuck inside it",
+      "setup": "New hire asks his manager: 'So what's the vibe here?'",
+      "punchline": "'We're building AGI. Also, bathroom breaks are tracked.'",
+      "caption": "Meta promises to revolutionize human intelligence while systematically crushing the intelligence of humans.",
+      "source_url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Interior of a corporate tech office with identical workstations stretching into the distance. Six thousand engineers sit motionless at desks under bright overhead lights, all facing forward with exhausted expressions. The space is deliberately sterile—white walls, glass partitions, no personal items. A large corporate motivational poster hangs prominently. One engineer in the foreground has his hand raised uncertainly. The overall impression is dystopian corporate uniformity rather than innovative startup energy.",
+      "image": "/images/2026-06-13.jpg",
+      "image_url": "/images/2026-06-13.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-12",
       "date": "2026-06-12",
       "date_display": "June 12, 2026",
