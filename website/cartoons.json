@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-17",
+      "date": "2026-06-17",
+      "date_display": "June 17, 2026",
+      "headline": "Sixty percent of US consumers say 'AI' in brand messaging is a turnoff, survey finds",
+      "setup": "So we tested the new campaign. We added 'AI-powered' to everything.",
+      "punchline": "The focus group walked out. But the good news? They walked out so efficiently.",
+      "caption": "Turns out the more you say AI-powered, the less people believe you actually built anything.",
+      "source_url": "https://techcrunch.com/2026/06/16/sixty-percent-of-u-s-consumers-say-ai-in-brand-messaging-is-a-turnoff-survey-finds/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An anxious male executive in business attire pointing at a PowerPoint slide in a conference room. The slide shows 'NEW: AI-ENABLED TOASTER' with a simplistic brain icon. A skeptical female CEO sits across the table with her arms crossed, staring at him. Behind them on the wall is a chart with a sharp downward line labeled 'Consumer Interest' and a tiny upward blip labeled 'Our Confidence.' The room is corporate-generic with a window showing an urban skyline.",
+      "image": "/images/2026-06-17.jpg",
+      "image_url": "/images/2026-06-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-16",
       "date": "2026-06-16",
       "date_display": "June 16, 2026",
