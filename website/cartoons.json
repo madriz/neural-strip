@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-19",
+      "date": "2026-06-19",
+      "date_display": "June 19, 2026",
+      "headline": "Almost half of US singles feel negatively about AI in dating, Match says",
+      "setup": "47% of singles say they hate AI in dating.",
+      "punchline": "The other 53% haven't realized their matches are bots either.",
+      "caption": "The Match study confirmed what we already knew: people want authentic connection, not algorithmic optimization. Unfortunately, that's not what the app is selling.",
+      "source_url": "https://techcrunch.com/2026/06/18/almost-half-of-u-s-singles-feel-negatively-about-ai-in-dating-match-says/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Two people sitting alone at a bar counter, each absorbed in their phone screens. The man's phone shows a sleek, AI-optimized dating profile with perfect lighting and metrics. The woman's phone shows similar professional polish. Neither is looking up or at each other, despite being seated only a few feet apart. Both have expressions of mild disappointment or skepticism while scrolling. Glasses and bar setting in background.",
+      "image": "/images/2026-06-19.jpg",
+      "image_url": "/images/2026-06-19.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-18",
       "date": "2026-06-18",
       "date_display": "June 18, 2026",
