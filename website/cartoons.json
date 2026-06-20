@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-20",
+      "date": "2026-06-20",
+      "date_display": "June 20, 2026",
+      "headline": "The CEO of Allbirds' new AI biz has a plan, but no team",
+      "setup": "CEO, $X million seed round, zero employees",
+      "punchline": "Have you considered starting with one?",
+      "caption": "Startup founder has plan. Startup founder has money. Startup founder has team of exactly one.",
+      "source_url": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A solitary person sitting at a long wooden conference table in an otherwise empty, modern office space with floor-to-ceiling windows. Professional attire, confident expression. Behind them on the wall is a detailed business roadmap or strategic plan with charts and timelines. A single potted plant in the corner. The scale is exaggerated to emphasize the emptiness.",
+      "image": "/images/2026-06-20.jpg",
+      "image_url": "/images/2026-06-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-19",
       "date": "2026-06-19",
       "date_display": "June 19, 2026",
