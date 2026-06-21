@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-21",
+      "date": "2026-06-21",
+      "date_display": "June 21, 2026",
+      "headline": "Why Amazon hates 'human-in-the-loop' AI governance",
+      "setup": "Amazon VP explains the company's position on AI oversight.",
+      "punchline": "The humans keep getting in the way of the system designed to manage the humans managing the system.",
+      "caption": "when your governance solution is to acknowledge the governor is the problem and then hire more governors.",
+      "source_url": "https://www.theregister.com/security/2026/06/20/why-amazon-hates-human-in-the-loop-ai-governance/5258639",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Corporate boardroom with polished table and ergonomic chairs. A middle-aged man in business casual stands at a modern podium with a large screen behind him displaying a presentation slide. Several executives sit at the table looking satisfied. A whiteboard on the wall shows a circular diagram with the word 'Humans' crossed out. Fluorescent lighting casts even shadows. Everyone appears confident and unbothered by the logical loop.",
+      "image": "/images/2026-06-21.jpg",
+      "image_url": "/images/2026-06-21.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-20",
       "date": "2026-06-20",
       "date_display": "June 20, 2026",
