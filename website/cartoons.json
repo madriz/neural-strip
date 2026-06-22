@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-22",
+      "date": "2026-06-22",
+      "date_display": "June 22, 2026",
+      "headline": "Why an AI company cleaned my New York City apartment for free",
+      "setup": "So when you said the cleaning was free, you didn't mention I was part of the data collection process.",
+      "punchline": "The robot's getting paid more than the cleaner in equity appreciation.",
+      "caption": "Nothing says startup innovation like paying humans nothing to train the robots that will replace them.",
+      "source_url": "https://www.bbc.com/news/articles/cpwerjy20kyo?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A residential apartment living room with a human cleaner in the foreground actively cleaning, wearing casual clothes. Behind them, a robot mounted on a stand with a camera lens pointed at the cleaner, recording. A homeowner standing to the side looking uncertain, holding a clipboard labeled 'Free Cleaning.' Modern apartment furnishings, natural lighting. The cleaner appears unaware or resigned to being filmed.",
+      "image": "/images/2026-06-22.jpg",
+      "image_url": "/images/2026-06-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-21",
       "date": "2026-06-21",
       "date_display": "June 21, 2026",
