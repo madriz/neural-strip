@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-24",
+      "date": "2026-06-24",
+      "date_display": "June 24, 2026",
+      "headline": "Meta halts worker tracking for AI training due to privacy fears",
+      "setup": "We decided to pause tracking your computer usage for AI training.",
+      "punchline": "You're welcome. Now, can we interest you in our new targeted ads based on your search history, location data, and relationship status?",
+      "caption": "Meta discovered privacy concerns exist. Just not the kind that affect quarterly earnings.",
+      "source_url": "https://www.bbc.co.uk/news/articles/cq615g3z36po?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate office setting with a male executive in business attire sitting at a conference table, looking slightly uncomfortable or guilty. He's holding a document. Behind him is a wall-mounted poster about connecting people with a small asterisk. Large windows show the outside of a modern building with neon signage reading 'Privacy Violations.' The overall tone suggests corporate hypocrisy.",
+      "image": "/images/2026-06-24.jpg",
+      "image_url": "/images/2026-06-24.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-23",
       "date": "2026-06-23",
       "date_display": "June 23, 2026",
