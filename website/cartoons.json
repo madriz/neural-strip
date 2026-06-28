@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-06-28",
+      "date": "2026-06-28",
+      "date_display": "June 28, 2026",
+      "headline": "We Built a Routing Layer to Cut Our AI Costs. It Broke the Product.",
+      "setup": "We successfully cut our AI costs by more than half.",
+      "punchline": "Three months later, we successfully cut our customer base by the same amount.",
+      "caption": "Nothing says efficiency like optimizing the wrong metric until the business stops working.",
+      "source_url": "https://towardsdatascience.com/we-built-a-routing-layer-to-cut-our-ai-costs-it-broke-the-product/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Product manager at desk, face illuminated by monitor glow, staring at two side-by-side graphs with identical downward slopes. Left graph labeled with cost arrows, right graph with customer satisfaction or quality metrics. Manager appears resigned, holding coffee mug. Office environment, cool lighting, slightly tired posture.",
+      "image": "/images/2026-06-28.jpg",
+      "image_url": "/images/2026-06-28.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-06-25",
       "date": "2026-06-25",
       "date_display": "June 25, 2026",
