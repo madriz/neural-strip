@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-04",
+      "date": "2026-07-04",
+      "date_display": "July 4, 2026",
+      "headline": "Mark Zuckerberg tells staff that AI agents haven't progressed as quickly as he'd hoped",
+      "setup": "Well, the good news is we're making progress.",
+      "punchline": "The bad news is it took longer than my entire previous company history to accomplish nothing.",
+      "caption": "When the guy betting billions on moving fast realizes physics still applies to progress.",
+      "source_url": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A man in a t-shirt standing before a whiteboard covered in messy AI diagrams, crossed-out timelines, and coffee ring stains. He holds a marker limply at his side. Behind him sit several employees in chairs, their faces blank or mildly sympathetic. The whiteboard shows increasingly chaotic arrows and the word AGENTS written multiple times with different colored markers. The room is a modern tech office conference room.",
+      "image": "/images/2026-07-04.jpg",
+      "image_url": "/images/2026-07-04.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-03",
       "date": "2026-07-03",
       "date_display": "July 3, 2026",
