@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-06",
+      "date": "2026-07-06",
+      "date_display": "July 6, 2026",
+      "headline": "Amazon will stop accepting new customers for Mechanical Turk",
+      "setup": "Amazon finally found a way to automate the job of automating jobs.",
+      "punchline": "",
+      "caption": "Amazon's Mechanical Turk, which commodified human labor for pennies, is itself being automated out of existence. The irony is operating exactly as intended.",
+      "source_url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired warehouse worker in his 40s sits at a desk with a computer monitor displaying an Amazon closure notification for Mechanical Turk. The worker has a resigned expression, staring at the screen. Behind him on the wall is a historical engraving or poster of the original 18th-century Mechanical Turk automaton. On the desk beside the computer sits a small toy robot. The fluorescent overhead lighting casts a flat, institutional glow. The background shows bland warehouse walls.",
+      "image": "/images/2026-07-06.jpg",
+      "image_url": "/images/2026-07-06.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-05",
       "date": "2026-07-05",
       "date_display": "July 5, 2026",
