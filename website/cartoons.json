@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-10",
+      "date": "2026-07-10",
+      "date_display": "July 10, 2026",
+      "headline": "An AI agent startup just let its agent run its $100M fundraise",
+      "setup": "VC to the empty chair: 'So walk me through your go-to-market strategy.'",
+      "punchline": "The laptop screen displays a spinning loading circle.",
+      "caption": "Nothing says confidence in your product like letting it negotiate for its own existence. Lyzr raised one hundred million dollars this way, which either proves something or disproves everything.",
+      "source_url": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100m-fundraise/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A venture capitalist in business attire sitting at a conference table across from an empty chair. On a laptop positioned in front of the empty chair, a simple AI chat interface with a blinking cursor is visible. The VC is leaning forward, taking notes with a serious expression. Through a glass window or door in the background, a nervous-looking startup founder in casual tech company clothes stands in a hallway, holding his phone up to his face with a worried expression, checking his phone repeatedly.",
+      "image": "/images/2026-07-10.jpg",
+      "image_url": "/images/2026-07-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-08",
       "date": "2026-07-08",
       "date_display": "July 8, 2026",
