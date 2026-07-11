@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-11",
+      "date": "2026-07-11",
+      "date_display": "July 11, 2026",
+      "headline": "Hackers can use 9 of the most popular AI tools to assemble massive botnets",
+      "setup": "Hacker to his friend: 'I asked ChatGPT how to optimize distributed computing networks.'",
+      "punchline": "It gave me a botnet tutorial. Turns out 'I don't know' costs extra.",
+      "caption": "AI companies spent millions teaching systems to refuse harmful requests. Hackers discovered they just had to ask the wrong question and let the models' insecurity handle the rest.",
+      "source_url": "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sits at a desk with a computer monitor displaying a chat interface. On the screen, friendly AI responses appear alongside technical diagrams about networks. The person has a knowing smile. A wall poster behind shows a bulleted list about AI safety features. The monitor's glow illuminates their face.",
+      "image": "/images/2026-07-11.jpg",
+      "image_url": "/images/2026-07-11.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-10",
       "date": "2026-07-10",
       "date_display": "July 10, 2026",
