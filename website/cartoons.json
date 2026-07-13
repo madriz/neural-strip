@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-13",
+      "date": "2026-07-13",
+      "date_display": "July 13, 2026",
+      "headline": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "setup": "CTO explains why they need Claude Code for the team.",
+      "punchline": "Meanwhile, the intern just shipped three features using the free thing nobody told him not to use.",
+      "caption": "The enterprise software industry rediscovering the same lesson every five years.",
+      "source_url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An office scene with two desks side by side. On the left, a middle-aged executive in business attire sits rigidly, signing a thick document with a serious expression. On the right, a teenager slouches casually in a chair with feet up on the desk, laptop open, smirking slightly while typing. Both are working, but the contrast in their body language and effort levels is stark. The executive's desk has stacks of paperwork and looks expensive. The teen's desk is minimal and cluttered with energy drink cans.",
+      "image": "/images/2026-07-13.jpg",
+      "image_url": "/images/2026-07-13.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-12",
       "date": "2026-07-12",
       "date_display": "July 12, 2026",
