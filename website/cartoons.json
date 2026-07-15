@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-15",
+      "date": "2026-07-15",
+      "date_display": "July 15, 2026",
+      "headline": "OpenAI's first hardware device is reportedly a screenless speaker that can move",
+      "setup": "OpenAI's new 'companion' device uses mechanical elements to move closer when you're using it.",
+      "punchline": "Finally, someone solved the problem of ChatGPT not being creepy enough.",
+      "caption": "OpenAI's first hardware is a mobile speaker designed to feel like a companion. The future used to be more abstract.",
+      "source_url": "https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A modern living room with soft lighting. On the carpet, a sleek metallic rectangular device approximately the size of a small speaker, with thin mechanical legs or appendages visible underneath, positioned mid-motion toward a man sitting on a couch. The man's face shows mild unease, eyes following the device. His posture is slightly tense. Behind him, household items on shelves including framed photos. The device has subtle glowing elements suggesting it's active. The scene should convey an unsettling domesticity.",
+      "image": "/images/2026-07-15.jpg",
+      "image_url": "/images/2026-07-15.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-14",
       "date": "2026-07-14",
       "date_display": "July 14, 2026",
