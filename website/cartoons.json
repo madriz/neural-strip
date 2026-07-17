@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-17",
+      "date": "2026-07-17",
+      "date_display": "July 17, 2026",
+      "headline": "Yes, you can now order DoorDash from the command line",
+      "setup": "My AI agent can order lunch from the command line faster than I can install npm packages.",
+      "punchline": "Still waiting for the CLI tool that orders coffee while I debug the CLI tool that orders coffee.",
+      "caption": "We've built the entire infrastructure of modern civilization for machines that want tacos. Humans still need to call and ask for extra napkins.",
+      "source_url": "https://techcrunch.com/2026/07/16/yes-you-can-now-order-doordash-from-the-command-line/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired programmer at a desk with a laptop showing terminal code. An AI agent represented as a glowing figure or hologram sits beside them at its own workstation, typing confidently. The human looks bleary-eyed and defeated. Around them are scattered empty energy drink cans, papers, and a wall calendar showing many crossed-off days. The contrast between the alert AI and the exhausted human is clear.",
+      "image": "/images/2026-07-17.jpg",
+      "image_url": "/images/2026-07-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-16",
       "date": "2026-07-16",
       "date_display": "July 16, 2026",
