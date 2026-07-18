@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-18",
+      "date": "2026-07-18",
+      "date_display": "July 18, 2026",
+      "headline": "The AI compute gap: Enterprises are buying infrastructure faster than they can measure what it costs",
+      "setup": "\"Our AI infrastructure spending is accelerating ahead of our ability to measure it.\"",
+      "punchline": "\"So you're telling me we're rich, we're poor, or we've achieved some new financial state that doesn't yet have a name?\"",
+      "caption": "Companies buying AI infrastructure like they're assembling IKEA furniture in the dark. The bill comes later, if anyone can figure out what it is.",
+      "source_url": "https://venturebeat.com/ai/the-ai-compute-gap-enterprises-are-buying-infrastructure-faster-than-they-can-measure-what-it-costs",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate office with an overwhelmed executive at a desk surrounded by stacks of papers and invoices. Through the window behind him, a large data center facility is under active construction with cranes and equipment visible. The executive has a bewildered expression. A business person in professional attire stands beside the desk holding a document labeled 'Your AI Bill' with a large question mark where the cost should be.",
+      "image": "/images/2026-07-18.jpg",
+      "image_url": "/images/2026-07-18.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-17",
       "date": "2026-07-17",
       "date_display": "July 17, 2026",
