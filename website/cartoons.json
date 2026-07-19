@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-19",
+      "date": "2026-07-19",
+      "date_display": "July 19, 2026",
+      "headline": "Using AI makes people less likely to admit they don't know something",
+      "setup": "No setup needed.",
+      "punchline": "The confidence interval on that projection is larger than the actual number.",
+      "caption": "Turns out being wrong faster is still being wrong.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/07/19/using-ai-makes-people-less-likely-to-admit-they-dont-know-something/5274567",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Executive in business attire standing before a boardroom presentation, gesturing with hand raised toward a chart on screen. Board members seated around table leaning forward, listening intently. Executive's expression shows complete confidence. Name plate on desk visible. Colleague in background with phone, looking stressed. Professional office setting, fluorescent lighting.",
+      "image": "/images/2026-07-19.jpg",
+      "image_url": "/images/2026-07-19.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-18",
       "date": "2026-07-18",
       "date_display": "July 18, 2026",
