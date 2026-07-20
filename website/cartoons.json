@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-20",
+      "date": "2026-07-20",
+      "date_display": "July 20, 2026",
+      "headline": "Your AI Agent Passed Every Eval. Finance Still Killed It.",
+      "setup": "We tested the agent against every metric. Perfect scores across the board.",
+      "punchline": "Finance tested it against one metric: cost per resolution. It's dead.",
+      "caption": "Technical success and business viability are apparently different test suites.",
+      "source_url": "https://towardsdatascience.com/your-ai-agent-passed-every-eval-finance-still-killed-it/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A data scientist with a pleased expression stands before a whiteboard filled with green checkmarks, upward-trending graphs, and performance metrics. Behind him stands a stern CFO in business attire with one hand on a large red button labeled KILL AGENT. In the corner of the scene, a small innocent-looking robot or AI agent figure looks worried or uncertain. The room is an office setting with a corporate aesthetic.",
+      "image": "/images/2026-07-20.jpg",
+      "image_url": "/images/2026-07-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-19",
       "date": "2026-07-19",
       "date_display": "July 19, 2026",
