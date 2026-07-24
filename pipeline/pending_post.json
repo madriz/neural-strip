@@ -1,0 +1,13 @@
+{
+  "headline": "How AI guardrails are impeding the work of offensive cybersecurity researchers",
+  "source_url": "https://techcrunch.com/2026/07/23/how-ai-guardrails-are-impeding-the-work-of-offensive-cybersecurity-researchers/",
+  "angle": "The irony of AI safety measures blocking the very people trying to make AI safer.",
+  "scene": "A frustrated cybersecurity researcher sits at a desk with multiple monitors. One screen shows an error message from ChatGPT refusing to help find vulnerabilities. On the wall behind him is a framed certificate that says 'I help defend against AI attacks.' A coffee cup reads 'Professional Hacker' (in the legitimate sense). His expression is one of bewilderment.",
+  "setup": "Defensive researcher to AI chatbot: 'I need your help finding security vulnerabilities.'",
+  "punchline": "AI: 'I can't help with that. It's too dangerous.'",
+  "instagram_caption": "The guardrails are working exactly as intended, which is precisely the problem.",
+  "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A cybersecurity researcher sitting at a desk with multiple computer monitors showing code and error messages. Behind him, a framed certificate on the wall reads 'I help defend against AI attacks.' His coffee cup has 'Professional Hacker' written on it. His facial expression shows frustration and confusion as he looks at one of the screens displaying a refusal message. The setting is a typical office workspace with dim lighting from the monitors.",
+  "generated_at": "2026-07-24T11:36:45.525202+00:00",
+  "feed_count": 66,
+  "image_local_path": "/home/runner/work/neural-strip/neural-strip/pipeline/output_images/2026-07-24.jpg"
+}
