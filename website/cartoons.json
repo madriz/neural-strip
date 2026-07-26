@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-26",
+      "date": "2026-07-26",
+      "date_display": "July 26, 2026",
+      "headline": "Librarians are hosting viral 'Avoiding AI' workshops for people who are fed up with Big Tech",
+      "setup": "Librarian: So the first step is to unplug all your devices and read books instead.",
+      "punchline": "Attendee in back: Can you email me that list of recommendations?",
+      "caption": "The library's server just crashed from workshop registration traffic.",
+      "source_url": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A librarian standing at a wooden podium in front of a crowded library workshop. The audience fills the room, many holding phones and notebooks. A whiteboard behind the librarian reads 'How to Avoid AI.' A digital display on the wall shows 'WORKSHOP FULL - WAITLIST: 847.' Bookshelves line the background. The librarian looks earnest while gesturing at the whiteboard. Attendees look engaged, some scrolling their phones, some taking notes.",
+      "image": "/images/2026-07-26.jpg",
+      "image_url": "/images/2026-07-26.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-25",
       "date": "2026-07-25",
       "date_display": "July 25, 2026",
