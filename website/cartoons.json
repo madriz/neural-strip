@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-28",
+      "date": "2026-07-28",
+      "date_display": "July 28, 2026",
+      "headline": "Satya Nadella says companies that trust one AI for everything may not survive",
+      "setup": "\"Companies that trust one AI for everything won't survive,\" Nadella explains, tapping his diagram.",
+      "punchline": "\"You'll need our gateway, our infrastructure layer, and ideally three more redundant systems you haven't heard of yet.\"",
+      "caption": "Nothing says reassurance like being told you're doomed unless you buy the thing the person selling it just invented.",
+      "source_url": "https://techcrunch.com/2026/07/27/satya-nadella-says-companies-that-trust-one-ai-for-everything-but-fears-chinese-ai/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Corporate office setting. A worried middle-aged businessman sits at a desk. Satya Nadella stands beside a whiteboard with complex diagrams labeled 'AI gateways' and 'infrastructure layers.' Multiple identical bottles or boxes labeled 'AI' are stacked haphazardly on the desk. The manager's expression shows confusion mixed with dread.",
+      "image": "/images/2026-07-28.jpg",
+      "image_url": "/images/2026-07-28.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-27",
       "date": "2026-07-27",
       "date_display": "July 27, 2026",
