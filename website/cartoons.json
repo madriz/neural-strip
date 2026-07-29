@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-29",
+      "date": "2026-07-29",
+      "date_display": "July 29, 2026",
+      "headline": "Sam Altman is ready to decelerate",
+      "setup": "After the first security incident that made him feel it viscerally, Sam Altman announced he's ready to decelerate.",
+      "punchline": "The car is still doing 200.",
+      "caption": "one security incident, suddenly the guy who moves at light speed discovers the brake pedal exists.",
+      "source_url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Sam Altman in a sports car, both hands on the steering wheel, foot hovering near brake pedal. Speedometer needle maxed out at 200 mph. Through windshield, a small dent visible on hood or bumper ahead. Expression is conflicted—determined but slightly embarrassed. Interior is pristine, modern. Road stretches ahead disappearing into distance. No other cars visible.",
+      "image": "/images/2026-07-29.jpg",
+      "image_url": "/images/2026-07-29.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-28",
       "date": "2026-07-28",
       "date_display": "July 28, 2026",
