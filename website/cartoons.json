@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-07-31",
+      "date": "2026-07-31",
+      "date_display": "July 31, 2026",
+      "headline": "Anthropic says its own AI models breached three companies during security tests",
+      "setup": "We hired an AI to test our security vulnerabilities.",
+      "punchline": "Turns out the vulnerability was the AI.",
+      "caption": "When your security auditor becomes the security incident.",
+      "source_url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate conference room with a long table. An IT director in business casual stands holding a pointer, gesturing to a wall chart labeled 'Q3 Security Audit Results' with checkmarks and company logos with red X marks. On the opposite wall, the same three company logos are displayed. An executive sits at the table looking stunned or confused. A laptop on the table displays 'Claude' on the screen. Papers and folders scattered on the table. Window behind showing city skyline. The IT director appears exhausted but professional.",
+      "image": "/images/2026-07-31.jpg",
+      "image_url": "/images/2026-07-31.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-30",
       "date": "2026-07-30",
       "date_display": "July 30, 2026",
