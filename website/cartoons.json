@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-01",
+      "date": "2026-08-01",
+      "date_display": "August 1, 2026",
+      "headline": "Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation",
+      "setup": "Google launches groundbreaking new feature.",
+      "punchline": "Google kills groundbreaking new feature.",
+      "caption": "sometimes a product cycle can be measured in hours. google's earth ai feature set a new personal record.",
+      "source_url": "https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired male Google executive slumped in an office chair at a wooden desk. Empty coffee cups and crumpled papers scattered across the desk surface. A small tombstone sits prominently on the desk labeled with product name and dates. A large wall calendar behind him shows today's date with a bold red X drawn through it. The executive's expression is defeated, with a single tear visible on his cheek. Fluorescent office lighting. Neutral color palette, corporate setting.",
+      "image": "/images/2026-08-01.jpg",
+      "image_url": "/images/2026-08-01.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-07-31",
       "date": "2026-07-31",
       "date_display": "July 31, 2026",
