@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-02",
+      "date": "2026-08-02",
+      "date_display": "August 2, 2026",
+      "headline": "YouTuber Hank Green says his AI usage is 'not healthy'",
+      "setup": "Hank Green admits his dopamine hits from talking to ChatGPT aren't healthy.",
+      "punchline": "He's considering a twelve-step program, but first he needs to ask Claude if step one is worth it.",
+      "caption": "The irony of someone built on engaging audiences realizing he'd rather engage a chatbot instead.",
+      "source_url": "https://techcrunch.com/2026/08/01/youtuber-hank-green-says-his-ai-usage-is-not-healthy/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A man in his 30s-40s sitting at a desk, slumped in his chair, staring at a computer monitor with a tired, defeated expression. Empty energy drink cans scattered on the desk. His phone visible, showing a long chat conversation thread. A framed motivational poster on the wall behind him. The computer screen reflects his worn face back at him. Cluttered desk with papers and notebooks. The overall tone is exhausted desperation mixed with the mundane reality of a home office.",
+      "image": "/images/2026-08-02.jpg",
+      "image_url": "/images/2026-08-02.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-01",
       "date": "2026-08-01",
       "date_display": "August 1, 2026",
