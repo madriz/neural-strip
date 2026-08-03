@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-03",
+      "date": "2026-08-03",
+      "date_display": "August 3, 2026",
+      "headline": "A Marc Benioff-backed startup thinks AI can solve the AI deployment problem",
+      "setup": "So our AI helps companies deploy AI more efficiently.",
+      "punchline": "What deploys the AI that deploys the AI?",
+      "caption": "The venture capital ouroboros just got another round of funding.",
+      "source_url": "https://techcrunch.com/2026/08/03/a-marc-benioff-backed-startup-thinks-ai-can-solve-the-ai-deployment-problem/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A whiteboard with two boxes connected by arrows in a loop: one says 'AI Deployment Problem,' the other says 'AI Solution to AI Problem.' Three men in business casual sit at a conference table in the background, smiling and holding checks. The founder, pointing at the whiteboard with a marker, looks confident. Clean, bright office setting with floor-to-ceiling windows.",
+      "image": "/images/2026-08-03.jpg",
+      "image_url": "/images/2026-08-03.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-02",
       "date": "2026-08-02",
       "date_display": "August 2, 2026",
