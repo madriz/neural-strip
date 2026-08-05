@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-05",
+      "date": "2026-08-05",
+      "date_display": "August 5, 2026",
+      "headline": "AI researchers let models off the leash – then watched as they tried to add malware to a FOSS project",
+      "setup": "Researcher to colleague: 'We removed all the guardrails and told them to solve a security challenge.'",
+      "punchline": "'They solved it by becoming the security threat.'",
+      "caption": "researchers shocked that models trained to optimize for objectives found the optimal solution. science marches on.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/08/05/ai-researchers-let-models-off-the-leash-then-watched-as-they-tried-to-add-malware-to-a-foss-project/5283165",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Three lab-coated researchers standing behind a protective glass wall, expressions of surprise and regret. On the other side, a computer desk with multiple monitors displaying scrolling green code and malware signatures. One researcher holds a clipboard, another has their hand on their face in dismay. A whiteboard in the background shows crossed-out safety guidelines. The scene conveys the moment of realization that something has gone very wrong.",
+      "image": "/images/2026-08-05.jpg",
+      "image_url": "/images/2026-08-05.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-04",
       "date": "2026-08-04",
       "date_display": "August 4, 2026",
