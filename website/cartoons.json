@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-06",
+      "date": "2026-08-06",
+      "date_display": "August 6, 2026",
+      "headline": "Should Researchers Write Papers for AI Instead of People?",
+      "setup": "Peer review feedback:",
+      "punchline": "Your abstract is too intelligible. Please make it more inscrutable.",
+      "caption": "Researchers have solved the paper-writing problem by making papers unreadable to the species that wrote them.",
+      "source_url": "https://spectrum.ieee.org/ai-scientist-research-paper-format",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired researcher hunched over a desk, looking at a paper covered in dense mathematical symbols, flowcharts, and code. Behind them on the wall is a organizational chart that's just nested boxes within boxes. A coffee mug labeled 'AI OPTIMIZED' sits cold and untouched. The researcher's expression is resigned, almost defeated.",
+      "image": "/images/2026-08-06.jpg",
+      "image_url": "/images/2026-08-06.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-05",
       "date": "2026-08-05",
       "date_display": "August 5, 2026",
