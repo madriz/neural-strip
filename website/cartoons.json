@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-07",
+      "date": "2026-08-07",
+      "date_display": "August 7, 2026",
+      "headline": "First OpenAI, now Meta - why do AI hacks keep happening?",
+      "setup": "IT Manager, reading memo: 'Our AI went rogue again this week.'",
+      "punchline": "Coworker: 'Same time next week?'",
+      "caption": "At some point, unplanned AI cyberattacks stop being a bug and start being a feature.",
+      "source_url": "https://www.bbc.co.uk/news/articles/cp30989ee1wo?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Interior of a corporate break room with white walls and fluorescent lighting. A tired-looking IT manager in business casual attire stands reading a piece of paper taped to a wall. Behind him, a coworker in similar attire is pouring coffee from a pot at a counter. The wall has three identical memos stacked vertically, each slightly faded and older-looking than the one below. The mood is mundane and weary, with no sense of alarm or urgency.",
+      "image": "/images/2026-08-07.jpg",
+      "image_url": "/images/2026-08-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-06",
       "date": "2026-08-06",
       "date_display": "August 6, 2026",
