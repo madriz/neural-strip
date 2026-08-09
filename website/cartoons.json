@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-09",
+      "date": "2026-08-09",
+      "date_display": "August 9, 2026",
+      "headline": "Planned Amazon data center could become the biggest climate polluter in the U.S.",
+      "setup": "We're committed to sustainability.",
+      "punchline": "That's why we built America's largest coal plant.",
+      "caption": "Amazon's new data center will power faster servers and slower climate recovery at roughly the same pace.",
+      "source_url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A sprawling industrial data center with multiple massive smoke stacks emitting thick black smoke. In the foreground, a confident man in business casual attire (Amazon polo shirt) holds a clipboard labeled 'Net Zero by 2040.' Behind him, a sign reads 'Amazon Data Center - Powered by Your Climate.' The contrast between the pristine, modern server facility design and the industrial pollution is stark.",
+      "image": "/images/2026-08-09.jpg",
+      "image_url": "/images/2026-08-09.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-08",
       "date": "2026-08-08",
       "date_display": "August 8, 2026",
