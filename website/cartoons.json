@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-10",
+      "date": "2026-08-10",
+      "date_display": "August 10, 2026",
+      "headline": "Tech leaders say AI means less work - their staff say they work up to 90 hours a week",
+      "setup": "Our new AI system will free you from routine work.",
+      "punchline": "So you can do the important stuff—like more routine work.",
+      "caption": "The efficiency gains are real. Your free time, however, is science fiction.",
+      "source_url": "https://www.bbc.co.uk/news/articles/cvgx4yd1gl2o?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A CEO at a podium mid-presentation, pointing at a slide with confident posture. Behind him through an office window, visible employees slumped at desks surrounded by clutter, empty coffee cups, and glowing screens. The contrast between the CEO's animated enthusiasm and the employees' visible exhaustion is stark. Time on a visible monitor reads late evening.",
+      "image": "/images/2026-08-10.jpg",
+      "image_url": "/images/2026-08-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-09",
       "date": "2026-08-09",
       "date_display": "August 9, 2026",
