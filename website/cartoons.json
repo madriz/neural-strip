@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-12",
+      "date": "2026-08-12",
+      "date_display": "August 12, 2026",
+      "headline": "General Catalyst leads $1.1B round into 2-month-old River AI",
+      "setup": "VC partner: So walk me through your go-to-market strategy.",
+      "punchline": "Founder: Our what now? We incorporated last Tuesday.",
+      "caption": "Sometimes the best business plan is not having one yet.",
+      "source_url": "https://techcrunch.com/2026/08/11/general-catalyst-leads-1-1b-round-into-2-month-old-river-ai/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A middle-aged venture capitalist in business attire sits across from a younger founder at a minimalist conference table. The VC holds an oversized novelty check. On the wall behind them is a large monitor displaying a basic website with 'River AI - Coming Soon' and a loading spinner. The founder appears bemused. Morning light streams through floor-to-ceiling windows overlooking a city skyline.",
+      "image": "/images/2026-08-12.jpg",
+      "image_url": "/images/2026-08-12.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-11",
       "date": "2026-08-11",
       "date_display": "August 11, 2026",
