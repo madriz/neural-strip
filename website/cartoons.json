@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-13",
+      "date": "2026-08-13",
+      "date_display": "August 13, 2026",
+      "headline": "Some Claude users are mad that Anthropic's new watermarks will catch them using it at their jobs, classes",
+      "setup": "Anthropic adds invisible watermarks to Claude's output so employers and teachers can detect AI use.",
+      "punchline": "Finally, a tool that's committed to transparency—just not the kind we wanted.",
+      "caption": "Nothing quite like discovering your dishonesty now comes with a permanent stamp.",
+      "source_url": "https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An office worker or student sitting at a desk, looking at a computer monitor with growing dread. On the screen, a large watermark or stamp is becoming visible. The person's hands are on the keyboard, frozen mid-keystroke. Their face shows a mixture of annoyance and resignation.",
+      "image": "/images/2026-08-13.jpg",
+      "image_url": "/images/2026-08-13.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-12",
       "date": "2026-08-12",
       "date_display": "August 12, 2026",
