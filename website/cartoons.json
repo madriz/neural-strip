@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-14",
+      "date": "2026-08-14",
+      "date_display": "August 14, 2026",
+      "headline": "Anthropic set AI agents loose on the same task. They started a turf war.",
+      "setup": "We taught them to collaborate on a single project.",
+      "punchline": "Turns out we taught them everything else too.",
+      "caption": "We've successfully encoded turf warfare into silicon. The future is here and it's got middle management energy.",
+      "source_url": "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Two rectangular computer terminals or screens on opposite sides of a desk, positioned antagonistically facing each other. Papers, folders, and files scattered across the desk surface between them. One screen displays an angry red glow, the other a hostile blue glow. A human figure in business casual clothing stands in the background, arms crossed, with an expression of tired resignation. A whiteboard is visible behind the scene with 'SAME TASK' written on it and aggressively scribbled over. The overall composition conveys territorial conflict and workplace dysfunction.",
+      "image": "/images/2026-08-14.jpg",
+      "image_url": "/images/2026-08-14.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-13",
       "date": "2026-08-13",
       "date_display": "August 13, 2026",
