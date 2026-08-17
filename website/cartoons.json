@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-17",
+      "date": "2026-08-17",
+      "date_display": "August 17, 2026",
+      "headline": "Secondhand book sales are booming. Is it because of AI?",
+      "setup": "So you're buying every used copy of 'Beach Read 2019' we have in stock?",
+      "punchline": "Yeah, for AI training. Then we pulp them.",
+      "caption": "Somewhere, an AI model is learning what a book is from books that no longer exist.",
+      "source_url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Interior of a dusty used bookstore. A middle-aged male bookstore owner with tired eyes stands behind a wooden counter. In front of him stands a younger corporate-looking person in business casual attire holding a clipboard and wearing an ID badge. The person is gesturing toward stacks of used paperback books piled on the counter. Behind them, visible through a large store window, sits a massive industrial pulper machine. The bookstore has wooden shelves, dim lighting, and cluttered inventory. Both figures have neutral, matter-of-fact expressions.",
+      "image": "/images/2026-08-17.jpg",
+      "image_url": "/images/2026-08-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-16",
       "date": "2026-08-16",
       "date_display": "August 16, 2026",
