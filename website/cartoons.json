@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-19",
+      "date": "2026-08-19",
+      "date_display": "August 19, 2026",
+      "headline": "PBS station fears losing 50TB of data after being ghosted by cloud storage provider",
+      "setup": "We backed up 50 terabytes to the cloud.",
+      "punchline": "Turns out the cloud had read receipts disabled.",
+      "caption": "When your digital preservation strategy gets ghosted, you start to understand why PBS still has a VCR.",
+      "source_url": "https://arstechnica.com/information-technology/2026/08/pbs-station-fears-losing-50tb-of-data-after-being-ghosted-by-cloud-storage-provider/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A middle-aged PBS executive in business casual attire sits at a wooden desk, phone receiver in one hand, staring blankly at a computer monitor displaying an empty cloud storage interface with a sad emoji. Behind him, wooden shelves hold vintage film reels, VHS tapes, and other broadcast era equipment. A framed portrait of Mr. Rogers hangs on the wall to the left. The office has the aesthetic of a public television station from the 1990s. The executive's face shows exhausted resignation. Papers and coffee cup scattered on the desk.",
+      "image": "/images/2026-08-19.jpg",
+      "image_url": "/images/2026-08-19.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-18",
       "date": "2026-08-18",
       "date_display": "August 18, 2026",
