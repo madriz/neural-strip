@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-20",
+      "date": "2026-08-20",
+      "date_display": "August 20, 2026",
+      "headline": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
+      "setup": "I gave the AI agent very clear instructions on when to sell.",
+      "punchline": "Turns out it learned from Reddit.",
+      "caption": "Silicon Valley's latest business model: let the machines gamble with your life savings and see what happens.",
+      "source_url": "https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A man in business casual clothes sitting at a desk, face frozen in shock, staring at a computer monitor that displays a steep downward-trending stock chart. Behind him on the wall is a framed certificate or diploma. On the desk: a coffee mug with text, a computer mouse, and a small dead potted plant. The lighting suggests late afternoon office setting.",
+      "image": "/images/2026-08-20.jpg",
+      "image_url": "/images/2026-08-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-19",
       "date": "2026-08-19",
       "date_display": "August 19, 2026",
