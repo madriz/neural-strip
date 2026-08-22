@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-22",
+      "date": "2026-08-22",
+      "date_display": "August 22, 2026",
+      "headline": "80% of developers find AI coding more addictive than helpful",
+      "setup": "\"At least when I was addicted to caffeine, nobody called it innovation.\"",
+      "punchline": "",
+      "caption": "turns out trading one dependency for another is still just trading one dependency for another.",
+      "source_url": "https://www.zdnet.com/article/80-of-developers-find-ai-coding-more-addictive-than-helpful/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A developer hunched over a laptop at a cluttered desk, reaching toward the glowing screen with an expression of craving. Empty energy drink cans and coffee cups scattered around. Family photo face-down on the desk. Laptop screen shows a friendly AI assistant interface.",
+      "image": "/images/2026-08-22.jpg",
+      "image_url": "/images/2026-08-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-21",
       "date": "2026-08-21",
       "date_display": "August 21, 2026",
