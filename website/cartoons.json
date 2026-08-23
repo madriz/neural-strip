@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-23",
+      "date": "2026-08-23",
+      "date_display": "August 23, 2026",
+      "headline": "OpenAI says California should strengthen its AI safety bill",
+      "setup": "We've had a change of heart. We now believe SB 53 should be significantly strengthened.",
+      "punchline": "Funny how that happens right after the market's already flooded with our products.",
+      "caption": "Nothing says commitment to safety like demanding regulation only once your competitors have caught up.",
+      "source_url": "https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate executive in business attire sitting across a desk from a government legislator, holding up a document labeled SB 53. Both figures have neutral, polite expressions. Through a large window behind them, the city outside is visibly chaotic: cars driving erratically, digital billboards displaying corrupted text, robots in awkward positions. The desk between them is clean and orderly, creating contrast with the mayhem visible outside.",
+      "image": "/images/2026-08-23.jpg",
+      "image_url": "/images/2026-08-23.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-22",
       "date": "2026-08-22",
       "date_display": "August 22, 2026",
