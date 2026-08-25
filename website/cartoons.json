@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-25",
+      "date": "2026-08-25",
+      "date_display": "August 25, 2026",
+      "headline": "Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC",
+      "setup": "",
+      "punchline": "We had every model telling us this was coming.",
+      "caption": "An AI hedge fund named Situational Awareness just got subpoenaed by the SEC. The irony writes itself.",
+      "source_url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Interior of a modern office with floor-to-ceiling windows. A man in a dark suit sits at a large desk, surrounded by papers labeled 'SEC SUBPOENA.' His expression is vacant, eyes forward. Through the windows behind him, several figures in dark FBI or federal agent windbreakers walk toward the building entrance. A nameplate on the wall reads 'SITUATIONAL AWARENESS HEDGE FUND.' The office is otherwise sterile and expensive-looking.",
+      "image": "/images/2026-08-25.jpg",
+      "image_url": "/images/2026-08-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-24",
       "date": "2026-08-24",
       "date_display": "August 24, 2026",
