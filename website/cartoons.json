@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-27",
+      "date": "2026-08-27",
+      "date_display": "August 27, 2026",
+      "headline": "AI use among UK teachers doubles, but working hours still don't come down",
+      "setup": "Teacher to colleague: 'The AI saves me hours on grading.'",
+      "punchline": "'Yeah, I use those hours to prep better lessons, respond to AI-generated parent emails, and debug why it marked all haikus as 'concerning content.'",
+      "caption": "The AI was supposed to free up time. Instead it just created new administrative work that feels less real but somehow takes longer.",
+      "source_url": "https://www.theregister.com/public-sector/2026/08/27/ai-use-among-uk-teachers-doubles-but-working-hours-still-dont-come-down/5292551",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An exhausted teacher slumped in a desk chair at midnight, laptop open showing an AI grading interface. Empty coffee cups scattered around. Stacks of papers next to the keyboard. A motivational poster on the wall behind reading 'AI: The Future of Education.' The teacher's expression is worn and defeated while staring at the screen.",
+      "image": "/images/2026-08-27.jpg",
+      "image_url": "/images/2026-08-27.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-26",
       "date": "2026-08-26",
       "date_display": "August 26, 2026",
