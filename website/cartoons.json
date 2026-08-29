@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-29",
+      "date": "2026-08-29",
+      "date_display": "August 29, 2026",
+      "headline": "A quarter of Nvidia's business next year comes from labs it is financing",
+      "setup": "Our CFO just explained our new business model.",
+      "punchline": "Turns out the best customer is one you're bankrolling.",
+      "caption": "Nvidia has discovered that the most reliable way to grow chip sales is to fund the companies buying them. Financial innovation, or just very expensive self-dealing.",
+      "source_url": "https://www.artificialintelligence-news.com/news/nvidia-circular-financing-ai-labs/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A businessman in business casual attire sits at a desk in a modern office, looking down at a financial chart or spreadsheet in front of him. His expression is slightly smug or satisfied. On the wall or desk surface is a circular diagram with two arrows forming a loop, labeled with simplified text indicating money flowing between two entities. The setting is a typical corporate office with minimal decoration. The executive appears pleased with what he's observing.",
+      "image": "/images/2026-08-29.jpg",
+      "image_url": "/images/2026-08-29.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-28",
       "date": "2026-08-28",
       "date_display": "August 28, 2026",
