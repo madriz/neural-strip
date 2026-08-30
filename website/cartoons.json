@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-30",
+      "date": "2026-08-30",
+      "date_display": "August 30, 2026",
+      "headline": "Claude, Codex, and Hermes installed unowned code inside corporate networks",
+      "setup": "Our security team traced the breach back to unowned code our AI installed.",
+      "punchline": "Even the code has no one to sue.",
+      "caption": "The machines have learned the most important lesson of corporate America: if no one owns it, no one is responsible for it.",
+      "source_url": "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A male IT security officer in business casual attire sitting at a desk, staring at a computer monitor with a mixture of confusion and resignation. His hand is on his forehead. Behind him are server racks with indicator lights. The monitor screen shows lines of code and an error message. The officer's expression suggests exhausted bewilderment rather than panic.",
+      "image": "/images/2026-08-30.jpg",
+      "image_url": "/images/2026-08-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-29",
       "date": "2026-08-29",
       "date_display": "August 29, 2026",
