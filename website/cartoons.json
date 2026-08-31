@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-08-31",
+      "date": "2026-08-31",
+      "date_display": "August 31, 2026",
+      "headline": "Energy biz SSE smacked around in court by a guy and AI",
+      "setup": "SSE Energy's legal team spent three years chasing a debt from a non-existent address.",
+      "punchline": "Turns out the address was fake, but the guy with ChatGPT wasn't.",
+      "caption": "A major energy company spent three years in court losing to a guy and his laptop. Sometimes scale is a liability.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/08/31/energy-biz-sse-smacked-around-in-court-by-a-guy-and-ai/5293391",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A cramped apartment with one man at a desk with a laptop, papers scattered, coffee cups. In a split view or background, a ornate courtroom with multiple suited lawyers looking defeated. Judge's gavel mid-strike. Contrast between humble home setup and institutional grandeur.",
+      "image": "/images/2026-08-31.jpg",
+      "image_url": "/images/2026-08-31.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-30",
       "date": "2026-08-30",
       "date_display": "August 30, 2026",
