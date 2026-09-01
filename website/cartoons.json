@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-01",
+      "date": "2026-09-01",
+      "date_display": "September 1, 2026",
+      "headline": "Blue Voice is trained on department-specific laws, local ordinances, protocols, and guidelines that general-purpose AI tools can't access on the public internet.",
+      "setup": "Officer Martinez finally decides to check if he's allowed to do his job.",
+      "punchline": "Blue Voice: 'I'm going to need more training data.'",
+      "caption": "when you need an AI to tell you if you're breaking the law while enforcing the law.",
+      "source_url": "https://techcrunch.com/2026/08/31/harvard-law-dropout-raises-6m-for-blue-voice-to-build-a-harvey-for-police-officers/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A uniformed police officer at a desk, looking anxious while staring at a laptop screen displaying a chatbot interface. The desk has scattered papers and a coffee cup. Behind him, messy filing cabinets and a slightly tilted framed Constitution on the wall. The officer's expression suggests confusion and resignation.",
+      "image": "/images/2026-09-01.jpg",
+      "image_url": "/images/2026-09-01.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-08-31",
       "date": "2026-08-31",
       "date_display": "August 31, 2026",
