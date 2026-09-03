@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-03",
+      "date": "2026-09-03",
+      "date_display": "September 3, 2026",
+      "headline": "We're 'dangerously close' to dead internet theory, says Pangram's CEO",
+      "setup": "I found a great article explaining how to spot AI-generated content.",
+      "punchline": "Turns out it was AI-generated.",
+      "caption": "the internet has become a hall of mirrors where everything reflects back on itself.",
+      "source_url": "https://techcrunch.com/podcast/were-dangerously-close-to-dead-internet-theory-says-pangrams-ceo/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person sitting at a desk facing a computer monitor, their face showing blank exhaustion. The screen displays search results. On the desk are scattered papers, an empty coffee mug, and a pen. The person's posture is slouched, shoulders down. Single lamp overhead casting harsh light. Minimalist office setting with beige walls.",
+      "image": "/images/2026-09-03.jpg",
+      "image_url": "/images/2026-09-03.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-02",
       "date": "2026-09-02",
       "date_display": "September 2, 2026",
