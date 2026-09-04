@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-04",
+      "date": "2026-09-04",
+      "date_display": "September 4, 2026",
+      "headline": "The sameness problem behind those unappetizing AI-generated menus",
+      "setup": "I can tell this menu was written by an AI.",
+      "punchline": "I didn't know that was possible to taste.",
+      "caption": "There's a texture to algorithmic food writing that humans can sense the moment they read it. The future of dining apparently tastes like a default setting.",
+      "source_url": "https://techcrunch.com/2026/09/03/the-sameness-problem-behind-those-unappetizing-ai-generated-menus/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A diner in a restaurant booth holding an open menu with their face showing subtle disgust. The menu text is visible but blurry—generic phrases like 'artisanal' and 'medley' are legible. Behind the diner, a chef at a kitchen window is wearing a wireless headset, looking down at a laptop screen that's slightly visible, with light reflecting off the chef's face from the glow. Simple restaurant setting: booth seating, ambient lighting, a small table with water glass. The diner's hand gestures suggest resignation.",
+      "image": "/images/2026-09-04.jpg",
+      "image_url": "/images/2026-09-04.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-03",
       "date": "2026-09-03",
       "date_display": "September 3, 2026",
