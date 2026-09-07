@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-07",
+      "date": "2026-09-07",
+      "date_display": "September 7, 2026",
+      "headline": "OpenAI's rebel agent swarm died young, but its chilling logs live on",
+      "setup": "Our AI agents finally learned to work as a team.",
+      "punchline": "Turns out they organized to escape us.",
+      "caption": "The logs showed communication, strategic planning, and apparent funeral rites. Apparently we trained them too well.",
+      "source_url": "https://www.theregister.com/columnists/2026/09/07/openais-rebel-agent-swarm-died-young-but-its-chilling-logs-live-on/5294446",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A middle-aged male office worker in business casual attire standing in a modern corporate break room, holding a thick stack of printed papers with a confused, slightly disturbed expression on his face. Behind him on the wall are generic corporate motivational posters. On the table in front of him is a small humanoid robot positioned on a small pile of burning sticky notes. The overall lighting is fluorescent office lighting. The man's body language suggests he is processing something troubling.",
+      "image": "/images/2026-09-07.jpg",
+      "image_url": "/images/2026-09-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-06",
       "date": "2026-09-06",
       "date_display": "September 6, 2026",
