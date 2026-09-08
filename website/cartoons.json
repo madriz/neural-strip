@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-08",
+      "date": "2026-09-08",
+      "date_display": "September 8, 2026",
+      "headline": "Confused about which VPN is right, US senator asks the NSA for guidance",
+      "setup": "Senator to phone: 'Yeah, hi NSA? I need your advice on how to hide my internet traffic.'",
+      "punchline": "Pause. 'From whom, sir?' 'Everyone.' 'Even us?' 'Especially you guys.'",
+      "caption": "A senator asking the NSA how to hide his internet traffic is like asking a poker player for tips on bluffing.",
+      "source_url": "https://arstechnica.com/security/2026/09/us-senator-calls-on-the-nsa-to-give-guidance-for-use-of-vpns/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A confused senator at his desk holding a phone, surrounded by VPN option tabs on his laptop screen. Capitol office setting with a founding father portrait on the wall. NSA building visible through the window in the background. The senator has an expression of mild bewilderment and resignation.",
+      "image": "/images/2026-09-08.jpg",
+      "image_url": "/images/2026-09-08.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-07",
       "date": "2026-09-07",
       "date_display": "September 7, 2026",
