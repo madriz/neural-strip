@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-11",
+      "date": "2026-09-11",
+      "date_display": "September 11, 2026",
+      "headline": "OpenAI puts Pro subscriptions on hold due to Astra demand",
+      "setup": "Sorry, we're too popular. Can you come back when we're less successful?",
+      "punchline": "We had to shut down the paying tier to make room for the free one.",
+      "caption": "Nothing says thriving business like telling customers their money isn't welcome right now.",
+      "source_url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A customer in business attire holding a credit card at an OpenAI service counter. Behind the desk, an exhausted employee with both hands raised defensively blocks the window. Visible through the background are dozens of satisfied users happily working on laptops with smiling faces. The employee looks stressed and overwhelmed. Fluorescent office lighting. Clean, modern service desk aesthetic.",
+      "image": "/images/2026-09-11.jpg",
+      "image_url": "/images/2026-09-11.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-10",
       "date": "2026-09-10",
       "date_display": "September 10, 2026",
