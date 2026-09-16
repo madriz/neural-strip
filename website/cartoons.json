@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-16",
+      "date": "2026-09-16",
+      "date_display": "September 16, 2026",
+      "headline": "US data centers could consume more natural gas than Germany and Japan combined by 2035",
+      "setup": "So we're looking at consuming as much natural gas as Germany and Japan combined by 2035.",
+      "punchline": "For what—better AI poetry or just to keep ChatGPT from making typos?",
+      "caption": "The AI boom has decided that energy abundance is a luxury we can afford. Spoiler: it isn't.",
+      "source_url": "https://techcrunch.com/2026/09/15/us-data-centers-could-consume-more-natural-gas-than-germany-and-japan-combined-by-2035/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate boardroom with a middle-aged executive in business attire standing beside a large presentation screen. The screen displays a graph with 'Data Center Energy Demand 2035' at the top; the red line shoots upward dramatically and extends beyond the edge of the graph. The executive points at it with an expression of grim resignation. Behind him through floor-to-ceiling windows is a sprawling suburban landscape with transmission towers and power lines. On the polished conference table sits a small toy or model of a robot. The room is all glass, steel, and professional uncertainty.",
+      "image": "/images/2026-09-16.jpg",
+      "image_url": "/images/2026-09-16.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-15",
       "date": "2026-09-15",
       "date_display": "September 15, 2026",
