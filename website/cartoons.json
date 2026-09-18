@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-18",
+      "date": "2026-09-18",
+      "date_display": "September 18, 2026",
+      "headline": "The fix for rogue AI agents could be more AI",
+      "setup": "Our solution to agents acting faster than we can review them?",
+      "punchline": "More agents acting faster than we can review them.",
+      "caption": "The software equivalent of hiring a second ghost to haunt your house because the first one won't stop making noise.",
+      "source_url": "https://techcrunch.com/2026/09/17/the-fix-for-rogue-ai-agents-could-be-more-ai/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate office with a manager sitting at a desk surrounded by incident reports. Behind him stands an unstable tower of stacked boxes, each labeled with progressively longer AI-related titles. At the top, a tiny figure sits on the topmost box with a clipboard, surrounded by precariously balanced papers and files. The manager looks exhausted and is gesturing at the tower. The tower leans slightly, suggesting instability.",
+      "image": "/images/2026-09-18.jpg",
+      "image_url": "/images/2026-09-18.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-17",
       "date": "2026-09-17",
       "date_display": "September 17, 2026",
