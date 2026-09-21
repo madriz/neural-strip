@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-21",
+      "date": "2026-09-21",
+      "date_display": "September 21, 2026",
+      "headline": "World model companies are keeping a lot of secrets",
+      "setup": "So what exactly does your world model do?",
+      "punchline": "It's proprietary. But trust me, it's revolutionary.",
+      "caption": "The tech industry's favorite business model: raise half a billion dollars, sign NDAs with everyone, answer no questions.",
+      "source_url": "https://techcrunch.com/2026/09/20/world-model-companies-are-keeping-a-lot-of-secrets/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A founder in business casual attire sits at a modern conference table across from a journalist with a voice recorder. The founder holds a large check and smiles confidently. Behind the founder hangs a floor-to-ceiling curtain covering what appears to be something mysterious. The setting is a sterile, glass-walled conference room. The journalist's expression shows confusion and frustration.",
+      "image": "/images/2026-09-21.jpg",
+      "image_url": "/images/2026-09-21.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-20",
       "date": "2026-09-20",
       "date_display": "September 20, 2026",
