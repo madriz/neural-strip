@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-22",
+      "date": "2026-09-22",
+      "date_display": "September 22, 2026",
+      "headline": "OpenAI forms math advisory group as its AI resolves more than 100 open problems",
+      "setup": "Our advisory group has some concerns about the direction of the research—",
+      "punchline": "That's great feedback. We'll definitely consider not considering it.",
+      "caption": "nothing says you value expert input like assembling a team of world-class mathematicians and then telling them their job is decorative.",
+      "source_url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A distinguished, older mathematician sits at one end of a long conference table, holding a thick binder labeled 'Advisory Group Recommendations.' Across from him sits a young OpenAI representative in casual tech attire, looking at their phone with mild disinterest. The mathematician's expression is one of polite confusion and suppressed frustration. Behind them on the wall hangs a framed certificate reading 'Advisory Group' with illegibly small fine print below. The room is formal and corporate. Papers are scattered on the table. A window shows a city skyline.",
+      "image": "/images/2026-09-22.jpg",
+      "image_url": "/images/2026-09-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-21",
       "date": "2026-09-21",
       "date_display": "September 21, 2026",
