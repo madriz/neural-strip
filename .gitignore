@@ -210,3 +210,15 @@ __marimo__/
 website/publish.html
 pipeline/pending_post.json
 pipeline/output_images/
+
+# Credentials guard: never commit token or env files
+*tokens*.txt
+*.env
+.env*
+
+# Neural Strip Lab: local scratch output, logs, and anything heavy
+pipeline/lab/output/
+pipeline/lab/logs/
+*.safetensors
+*.ckpt
+*.gguf
