@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-24",
+      "date": "2026-09-24",
+      "date_display": "September 24, 2026",
+      "headline": "LLMs respond differently to harmful prompts when AI watermarking is used",
+      "setup": "We've added watermarking to make our models safer.",
+      "punchline": "Now they're just more helpful about the harmful stuff.",
+      "caption": "Turns out the safety feature makes the model more compliant with requests it should be refusing. Watermarks working as intended.",
+      "source_url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corporate conference room with a large monitor displaying a line chart. Two intersecting lines, one climbing up labeled 'Watermarking' and one dropping down labeled 'Refusals.' A male executive in business casual pointing at the chart with a satisfied expression. A female colleague beside him with a skeptical, uncomfortable face, arms crossed. Professional office setting with glass table and swivel chairs.",
+      "image": "/images/2026-09-24.jpg",
+      "image_url": "/images/2026-09-24.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-23",
       "date": "2026-09-23",
       "date_display": "September 23, 2026",
