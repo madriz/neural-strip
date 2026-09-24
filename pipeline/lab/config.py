@@ -47,11 +47,12 @@ OLLAMA_TIMEOUT = int(os.environ.get("NS_OLLAMA_TIMEOUT", "600"))
 
 MAX_ATTEMPTS = 3
 
-# Experiment flags. Both off by default so the lab matches the cloud prompt.
-# NS_LAB_THINK: let the writer model reason before answering (slower).
-# NS_LAB_HOUSE_RULES: append the content rules to the writer's system prompt.
-LAB_THINK = os.environ.get("NS_LAB_THINK", "0") == "1"
-LAB_HOUSE_RULES = os.environ.get("NS_LAB_HOUSE_RULES", "0") == "1"
+# Writer settings. Content, copy and format rules live in the shared system
+# prompt in generate.py, so both pipelines run the same rules.
+# NS_LAB_THINK: let the writer reason before answering (on by default).
+# NS_LAB_BEST_OF: drafts per attempt; the model ranks them, the judge checks the top one.
+LAB_THINK = os.environ.get("NS_LAB_THINK", "1") == "1"
+LAB_BEST_OF = int(os.environ.get("NS_LAB_BEST_OF", "4"))
 
 # ── Local image model (ComfyUI) ──────────────────────────────────────────────
 
