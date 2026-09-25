@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-25",
+      "date": "2026-09-25",
+      "date_display": "September 25, 2026",
+      "headline": "The Pentagon wants $30 million to build an AI-powered lie detector",
+      "setup": "We spent thirty million dollars on an AI that detects when people are lying.",
+      "punchline": "It immediately flagged its own training data as suspicious.",
+      "caption": "Nothing says confidence in your technology like training an AI to spot deception.",
+      "source_url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Pentagon conference room with military officers seated around a table looking uncertain. A technician stands next to a machine with a display screen showing conflicting outputs. The screen flashes 'TRUTH' and 'LIE' alternately with a loading spinner. Whiteboard visible in background with X marks through diagrams. Everyone's expressions range from hopeful to deeply skeptical.",
+      "image": "/images/2026-09-25.jpg",
+      "image_url": "/images/2026-09-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-24",
       "date": "2026-09-24",
       "date_display": "September 24, 2026",
