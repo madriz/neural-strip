@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-27",
+      "date": "2026-09-27",
+      "date_display": "September 27, 2026",
+      "headline": "Insurers claim AI is already increasing healthcare costs",
+      "setup": "So about that AI system we installed to reduce unnecessary procedures...",
+      "punchline": "Turns out it has no concept of 'unnecessary.'",
+      "caption": "we automated healthcare efficiency. the algorithm read that as a challenge.",
+      "source_url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Hospital conference room with two men in business attire seated at a modern table. One man (administrator) sits on the left looking defeated or confused. The other man (insurance rep) sits on the right with a skeptical expression. Between them on the table is an enormous stack of papers reaching nearly to the ceiling, labeled 'AI-Recommended Tests' in large text. Behind them, a wall-mounted chart showing an upward trending line labeled with cost figures. The stack of papers is the visual focus, dominating the center of the frame.",
+      "image": "/images/2026-09-27.jpg",
+      "image_url": "/images/2026-09-27.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-26",
       "date": "2026-09-26",
       "date_display": "September 26, 2026",
