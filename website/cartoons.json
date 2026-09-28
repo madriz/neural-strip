@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-28",
+      "date": "2026-09-28",
+      "date_display": "September 28, 2026",
+      "headline": "I created an interactive digital avatar of myself — and you can talk to it",
+      "setup": "Finally, someone who really understands my problems.",
+      "punchline": "My avatar won't return my calls either.",
+      "caption": "The ultimate solution to not having anyone to talk to. Now you can ignore yourself digitally.",
+      "source_url": "https://techcrunch.com/2026/09/26/i-created-an-interactive-digital-avatar-of-myself-and-you-can-it",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person at a desk looking at a computer monitor showing their digital avatar. Both figures have nearly identical poses and facial expressions of mild befuddlement. The person's hand is on the mouse. Empty coffee mug in foreground. Typical office desk with keyboard and monitor. Both the real person and avatar on screen are making eye contact with each other through the screen.",
+      "image": "/images/2026-09-28.jpg",
+      "image_url": "/images/2026-09-28.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-27",
       "date": "2026-09-27",
       "date_display": "September 27, 2026",
