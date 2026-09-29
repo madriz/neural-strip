@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-29",
+      "date": "2026-09-29",
+      "date_display": "September 29, 2026",
+      "headline": "Anthropic's prospectus details losses, growth, and, yes, a warning that its AI could end humanity",
+      "setup": "So your burn rate is massive, but the growth trajectory is incredible. What's the risk profile looking like?",
+      "punchline": "Oh, the usual. Customer acquisition, retention, talent wars... potential extinction-level event. Page 47.",
+      "caption": "Anthropic's investors learned that their billion-dollar bet came with fine print about humanity's expiration date. At least it was disclosed.",
+      "source_url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A venture capitalist and a CFO in a modern office conference room. The VC sits across a table, eyes wide with a half-smile, holding a thick prospectus booklet. The CFO points casually at a chart showing explosive growth but also massive red numbers. Behind them, a large window shows a city skyline. Papers and coffee cups on the table. The VC's body language suggests concern masking polite interest.",
+      "image": "/images/2026-09-29.jpg",
+      "image_url": "/images/2026-09-29.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-28",
       "date": "2026-09-28",
       "date_display": "September 28, 2026",
