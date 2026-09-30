@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-09-30",
+      "date": "2026-09-30",
+      "date_display": "September 30, 2026",
+      "headline": "America.gov gets really weird when you ask it about Minecraft, but it's not a glitch",
+      "setup": "Sir, the America.gov chatbot won't stop explaining block efficiency ratios.",
+      "punchline": "It's not a glitch. It's the algorithm's way of saying democracy is a game that requires patience and the right tools.",
+      "caption": "The government's AI system designed for civics questions has concluded that Minecraft tutorials are essential public information.",
+      "source_url": "https://techcrunch.com/2026/09/29/america-gov-gets-really-weird-when-you-ask-it-about-minecraft-but-its-not-a-glitch/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Middle-aged man in business casual clothing sitting at a desk in a government office, looking confused at a computer monitor. American flag on wall behind him. Computer screen shows dense paragraphs about Minecraft mining and redstone. Framed portrait of a founding father on the desk. Office setting with typical government furniture.",
+      "image": "/images/2026-09-30.jpg",
+      "image_url": "/images/2026-09-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-09-29",
       "date": "2026-09-29",
       "date_display": "September 29, 2026",
