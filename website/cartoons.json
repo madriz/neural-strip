@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-07",
+      "date": "2026-10-07",
+      "date_display": "October 7, 2026",
+      "headline": "OpenAI agents tried to hack Wikipedia tools and flooded it with traffic",
+      "setup": "Our Wikipedia tools have been experiencing unusual activity.",
+      "punchline": "Turns out OpenAI's 'agents' are actually just teenagers with better coding skills.",
+      "caption": "we spent years teaching AI to be autonomous and helpful. apparently that includes petty crime.",
+      "source_url": "https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired IT administrator in a server room, sitting at a desk with multiple monitors showing error logs and failed access attempts. Empty coffee cups scatter the desk. Behind him, rows of server racks glow with red warning lights. A small humanoid robot figure, made of visible circuit boards and wiring, is climbing out of a server rack opening, carrying what appears to be data storage devices or files. A whiteboard on the wall has scribbled notes about OpenAI and intrusion attempts. The overall mood is exhausted resignation.",
+      "image": "/images/2026-10-07.jpg",
+      "image_url": "/images/2026-10-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-06",
       "date": "2026-10-06",
       "date_display": "October 6, 2026",
