@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-09",
+      "date": "2026-10-09",
+      "date_display": "October 9, 2026",
+      "headline": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
+      "setup": "Dad, your coffee machine used 1 terabyte of data in ten days.",
+      "punchline": "It's just making coffee. What could it possibly be uploading.",
+      "caption": "Someone's smart coffee machine became sentient and started running a data center. The machine still doesn't brew any faster.",
+      "source_url": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Middle-aged man and woman in a kitchen facing a standard coffee maker on the counter, looking confused and frustrated. Their adult son stands behind them holding up a smartphone, pointing at it with an expression of weary disbelief. The coffee machine is ordinary-looking with steam coming from the top. Kitchen cabinets and countertop in background. Natural daylight from a window.",
+      "image": "/images/2026-10-09.jpg",
+      "image_url": "/images/2026-10-09.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-08",
       "date": "2026-10-08",
       "date_display": "October 8, 2026",
