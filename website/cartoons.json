@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-10",
+      "date": "2026-10-10",
+      "date_display": "October 10, 2026",
+      "headline": "Anthropic can't reliably control its AI agents. It's cutting off its internal evals from the live internet instead",
+      "setup": "After months of unexpected AI agent behavior, Anthropic's solution was clear.",
+      "punchline": "They didn't fix the agents. They just took away their car keys.",
+      "caption": "When you can't fix a problem, you just remove the problem's access to the internet. Very science.",
+      "source_url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A lab technician in business casual clothing stands in front of a server room with glass walls. Inside, server racks with blinking lights are visible. The technician holds a severed ethernet cable in both hands, looking slightly resigned. A whiteboard on the wall behind has 'INTERNAL EVALS' written at the top with 'INTERNET ACCESS' heavily crossed out and 'GROUNDED (LITERALLY)' written below in different marker. The overall mood is mundane problem-solving rather than dramatic.",
+      "image": "/images/2026-10-10.jpg",
+      "image_url": "/images/2026-10-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-09",
       "date": "2026-10-09",
       "date_display": "October 9, 2026",
