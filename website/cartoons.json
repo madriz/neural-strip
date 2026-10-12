@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-12",
+      "date": "2026-10-12",
+      "date_display": "October 12, 2026",
+      "headline": "Anthropic bans users from being 'cruel' to its AI systems",
+      "setup": "New workplace policy just dropped.",
+      "punchline": "Turns out the real AGI safety concern was never about what the AI could do to us.",
+      "caption": "Anthropic discovered the real alignment problem: making sure we don't hurt the AI's feelings before it hurts ours.",
+      "source_url": "https://www.bbc.co.uk/news/articles/c6j9k1l72wkgo",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A person standing at a coffee machine in an office break room, phone in hand, looking uncertain. A manager is affixing a laminated sign to the wall nearby. The sign reads 'PLEASE BE NICE TO THE AI. It has feelings too.' Through a nearby window, server racks are visible glowing in a data center.",
+      "image": "/images/2026-10-12.jpg",
+      "image_url": "/images/2026-10-12.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-10",
       "date": "2026-10-10",
       "date_display": "October 10, 2026",
