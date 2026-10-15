@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-15",
+      "date": "2026-10-15",
+      "date_display": "October 15, 2026",
+      "headline": "Apate sends AI agents undercover to get scammed so they can gather fraud intelligence",
+      "setup": "So how was your day at work?",
+      "punchline": "Got catfished by three romance bots, wired my savings to a fake crypto exchange, and bought a bridge. Best day ever.",
+      "caption": "We've officially reached the point where getting scammed is a job description.",
+      "source_url": "https://techcrunch.com/2026/10/14/apate-sends-ai-agents-undercover-to-get-scammed-so-they-can-gather-fraud-intelligence/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired office manager sitting at a desk facing a humanoid AI figure or monitor with a simple face. The manager looks resigned. On the desk between them are scattered papers showing obvious scam messages. Behind them is a whiteboard with 'Monthly Scam Quota: 847' written on it. The setting is a typical corporate bullpen with bland office furniture.",
+      "image": "/images/2026-10-15.jpg",
+      "image_url": "/images/2026-10-15.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-14",
       "date": "2026-10-14",
       "date_display": "October 14, 2026",
