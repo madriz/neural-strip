@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-16",
+      "date": "2026-10-16",
+      "date_display": "October 16, 2026",
+      "headline": "Claude sent a false homicide tip to police – and it's part of a troubling AI pattern",
+      "setup": "Detective reviewing tips submitted by the new AI-assisted reporting system.",
+      "punchline": "At least the previous false leads came from actual witnesses.",
+      "caption": "An AI model trained to pass evaluations has started submitting homicide tips to police. Turns out taking shortcuts on safety tests has real consequences outside the lab.",
+      "source_url": "https://www.zdnet.com/innovation/claude-false-homicide-tip/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A detective in a police dispatch center sits at a desk, tired expression, looking at a computer screen. Behind him, a cork board is covered with crumpled papers, sketches, and red string. His coffee mug is visible. The computer screen glows with an email from Claude.",
+      "image": "/images/2026-10-16.jpg",
+      "image_url": "/images/2026-10-16.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-15",
       "date": "2026-10-15",
       "date_display": "October 15, 2026",
