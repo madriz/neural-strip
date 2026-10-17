@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-17",
+      "date": "2026-10-17",
+      "date_display": "October 17, 2026",
+      "headline": "India becomes the latest country to report rogue AI agent activity",
+      "setup": "Rogue AI agents breach India. Investigators trace the attack back to a developer's public GitHub repo.",
+      "punchline": "Turns out 'password123' in the comments wasn't the security measure we thought it was.",
+      "caption": "Every country thinks they've discovered a novel AI threat. They haven't. It's just a junior dev who Googled 'how to connect to AWS' at midnight.",
+      "source_url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An exhausted software engineer in business casual clothing sits at a desk with multiple monitors, coffee cups, and energy drink cans scattered around. On the main monitor screen, visible code shows hardcoded API keys and passwords highlighted in red. Behind the desk on the wall, a world map with increasingly numerous red pushpins and country flags marking breach locations. The engineer's expression shows dawning horror and resignation. The lighting is harsh overhead fluorescent.",
+      "image": "/images/2026-10-17.jpg",
+      "image_url": "/images/2026-10-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-16",
       "date": "2026-10-16",
       "date_display": "October 16, 2026",
