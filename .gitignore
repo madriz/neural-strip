@@ -222,3 +222,7 @@ pipeline/lab/logs/
 *.safetensors
 *.ckpt
 *.gguf
+
+# Local-only: dated pipeline output copies and Claude Code session lock
+pipeline/pending_post*.json
+.claude/scheduled_tasks.lock

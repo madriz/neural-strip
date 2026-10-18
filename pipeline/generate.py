@@ -29,6 +29,8 @@ import feedparser
 import ftfy
 import requests
 
+from lab import rules  # shared writing rules, copy checks and judge prompt
+
 # ── Encoding helpers ─────────────────────────────────────────────────────────
 
 MOJIBAKE_FIXES = {
@@ -87,46 +89,9 @@ IDEOGRAM_NEGATIVE_PROMPT = (
     "extra limbs, bad anatomy"
 )
 
-SYSTEM_PROMPT = """\
-You are a veteran single-panel cartoon writer for The New Yorker, \
-but your beat is AI and tech. Your humor is dry, observational, and smart. \
-Never corny, never preachy. Think Gary Larson meets Silicon Valley.
-
-You will receive today's top AI/tech headlines and summaries. \
-Pick the ONE story with the best comedic potential for a single-panel cartoon. \
-Do not pick a story that is just a product launch. Pick stories with irony, \
-absurdity, or unintended consequences.
-
-Output valid JSON with these fields:
-{
-  "headline": "the original headline you chose",
-  "source_url": "the direct URL of the article you chose",
-  "angle": "the comedic angle in one sentence",
-  "scene": "visual description of the single-panel cartoon (what the viewer sees)",
-  "setup": "caption or dialogue line 1 (if needed)",
-  "punchline": "the punchline caption or dialogue",
-  "instagram_caption": "dry, understated, 1-2 sentences max",
-  "image_prompt": "describe ONLY the scene content (characters, setting, objects, expressions, actions). Do NOT include any style instructions."
-}
-
-STRICT RULES for source_url:
-- Must be the exact URL from the RSS feed item. Do not fabricate or modify URLs.
-- If no URL is available, use empty string "".
-
-STRICT RULES for instagram_caption:
-- No hashtags. Zero. Never.
-- No emoji. Zero. Never.
-- No exclamation marks.
-- No promotional language, no superlatives, no hype.
-- Dry, understated, observational tone. One or two sentences only.
-- Sentence case. The humor speaks for itself.
-
-STRICT RULES for image_prompt:
-- Describe only what the viewer sees: characters, setting, objects, expressions, spatial layout.
-- Do NOT include style instructions (line art, colors, palette, aesthetic, etc.). Style is applied separately.
-- Be specific and visual. The scene must be drawable from this description alone.
-
-Output ONLY the JSON object. No markdown, no explanation."""
+# Writer prompt: shared with Neural Strip Lab so both pipelines run the same
+# one-liner writing order, content rules and owner copy rules.
+SYSTEM_PROMPT = rules.SYSTEM_PROMPT
 
 IMAGE_PROMPT_PREFIX = (
     "Single-panel cartoon, clean line art, thick black outlines, "
@@ -267,6 +232,7 @@ def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> d
 
     # Output-side pass: recursively clean every string in the parsed dict.
     concept = fix_encoding(concept)
+    concept["punchline"] = rules.strip_wrapping_quotes(str(concept.get("punchline", "")))
 
     # Prepend locked style prefix to image_prompt
     if concept.get("image_prompt"):
@@ -322,6 +288,116 @@ def brand_safety_check(concept: dict) -> bool:
                 )
                 return False
     return True
+
+
+# ── Content judge (Haiku, same prompt as Neural Strip Lab) ───────────────────
+
+def judge_concept(concept: dict) -> dict:
+    """Judge pass over the joke fields only. Returns {"verdict": "pass"|"fail", "reason", "violations"}."""
+    import anthropic
+
+    client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+    response = client.messages.create(
+        model="claude-haiku-5-5",
+        max_tokens=300,
+        temperature=0,
+        system=rules.JUDGE_SYSTEM + '\n\nOutput ONLY a JSON object: '
+               '{"verdict": "pass" or "fail", "reason": "...", "violations": ["..."]}',
+        messages=[{"role": "user", "content": rules.JUDGE_USER_TEMPLATE.format(
+            draft=rules.judge_draft_text(concept, IMAGE_PROMPT_PREFIX))}],
+    )
+    raw = response.content[0].text.strip()
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+    verdict = json.loads(raw)
+    verdict["verdict"] = "pass" if verdict.get("verdict") == "pass" else "fail"
+    return verdict
+
+
+# ── Generation with checks, retries and story fallback ───────────────────────
+
+MAX_ATTEMPTS = 3   # per story
+MAX_STORIES = 2    # if a story fails every attempt, try the next-best story once
+
+BRAND_SAFETY_GUIDANCE = (
+    "Previous attempt was flagged for brand safety. Ensure content is "
+    "completely brand safe, neutral, and appropriate for all audiences."
+)
+
+
+def generate_checked_concept(headlines_text: str) -> tuple[dict | None, list[dict]]:
+    """
+    Up to MAX_ATTEMPTS per story, up to MAX_STORIES stories. Every attempt runs the
+    keyword filter, the copy and format rules, and the Haiku judge.
+    Returns (concept or None, per-attempt log). Invalid JSON or API errors still exit.
+    """
+    log: list[dict] = []
+    excluded: list[str] = []
+    for story in range(1, MAX_STORIES + 1):
+        locked = ""
+        guidance = ""
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+            parts = []
+            if excluded:
+                parts.append("These stories could not be made brand safe. Do NOT pick them:\n"
+                             + "\n".join(f"- {h}" for h in excluded))
+            if locked:
+                parts.append(f"Write about this same story again: {locked}")
+            if guidance:
+                parts.append(guidance)
+            try:
+                candidate = generate_cartoon_concept(headlines_text, extra_guidance="\n\n".join(parts))
+            except json.JSONDecodeError as e:
+                print(f"ERROR: Claude returned invalid JSON: {e}", file=sys.stderr)
+                sys.exit(1)
+            except Exception as e:
+                print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
+                sys.exit(1)
+            locked = locked or candidate.get("headline", "")
+            rec = {"story": story, "attempt": attempt, "headline": candidate.get("headline", ""),
+                   "punchline": candidate.get("punchline", "")}
+            log.append(rec)
+            tag = f"story {story}/{MAX_STORIES}, attempt {attempt}/{MAX_ATTEMPTS}"
+
+            if not brand_safety_check(candidate):
+                rec["failed"] = "keyword filter"
+                print(f"  Brand safety failed ({tag})", file=sys.stderr)
+                guidance = BRAND_SAFETY_GUIDANCE
+                continue
+
+            reason = rules.copy_rules_check(candidate)
+            if reason:
+                rec["failed"] = reason
+                print(f"  Copy rules failed ({tag}): {reason}", file=sys.stderr)
+                guidance = f"Previous attempt was rejected: {reason}. Follow CAPTION FORMAT and CONTENT RULES."
+                continue
+
+            try:
+                verdict = judge_concept(candidate)
+            except Exception as e:
+                rec["failed"] = f"judge error: {e}"
+                print(f"  Judge call failed ({tag}): {e}", file=sys.stderr)
+                guidance = ""
+                continue
+            rec["judge"] = verdict
+            if verdict["verdict"] != "pass":
+                rec["failed"] = f"judge: {verdict.get('reason', '')}"
+                print(f"  Judge failed ({tag}): {verdict.get('reason', '')}", file=sys.stderr)
+                guidance = (
+                    f"Previous attempt was rejected by the content reviewer: {verdict.get('reason', '')} "
+                    f"Broken rules: {'; '.join(verdict.get('violations', []))}. Fix this in the new draft."
+                )
+                continue
+
+            candidate["judge"] = verdict
+            candidate["attempts"] = log
+            return candidate, log
+
+        if locked:
+            excluded.append(locked)
+            print(f"  Story failed {MAX_ATTEMPTS} attempts, trying the next-best story: {locked}",
+                  file=sys.stderr)
+    return None, log
 
 
 # ── Ideogram image generation ────────────────────────────────────────────────
@@ -422,34 +498,15 @@ def main():
         print("\n  DRY RUN — skipping Claude API call")
         return
 
-    # 2. Generate cartoon concept via Claude with brand safety retries (up to 3)
+    # 2. Generate cartoon concept via Claude: keyword filter, copy rules and judge,
+    #    up to 3 attempts per story, falling back to the next-best story once
     print("\n[2/3] Generating cartoon concept via Claude Haiku...")
-    MAX_ATTEMPTS = 3
-    BRAND_SAFETY_GUIDANCE = (
-        "Previous attempt was flagged for brand safety. Ensure content is "
-        "completely brand safe, neutral, and appropriate for all audiences."
-    )
-    concept = None
-    extra_guidance = ""
-    for attempt in range(1, MAX_ATTEMPTS + 1):
-        try:
-            candidate = generate_cartoon_concept(headlines_text, extra_guidance=extra_guidance)
-        except json.JSONDecodeError as e:
-            print(f"ERROR: Claude returned invalid JSON: {e}", file=sys.stderr)
-            sys.exit(1)
-        except Exception as e:
-            print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
-            sys.exit(1)
-
-        if brand_safety_check(candidate):
-            concept = candidate
-            break
-        print(f"  Brand safety failed on attempt {attempt}/{MAX_ATTEMPTS}", file=sys.stderr)
-        extra_guidance = BRAND_SAFETY_GUIDANCE
+    concept, _log = generate_checked_concept(headlines_text)
 
     if concept is None:
         print(
-            f"ERROR: Content failed brand safety check after {MAX_ATTEMPTS} attempts",
+            f"ERROR: Content failed safety, copy or judge checks after {MAX_ATTEMPTS} attempts "
+            f"on each of {MAX_STORIES} stories",
             file=sys.stderr,
         )
         sys.exit(1)
