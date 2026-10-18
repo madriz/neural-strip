@@ -244,7 +244,7 @@ def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> d
     user_prompt = USER_PROMPT_TEMPLATE.format(date=today, headlines=headlines_text)
 
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-haiku-5-5",
         max_tokens=1024,
         system=system,
         messages=[{"role": "user", "content": user_prompt}],
