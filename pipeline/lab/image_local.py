@@ -92,7 +92,51 @@ def clean_scene(prompt: str) -> str:
     return s.strip()
 
 
-def build_positive(scene: str) -> str:
+# Ink variant: a short style prefix so the scene lands early in the first CLIP chunk.
+INK_PREFIX = ("Black ink line drawing, pen and ink single-panel cartoon, white background, "
+              "clean confident lines, no color, no shading.")
+# Kept under one 75-token CLIP chunk: the ink terms plus the non-duplicate base terms.
+INK_NEGATIVE = ("color, shading, gradient, grey fill, crosshatching, photo, 3d, text, letters, "
+                "words, typography, caption, speech bubble, watermark, signature, logo, "
+                "blurry, low quality, distorted, extra limbs, bad anatomy, deformed hands")
+
+
+def build_ink_positive(scene: str) -> str:
+    return INK_PREFIX + " " + clean_scene(scene)
+
+
+def ink_levels(img: Image.Image) -> Image.Image:
+    """
+    Grayscale, then a levels step: paper to pure white, darkest lines to near black.
+    A linear stretch (no threshold), so anti-aliased edges and line weight survive.
+    """
+    g = img.convert("L")
+    hist = g.histogram()
+    total = sum(hist)
+    # Paper: the most common bright value; everything from just below it goes to white.
+    paper = max(range(128, 256), key=lambda v: hist[v])
+    white = max(128, paper - 12)
+    # Ink: the 1st percentile of darkness maps to black.
+    acc, black = 0, 0
+    for v in range(256):
+        acc += hist[v]
+        if acc >= total * 0.01:
+            black = v
+            break
+    black = min(black, white - 64)
+    span = max(1, white - black)
+    lut = [0 if v <= black else 255 if v >= white else round((v - black) * 255 / span) for v in range(256)]
+    return g.point(lut).convert("RGB")
+
+
+def build_positive(scene: str, gag_first: bool = False) -> str:
+    """
+    Locked style text + scene + no-text instruction. With gag_first, the scene
+    leads so the key action sits in the first CLIP chunk (77 tokens), and the
+    same locked style text follows it.
+    """
+    if gag_first:
+        return clean_scene(scene).rstrip(".") + ". " + cloud.IMAGE_PROMPT_PREFIX + NO_TEXT_SUFFIX.strip()
     return cloud.IMAGE_PROMPT_PREFIX + clean_scene(scene) + NO_TEXT_SUFFIX
 
 
@@ -109,11 +153,11 @@ def comfy_up() -> bool:
         return False
 
 
-def build_workflow(positive: str, seed: int, profile: dict) -> dict:
+def build_workflow(positive: str, seed: int, profile: dict, negative: str = NEGATIVE_PROMPT) -> dict:
     wf = json.loads((WORKFLOWS_DIR / "txt2img_api.json").read_text(encoding="utf-8"))
     wf["4"]["inputs"]["ckpt_name"] = profile["checkpoint"]
     wf["6"]["inputs"]["text"] = positive
-    wf["7"]["inputs"]["text"] = NEGATIVE_PROMPT
+    wf["7"]["inputs"]["text"] = negative
     wf["5"]["inputs"].update(width=profile["size"], height=profile["size"])
     wf["3"]["inputs"].update(seed=seed, steps=profile["steps"], cfg=profile["cfg"],
                              sampler_name=profile["sampler"], scheduler=profile["scheduler"])
@@ -128,12 +172,12 @@ def build_workflow(positive: str, seed: int, profile: dict) -> dict:
 
 
 def render(positive: str, seed: int, profile_name: str = DEFAULT_PROFILE,
-           timeout: int = 900) -> tuple[Image.Image, float]:
+           timeout: int = 900, negative: str = NEGATIVE_PROMPT) -> tuple[Image.Image, float]:
     """Queue one render and wait. Returns (image, seconds of ComfyUI execution)."""
     profile = copy.deepcopy(PROFILES[profile_name])
     if profile_name == "sdxl_lora" and not profile.get("lora"):
         raise ComfyError("sdxl_lora profile needs NS_IMAGE_LORA set")
-    wf = build_workflow(positive, seed, profile)
+    wf = build_workflow(positive, seed, profile, negative)
     client_id = uuid.uuid4().hex
     r = requests.post(f"{COMFY_URL}/prompt", json={"prompt": wf, "client_id": client_id}, timeout=30)
     if r.status_code != 200:
@@ -247,6 +291,23 @@ def save_jpeg(img: Image.Image, path: Path, target_kb: int = TARGET_KB) -> int:
             break
     path.write_bytes(data)
     return len(data)
+
+
+def make_panel(positive: str, out_png: Path, seed: int, profile_name: str = DEFAULT_PROFILE,
+               negative: str = NEGATIVE_PROMPT, post=None) -> dict:
+    """
+    Render and keep the panel (no caption), so it can be captioned more than once.
+    With `post`, the raw render is also kept as <name>_raw.png and the processed one is the panel.
+    """
+    panel, seconds = render(positive, seed, profile_name, negative=negative)
+    out_png.parent.mkdir(parents=True, exist_ok=True)
+    if post is not None:
+        panel.save(out_png.with_name(out_png.stem + "_raw.png"))
+        panel = post(panel)
+    panel.save(out_png)
+    return {"profile": profile_name, "checkpoint": PROFILES[profile_name]["checkpoint"],
+            "seed": seed, "render_s": seconds, "positive": positive, "negative": negative,
+            "panel": str(out_png)}
 
 
 def make_cartoon(scene_prompt: str, caption: str, out_path: Path, seed: int,

@@ -146,7 +146,7 @@
 
         hero.innerHTML =
             '<div class="hero-image-wrap" id="hero-image" title="Click to enlarge">' +
-                imageOrPlaceholder(cartoon.image_url, cartoon.setup) +
+                imageOrPlaceholder(cartoon.image_url, cartoon.setup || cartoon.punchline) +
             '</div>' +
             '<div class="hero-caption">' +
                 '<div class="setup">' + esc(cartoon.setup) + '</div>' +
@@ -233,7 +233,7 @@
 
         grid.innerHTML = displayList.map(function (c) {
             return '<div class="archive-card" data-id="' + esc(c.id) + '">' +
-                '<div class="card-img">' + imageOrPlaceholder(c.image_url, c.setup) + '</div>' +
+                '<div class="card-img">' + imageOrPlaceholder(c.image_url, c.setup || c.punchline) + '</div>' +
                 '<div class="card-body">' +
                     '<div class="card-caption">' + esc(c.caption) + '</div>' +
                     '<div class="card-footer">' +
@@ -323,7 +323,7 @@
 
         var imgWrap = lb.querySelector('.lb-image-wrap');
         imgWrap.innerHTML = c.image_url
-            ? '<img src="' + esc(c.image_url) + '" alt="' + esc(c.setup) + '" onerror="this.parentNode.innerHTML=\'<div class=lb-placeholder>&#x1f5bc;</div>\'">'
+            ? '<img src="' + esc(c.image_url) + '" alt="' + esc(c.setup || c.punchline) + '" onerror="this.parentNode.innerHTML=\'<div class=lb-placeholder>&#x1f5bc;</div>\'">'
             : '<div class="lb-placeholder">&#x1f5bc;</div>';
 
         lb.querySelector('.lb-caption').textContent = c.setup;
