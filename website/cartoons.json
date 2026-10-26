@@ -17,6 +17,23 @@
       "dislikes": 0
     },
     {
+      "id": "2026-10-21",
+      "date": "2026-10-21",
+      "date_display": "October 21, 2026",
+      "headline": "Gemini on Android Auto can access my photos, emails, and calendar now – why I'm OK with that (mostly)",
+      "setup": "MAN: \"Gemini, anything new in my email?\"",
+      "punchline": "GEMINI: \"Yes. Three messages from Diane. The most recent one is titled 'Re: Duluth.'\"",
+      "caption": "The assistant can now read your email aloud, which the reviewer finds mostly acceptable. The passenger seat was not consulted.",
+      "source_url": "https://www.zdnet.com/tech/gemini-on-android-auto-can-look-through-my-photos-emails-and-calendar-now-im-cautiously-optimistic/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Interior of a car seen from the passenger seat. A middle-aged man grips the steering wheel and gazes at the road with a pleasant, unbothered expression. His wife sits beside him with her arms folded and her eyes narrowed at him. The car's central touchscreen glows with a Gemini interface, showing a small speech-bubble icon. Through the windshield, a suburban road and a red traffic light.",
+      "image": "/images/2026-10-21.jpg",
+      "image_url": "/images/2026-10-21.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0,
+      "backfilled": true
+    },
+    {
       "id": "2026-10-18",
       "date": "2026-10-18",
       "date_display": "October 18, 2026",
