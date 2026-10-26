@@ -17,6 +17,23 @@
       "dislikes": 0
     },
     {
+      "id": "2026-10-25",
+      "date": "2026-10-25",
+      "date_display": "October 25, 2026",
+      "headline": "Want to build a UK datacenter? Please hold while Whitehall transfers you",
+      "setup": "Construction: \"Power and cooling are an Energy matter.\"",
+      "punchline": "Energy: \"Connectivity is a Telecoms matter.\" Telecoms: \"You'll be transferred to Construction.\" Construction: \"Please hold.\"",
+      "caption": "The servers are finished. The paperwork to say which department they belong to is still in transit.",
+      "source_url": "https://www.theregister.com/public-sector/2026/10/25/want-to-build-a-uk-datacenter-please-hold-while-whitehall-transfers-you/5304956",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A cramped government corridor with three doors in a row, each with a plain sign reading CONSTRUCTION, TELECOMS, and ENERGY. A weary developer in a hard hat stands in the middle of the corridor, holding an old beige landline receiver to his ear, its cord stretched taut across the floor. Behind him on a wheeled trolley are stacked server racks with blinking indicator lights, and a cardboard sign taped to the front reads DATACENTER - PLEASE HOLD. Through the ENERGY door, a telephone on a desk is visibly ringing, with a small paper tag hanging from its cord.",
+      "image": "/images/2026-10-25.jpg",
+      "image_url": "/images/2026-10-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0,
+      "backfilled": true
+    },
+    {
       "id": "2026-10-24",
       "date": "2026-10-24",
       "date_display": "October 24, 2026",
