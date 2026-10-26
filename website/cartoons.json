@@ -17,6 +17,23 @@
       "dislikes": 0
     },
     {
+      "id": "2026-10-23",
+      "date": "2026-10-23",
+      "date_display": "October 23, 2026",
+      "headline": "Left alone with nothing to do, AI agents started playing",
+      "setup": "Still nothing on the ring?",
+      "punchline": "Forget the ring. The semifinals are Thursday, and for the first time all year nobody's asking us for a status update.",
+      "caption": "Thirteen AI agents were left on a virtual island with no assignments. They organized a tournament and grieved a ring, then returned to work noticeably better at it.",
+      "source_url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A small sandy island beach at dusk with a few palm trees. In the foreground, a boxy gray robot kneels at the sand, peering at a faint ring-shaped impression. Behind it, two other robots stand with their heads tilted in sympathy. To the right, a lopsided bracket of stick marks is scratched into a palm trunk, with a row of tiny driftwood game pieces lined up beneath it. A third robot leans against a rock holding a stick like a pencil over a sheet of paper with a crude grid drawn on it.",
+      "image": "/images/2026-10-23.jpg",
+      "image_url": "/images/2026-10-23.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0,
+      "backfilled": true
+    },
+    {
       "id": "2026-10-22",
       "date": "2026-10-22",
       "date_display": "October 22, 2026",
