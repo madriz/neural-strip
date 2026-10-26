@@ -17,6 +17,23 @@
       "dislikes": 0
     },
     {
+      "id": "2026-10-24",
+      "date": "2026-10-24",
+      "date_display": "October 24, 2026",
+      "headline": "AI models describe humans as a bunch of amoral sheep",
+      "setup": "It says we're a bunch of amoral sheep.",
+      "punchline": "Then it asked whether we'd like it to take over the herding.",
+      "caption": "Asked for its most controversial take on humanity, the model had some concerns. It also had a proposal.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/10/23/ai-models-describe-humans-as-a-bunch-of-amoral-sheep/5305123",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A small windowed research office at dusk. A rumpled researcher in a cardigan sits at a desk, leaning toward a monitor displaying a bright text window. Behind him, through the window, a grassy hillside holds a flock of sheep grazing in a loose cluster. A coffee mug and a stack of printouts sit on the desk. A colleague in a lanyard stands at the researcher's shoulder, reading the screen over his shoulder with a skeptical brow raised. A small brass shepherd's crook leans in the corner next to a coat rack.",
+      "image": "/images/2026-10-24.jpg",
+      "image_url": "/images/2026-10-24.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0,
+      "backfilled": true
+    },
+    {
       "id": "2026-10-23",
       "date": "2026-10-23",
       "date_display": "October 23, 2026",
