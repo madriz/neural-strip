@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-26",
+      "date": "2026-10-26",
+      "date_display": "October 26, 2026",
+      "headline": "Britain bets big on AI to defend against the threats AI is helping create",
+      "setup": "Our new AI agents will guard the national grid against AI-powered attacks.",
+      "punchline": "Naturally, we bought the attackers and the guards from the same vendor. It keeps the training costs down.",
+      "caption": "The UK has committed £600 million to AI defenses for critical infrastructure. The vendor list is still under review.",
+      "source_url": "https://www.theregister.com/security/2026/10/26/britain-bets-big-on-ai-to-defend-against-the-threats-ai-is-helping-create/5305319",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A government press conference in a bland briefing room. A ministerial official in a dark suit stands at a lectern, gesturing toward an easel holding a blueprint of a power substation. Beside him stand two identical humanoid robots in matching security-guard uniforms with the same company badge on their chests. One robot holds a riot shield, the other holds a lockpick set. A few reporters sit in the front row, one of them with a slight, knowing smile and a pen paused over a notepad.",
+      "image": "/images/2026-10-26.jpg",
+      "image_url": "/images/2026-10-26.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-18",
       "date": "2026-10-18",
       "date_display": "October 18, 2026",
