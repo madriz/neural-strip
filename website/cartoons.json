@@ -17,6 +17,23 @@
       "dislikes": 0
     },
     {
+      "id": "2026-10-22",
+      "date": "2026-10-22",
+      "date_display": "October 22, 2026",
+      "headline": "IT department and auditors at major pharmacy chain got into a rip-roaring fight about using 'password' on Cisco firewall",
+      "setup": "Your firewall admin password is 'password.'",
+      "punchline": "We've changed it to 'Password1.' It meets policy.",
+      "caption": "An audit found the firewall password was 'password.' The replacement meets the complexity requirements.",
+      "source_url": "https://www.theregister.com/security/2026/10/22/it-department-and-auditors-at-major-pharmacy-chain-got-into-a-rip-roaring-fight-about-using-password-on-cisco-firewall/5304592",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A bland corporate conference room. An auditor in a cardigan and reading glasses sits across a table from an IT manager in a rumpled polo shirt. A clipboard lies on the table between them. On a laptop screen angled toward the auditor, a firewall login box shows a password field filled with six dots. The IT manager leans back in his chair with arms folded, looking pleased with himself. The auditor's expression is flat and resigned. A wall clock behind them reads just past five.",
+      "image": "/images/2026-10-22.jpg",
+      "image_url": "/images/2026-10-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0,
+      "backfilled": true
+    },
+    {
       "id": "2026-10-21",
       "date": "2026-10-21",
       "date_display": "October 21, 2026",
