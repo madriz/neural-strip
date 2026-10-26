@@ -2,10 +2,22 @@ name: Daily Generate
 
 on:
   schedule:
-    # Runs daily at 7:00 AM Eastern (EDT = UTC-4)
-    # Change to '0 12 * * *' in November when Toronto switches to EST (UTC-5)
-    - cron: '0 11 * * *'
-  workflow_dispatch: {}
+    # 12:00 UTC = 7:00 AM Toronto on EST (UTC-5, Nov 1 2026 to Mar 14 2027).
+    # On EDT (UTC-4, from Mar 14 2027) this fires at 8:00 AM; change to
+    # '0 11 * * *' then to keep 7:00 AM.
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Backfill date (YYYY-MM-DD). Leave empty for today.'
+        required: false
+        default: ''
+        type: string
+
+# One run at a time, so backfills and the daily run never race on the push to main.
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -14,6 +26,8 @@ jobs:
     timeout-minutes: 5
     permissions:
       contents: write
+    outputs:
+      skipped: ${{ steps.gen.outputs.skipped }}
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -21,10 +35,10 @@ jobs:
       IDEOGRAM_API_KEY: ${{ secrets.IDEOGRAM_API_KEY }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -34,8 +48,16 @@ jobs:
         run: pip install -r pipeline/requirements.txt
 
       - name: Generate cartoon concept
+        id: gen
         working-directory: pipeline
-        run: python generate.py
+        env:
+          BACKFILL_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$BACKFILL_DATE" ]; then
+            python generate.py --date "$BACKFILL_DATE"
+          else
+            python generate.py
+          fi
 
       # TODO: Instagram posting step
       # - name: Post to Instagram
@@ -43,8 +65,8 @@ jobs:
       #   run: python post_instagram.py
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        if: success()
+        uses: actions/upload-artifact@v7
+        if: success() && steps.gen.outputs.skipped != 'true'
         with:
           name: pending-post-${{ github.run_number }}
           path: |
@@ -54,7 +76,7 @@ jobs:
           retention-days: 7
 
       - name: Commit pending_post to daily-output branch
-        if: success()
+        if: success() && steps.gen.outputs.skipped != 'true'
         run: |
           git config user.name "Neural Strip Bot"
           git config user.email "bot@neuralstrip.com"
@@ -71,6 +93,7 @@ jobs:
   publish:
     name: Publish cartoon to main
     needs: generate
+    if: needs.generate.outputs.skipped != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -79,7 +102,7 @@ jobs:
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
@@ -91,18 +114,24 @@ jobs:
           mkdir -p pipeline/output_images
           # Use git show (no index side effects) so only website/* lands on main.
           git show origin/daily-output:pipeline/pending_post.json > pipeline/pending_post.json
-          DATE=$(python -c "import json; print(json.load(open('pipeline/pending_post.json'))['generated_at'][:10])")
+          DATE=$(python -c "import json; p = json.load(open('pipeline/pending_post.json')); print(p.get('cartoon_date') or p['generated_at'][:10])")
           git show "origin/daily-output:pipeline/output_images/${DATE}.jpg" > "pipeline/output_images/${DATE}.jpg"
 
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
       - name: Publish to website
         id: publish
+        env:
+          BACKFILL_DATE: ${{ inputs.date }}
         run: |
-          DATE=$(python pipeline/publish.py)
+          if [ -n "$BACKFILL_DATE" ]; then
+            DATE=$(python pipeline/publish.py --date "$BACKFILL_DATE")
+          else
+            DATE=$(python pipeline/publish.py)
+          fi
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push to main
@@ -131,3 +160,46 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main
+
+  # Runs last, only when generate or publish failed: opens an issue with the
+  # error lines so a broken pipeline is noticed the same day.
+  alert:
+    name: Open issue on failure
+    needs: [generate, publish]
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+      actions: read
+
+    steps:
+      - name: Open failure issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BACKFILL_DATE: ${{ inputs.date }}
+        run: |
+          DATE="${BACKFILL_DATE:-$(date -u +%Y-%m-%d)}"
+          ERRORS=""
+          for JOB_ID in $(gh api "repos/$REPO/actions/runs/$RUN_ID/jobs" --jq '.jobs[] | select(.conclusion == "failure") | .id'); do
+            ERRORS+=$(gh api "repos/$REPO/actions/jobs/$JOB_ID/logs" \
+              | grep -E 'ERROR|##\[error\]|Traceback|Error:|Bad reply|Raw reply' \
+              | sed -E 's/^[0-9-]+T[0-9:.]+Z //' | tail -n 40)
+            ERRORS+=$'\n'
+          done
+          if [ -z "${ERRORS//[[:space:]]/}" ]; then
+            ERRORS="(no error lines found, see the run log)"
+          fi
+          {
+            echo "Run: $RUN_URL"
+            [ -n "$BACKFILL_DATE" ] && echo "Backfill date: $BACKFILL_DATE"
+            echo
+            echo "Error lines:"
+            echo '```'
+            echo "$ERRORS"
+            echo '```'
+          } > body.md
+          gh issue create --repo "$REPO" --title "Daily pipeline failed $DATE" --body-file body.md

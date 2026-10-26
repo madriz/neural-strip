@@ -8,9 +8,13 @@ Reads pipeline/pending_post.json and pipeline/output_images/YYYY-MM-DD.jpg
 image into website/images/, and prepends a new entry to
 website/cartoons.json.
 
+With --date YYYY-MM-DD (backfill), the entry is filed under that date,
+inserted in date order rather than at the top, and marked "backfilled".
+
 Emits the cartoon date on stdout; all other logs go to stderr.
 """
 
+import argparse
 import json
 import shutil
 import sys
@@ -40,19 +44,33 @@ def format_display_date(date_str: str) -> str:
 
 
 def resolve_cartoon_id(pending: dict) -> str:
+    if pending.get("cartoon_date"):
+        return pending["cartoon_date"]
     generated_at = pending.get("generated_at", "")
     if generated_at and len(generated_at) >= 10:
         return generated_at[:10]
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
+def iso_date(value: str) -> str:
+    datetime.strptime(value, "%Y-%m-%d")
+    return value
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Publish the pending cartoon to the website")
+    parser.add_argument("--date", type=iso_date, help="Backfill: publish under this YYYY-MM-DD date")
+    args = parser.parse_args()
+
     if not PENDING_POST.exists():
         log(f"ERROR: {PENDING_POST} not found")
         sys.exit(1)
 
     pending = json.loads(PENDING_POST.read_text(encoding="utf-8"))
-    cartoon_id = resolve_cartoon_id(pending)
+    cartoon_id = args.date or resolve_cartoon_id(pending)
+    if args.date and pending.get("cartoon_date") not in (None, args.date):
+        log(f"ERROR: pending post is for {pending['cartoon_date']}, not {args.date}")
+        sys.exit(1)
 
     src_image = IMAGES_DIR / f"{cartoon_id}.jpg"
     if not src_image.exists():
@@ -89,14 +107,20 @@ def main() -> None:
         "likes": 0,
         "dislikes": 0,
     }
-    entries.insert(0, new_entry)
+    if args.date:
+        new_entry["backfilled"] = True
+        # Entries run newest first; slot in before the first older one.
+        pos = next((i for i, c in enumerate(entries) if c.get("date", "") < cartoon_id), len(entries))
+        entries.insert(pos, new_entry)
+    else:
+        entries.insert(0, new_entry)
 
     CARTOONS_JSON.write_text(
         json.dumps(cartoons, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     log(f"Updated {CARTOONS_JSON} — {len(entries)} cartoons total")
-    log(f"Newest: {cartoon_id} — {new_entry['headline']}")
+    log(f"{'Backfilled' if args.date else 'Newest'}: {cartoon_id} — {new_entry['headline']}")
 
     # Stdout: date only, for the workflow to capture
     print(cartoon_id)

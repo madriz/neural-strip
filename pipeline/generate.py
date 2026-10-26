@@ -8,8 +8,10 @@ to pick the best story for a single-panel humor cartoon, and outputs
 structured JSON with the cartoon concept.
 
 Usage:
-    python generate.py              # normal run
-    python generate.py --dry-run    # skip API call, print feeds only
+    python generate.py                     # normal run
+    python generate.py --dry-run           # skip API call, print feeds only
+    python generate.py --date 2026-10-19   # backfill: only stories from the
+                                           # 24h before 7:00 AM Toronto that day
 
 Environment:
     ANTHROPIC_API_KEY   — required
@@ -22,8 +24,9 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import feedparser
 import ftfy
@@ -76,6 +79,15 @@ RSS_FEEDS = [
 ]
 
 MAX_ITEMS_PER_FEED = 6
+
+# Backfill runs need at least this many candidate stories in the date window.
+MIN_BACKFILL_STORIES = 8
+TORONTO = ZoneInfo("America/Toronto")
+
+CLAUDE_MODEL = "claude-haiku-5-5"
+# Haiku 5.5 thinks by default (adaptive, effort medium) and thinking tokens
+# count toward max_tokens, so leave ample room for the JSON answer after it.
+CLAUDE_MAX_TOKENS = 16000
 
 OUTPUT_PATH = Path(__file__).parent / "pending_post.json"
 OUTPUT_IMAGES_DIR = Path(__file__).parent / "output_images"
@@ -145,13 +157,37 @@ Pick the best one for a single-panel humor cartoon and output the JSON."""
 
 # ── RSS Fetching ─────────────────────────────────────────────────────────────
 
-def fetch_headlines() -> list[dict]:
-    """Fetch top items from all RSS feeds. Returns list of {source, title, summary, link}."""
+def backfill_window(date_str: str) -> tuple[datetime, datetime]:
+    """The 24 hours before 7:00 AM Toronto on date_str, as UTC datetimes."""
+    day = datetime.strptime(date_str, "%Y-%m-%d").date()
+    end = datetime.combine(day, time(7, 0), tzinfo=TORONTO).astimezone(timezone.utc)
+    return end - timedelta(hours=24), end
+
+
+def entry_published_utc(entry) -> datetime | None:
+    """Publish time of a feed entry in UTC, or None if the feed doesn't give one."""
+    parsed = entry.get("published_parsed") or entry.get("updated_parsed")
+    if not parsed:
+        return None
+    return datetime(*parsed[:6], tzinfo=timezone.utc)
+
+
+def fetch_headlines(window: tuple[datetime, datetime] | None = None) -> list[dict]:
+    """Fetch items from all RSS feeds. Returns list of {source, title, summary, link}.
+
+    Without a window, takes the top MAX_ITEMS_PER_FEED items per feed. With a
+    (start, end) window, reads every item and keeps only those published in it.
+    """
     items = []
     for source_name, url in RSS_FEEDS:
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:MAX_ITEMS_PER_FEED]:
+            entries = feed.entries if window else feed.entries[:MAX_ITEMS_PER_FEED]
+            for entry in entries:
+                if window:
+                    published = entry_published_utc(entry)
+                    if published is None or not (window[0] <= published < window[1]):
+                        continue
                 title = entry.get("title", "").strip()
                 summary = entry.get("summary", "").strip()
                 # Strip HTML from summary
@@ -190,32 +226,59 @@ def format_headlines(items: list[dict]) -> str:
 # ── Recent story deduplication ───────────────────────────────────────────────
 
 CARTOONS_JSON_URL = "https://raw.githubusercontent.com/madriz/neural-strip/main/website/cartoons.json"
+CARTOONS_JSON_PATH = Path(__file__).parent.parent / "website" / "cartoons.json"
 
 
-def fetch_recent_headlines(days: int = 7) -> list[str]:
-    """Fetch headlines from cartoons.json to avoid repeating recent stories."""
+def load_published_cartoons() -> list[dict]:
+    """Read published cartoons from the local checkout, falling back to GitHub.
+
+    The checkout is preferred: in CI it is main as of this run, whereas the
+    raw.githubusercontent.com copy can be minutes stale, which would let
+    back-to-back backfill runs miss each other's stories.
+    """
     try:
-        r = requests.get(CARTOONS_JSON_URL, timeout=10)
-        if r.status_code != 200:
-            return []
-        data = r.json()
+        if CARTOONS_JSON_PATH.exists():
+            data = json.loads(CARTOONS_JSON_PATH.read_text(encoding="utf-8"))
+        else:
+            r = requests.get(CARTOONS_JSON_URL, timeout=10)
+            if r.status_code != 200:
+                return []
+            data = r.json()
         # cartoons.json uses {"cartoons": [...]} wrapper
         cartoons = data.get("cartoons", data) if isinstance(data, dict) else data
-        if not isinstance(cartoons, list):
-            return []
-        from datetime import timedelta
-        cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
-        return list(set(
-            c.get("headline", "") for c in cartoons
-            if c.get("date", "") >= cutoff and c.get("headline")
-        ))
+        return cartoons if isinstance(cartoons, list) else []
     except Exception:
         return []
 
 
+def fetch_recent_headlines(days: int | None = 7) -> list[str]:
+    """Headlines of cartoons from the last `days` days (every cartoon when None)."""
+    cartoons = load_published_cartoons()
+    cutoff = ""
+    if days is not None:
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+    return list(set(
+        c.get("headline", "") for c in cartoons
+        if c.get("date", "") >= cutoff and c.get("headline")
+    ))
+
+
 # ── Claude API ───────────────────────────────────────────────────────────────
 
-def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> dict:
+class BadReplyError(Exception):
+    """Claude's reply was cut off or wasn't valid JSON. Carries the raw text."""
+
+    def __init__(self, message: str, raw: str):
+        super().__init__(message)
+        self.raw = raw
+
+
+def generate_cartoon_concept(
+    headlines_text: str,
+    extra_guidance: str = "",
+    cartoon_date: str | None = None,
+    dedup_days: int | None = 7,
+) -> dict:
     """Send headlines to Claude Haiku and get cartoon concept JSON."""
     import anthropic
 
@@ -228,7 +291,7 @@ def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> d
 
     # Build system prompt with dedup list
     system = SYSTEM_PROMPT
-    recent = fetch_recent_headlines(days=7)
+    recent = fetch_recent_headlines(days=dedup_days)
     if recent:
         dedup_list = "\n".join(f"- {h}" for h in recent)
         system += (
@@ -240,17 +303,26 @@ def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> d
     if extra_guidance:
         system += f"\n\n{extra_guidance}"
 
-    today = datetime.now(timezone.utc).strftime("%B %d, %Y")
-    user_prompt = USER_PROMPT_TEMPLATE.format(date=today, headlines=headlines_text)
+    day = datetime.strptime(cartoon_date, "%Y-%m-%d") if cartoon_date else datetime.now(timezone.utc)
+    user_prompt = USER_PROMPT_TEMPLATE.format(date=day.strftime("%B %d, %Y"), headlines=headlines_text)
 
     response = client.messages.create(
-        model="claude-haiku-5-5",
-        max_tokens=1024,
+        model=CLAUDE_MODEL,
+        max_tokens=CLAUDE_MAX_TOKENS,
         system=system,
         messages=[{"role": "user", "content": user_prompt}],
     )
+    print(
+        f"  Claude: stop_reason={response.stop_reason} "
+        f"input_tokens={response.usage.input_tokens} "
+        f"output_tokens={response.usage.output_tokens}"
+    )
 
-    raw = response.content[0].text.strip()
+    # Haiku 5.5 can open with thinking blocks; the answer is in the text blocks.
+    raw = "".join(b.text for b in response.content if b.type == "text").strip()
+
+    if response.stop_reason == "max_tokens":
+        raise BadReplyError(f"reply hit max_tokens ({CLAUDE_MAX_TOKENS})", raw)
 
     # Primary fix: ftfy repairs a wide range of UTF-8 double-encoding issues.
     raw = ftfy.fix_text(raw)
@@ -263,7 +335,10 @@ def generate_cartoon_concept(headlines_text: str, extra_guidance: str = "") -> d
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
-    concept = json.loads(raw)
+    try:
+        concept = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise BadReplyError(f"invalid JSON: {e}", raw) from e
 
     # Output-side pass: recursively clean every string in the parsed dict.
     concept = fix_encoding(concept)
@@ -396,22 +471,66 @@ def generate_image(image_prompt: str, date_str: str) -> str:
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
+def set_step_output(name: str, value: str) -> None:
+    """Expose a value to later GitHub Actions steps (no-op outside Actions)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"{name}={value}\n")
+
+
+def iso_date(value: str) -> str:
+    datetime.strptime(value, "%Y-%m-%d")
+    return value
+
+
 def main():
     parser = argparse.ArgumentParser(description="Neural Strip cartoon concept generator")
     parser.add_argument("--dry-run", action="store_true", help="Fetch feeds only, skip Claude API")
+    parser.add_argument(
+        "--date", type=iso_date,
+        help="Backfill YYYY-MM-DD: use only stories published in the 24h before 7:00 AM Toronto that day",
+    )
     args = parser.parse_args()
+
+    cartoon_date = args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     print("=" * 50)
     print("Neural Strip — Daily Generate")
     print(f"Date: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    window = None
+    if args.date:
+        window = backfill_window(args.date)
+        print(
+            f"Backfill: {args.date} (stories published "
+            f"{window[0]:%Y-%m-%d %H:%M} to {window[1]:%Y-%m-%d %H:%M} UTC)"
+        )
     print("=" * 50)
 
     # 1. Fetch RSS headlines
     print("\n[1/3] Fetching RSS feeds...")
-    items = fetch_headlines()
+    items = fetch_headlines(window)
     print(f"  {len(items)} headlines from {len(RSS_FEEDS)} feeds")
 
-    if not items:
+    if args.date:
+        # Never reuse a story any published cartoon (backfilled or not) used.
+        published = load_published_cartoons()
+        used_links = {c["source_url"] for c in published if c.get("source_url")}
+        used_titles = {c["headline"].strip().lower() for c in published if c.get("headline")}
+        before = len(items)
+        items = [
+            i for i in items
+            if i["link"] not in used_links and i["title"].strip().lower() not in used_titles
+        ]
+        print(f"  Dedup: {before - len(items)} already-published stories removed, {len(items)} candidates")
+        if len(items) < MIN_BACKFILL_STORIES:
+            print(
+                f"\nNot enough stories for {args.date}: {len(items)} candidates, "
+                f"need {MIN_BACKFILL_STORIES}. Skipping this date."
+            )
+            set_step_output("skipped", "true")
+            return
+    elif not items:
         print("ERROR: No headlines fetched from any feed", file=sys.stderr)
         sys.exit(1)
 
@@ -433,10 +552,17 @@ def main():
     extra_guidance = ""
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
-            candidate = generate_cartoon_concept(headlines_text, extra_guidance=extra_guidance)
-        except json.JSONDecodeError as e:
-            print(f"ERROR: Claude returned invalid JSON: {e}", file=sys.stderr)
-            sys.exit(1)
+            candidate = generate_cartoon_concept(
+                headlines_text,
+                extra_guidance=extra_guidance,
+                cartoon_date=cartoon_date,
+                # Backfills dedup against every cartoon, not just the last week.
+                dedup_days=None if args.date else 7,
+            )
+        except BadReplyError as e:
+            print(f"  Bad reply on attempt {attempt}/{MAX_ATTEMPTS}: {e}", file=sys.stderr)
+            print(f"  Raw reply (first 500 chars): {e.raw[:500]!r}", file=sys.stderr)
+            continue
         except Exception as e:
             print(f"ERROR: Claude API call failed: {e}", file=sys.stderr)
             sys.exit(1)
@@ -449,7 +575,8 @@ def main():
 
     if concept is None:
         print(
-            f"ERROR: Content failed brand safety check after {MAX_ATTEMPTS} attempts",
+            f"ERROR: No usable cartoon concept after {MAX_ATTEMPTS} attempts "
+            f"(bad replies or brand safety failures, see above)",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -466,13 +593,13 @@ def main():
 
     # Add metadata
     concept["generated_at"] = datetime.now(timezone.utc).isoformat()
+    concept["cartoon_date"] = cartoon_date
     concept["feed_count"] = len(items)
 
     # Generate cartoon image via Ideogram (best-effort; pipeline continues on failure)
     print("\n[3/3] Generating cartoon image via Ideogram...")
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     image_prompt = concept.get("image_prompt", "")
-    concept["image_local_path"] = generate_image(image_prompt, today_str) if image_prompt else ""
+    concept["image_local_path"] = generate_image(image_prompt, cartoon_date) if image_prompt else ""
 
     # Print result
     pretty = json.dumps(concept, indent=2, ensure_ascii=False)

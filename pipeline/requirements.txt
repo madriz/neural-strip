@@ -1,5 +1,5 @@
 feedparser
-anthropic
+anthropic>=2.3,<3
 requests
 python-dotenv
 ftfy
