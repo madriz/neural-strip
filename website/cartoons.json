@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-27",
+      "date": "2026-10-27",
+      "date_display": "October 27, 2026",
+      "headline": "Developers Felt 20% Faster With AI. They Were 19% Slower.",
+      "setup": "Manager: So did the AI tool save you time on the migration?",
+      "punchline": "Developer: Oh, massively. I feel like I'm twenty percent faster.",
+      "caption": "The sense of having saved time is its own kind of output. The stopwatch disagrees.",
+      "source_url": "https://towardsdatascience.com/developers-felt-20-faster-with-ai-they-were-19-slower/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An open-plan office late in the day. In the foreground, a software developer leans back in an ergonomic chair with arms behind head and a satisfied grin, a mug of coffee on the desk beside a laptop showing a chat window with a long scroll of AI-generated code. Behind the developer stands a manager in a cardigan holding a clipboard, glancing down at a stopwatch in hand. On the far wall a clock reads a time noticeably later than the time shown on the developer's wristwatch. A half-empty bag of pretzels and a sticky note reading 'AI!!' sit on the desk.",
+      "image": "/images/2026-10-27.jpg",
+      "image_url": "/images/2026-10-27.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-26",
       "date": "2026-10-26",
       "date_display": "October 26, 2026",
