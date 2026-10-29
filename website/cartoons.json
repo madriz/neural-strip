@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-29",
+      "date": "2026-10-29",
+      "date_display": "October 29, 2026",
+      "headline": "Microsoft profits soar days after announcing thousands of layoffs",
+      "setup": "Best quarter in company history.",
+      "punchline": "Sixty thousand people made this possible. Mostly by leaving.",
+      "caption": "Record quarterly revenue, announced days after sixty thousand buyout offers. The earnings call did not connect the two.",
+      "source_url": "https://www.bbc.co.uk/news/articles/c6m24klyjr8no?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A corner office at dusk. Two executives in business suits stand at a floor-to-ceiling window, clinking champagne glasses. Behind them, a wall-mounted monitor displays a steeply rising line graph. Through the window, in an empty parking lot below, a few office workers carry cardboard boxes toward their cars. One executive gestures toward the parking lot with his glass while the other looks at the monitor and smiles.",
+      "image": "/images/2026-10-29.jpg",
+      "image_url": "/images/2026-10-29.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-28",
       "date": "2026-10-28",
       "date_display": "October 28, 2026",
