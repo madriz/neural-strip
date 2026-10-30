@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-10-30",
+      "date": "2026-10-30",
+      "date_display": "October 30, 2026",
+      "headline": "You don't need to believe in a god to get a religious exemption from using AI at work",
+      "setup": "Coworker: \"How did you get out of the AI mandate? What's your religion?\"",
+      "punchline": "Administrator: \"The form only asked whether I was sincere. Nobody asked what I was sincere about.\"",
+      "caption": "The exemption form asks about sincerity, not theology. The office has not yet decided whether that distinction matters.",
+      "source_url": "https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A university administrative office with beige cubicle walls. A middle-aged administrator sits calmly at a desk with a small paper nameplate reading 'Exempt' beside a monitor showing a blank document. A younger coworker leans over the cubicle partition holding a laptop open to a chat window, with a puzzled, slightly suspicious expression. A corkboard behind the administrator holds a faded memo titled 'AI Adoption Mandate.' The administrator has a serene, unbothered expression and is holding a coffee mug.",
+      "image": "/images/2026-10-30.jpg",
+      "image_url": "/images/2026-10-30.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-29",
       "date": "2026-10-29",
       "date_display": "October 29, 2026",
