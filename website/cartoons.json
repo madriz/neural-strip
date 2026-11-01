@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-01",
+      "date": "2026-11-01",
+      "date_display": "November 1, 2026",
+      "headline": "Google's AI satellite sends a very expensive haiku to Earth",
+      "setup": "Manager: \"Did it at least report on the thermal problems?\"",
+      "punchline": "Engineer: \"It wrote a haiku about the thermal problems. It seems very sad about them.\"",
+      "caption": "Google's orbital computing prototype was built to process data at scale. It chose verse instead.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/10/31/googles-ai-satellite-sends-a-very-expensive-haiku-to-earth/5306818",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A dim satellite mission control room with rows of empty consoles. In the foreground, a weary engineer wearing a lanyard leans back in a swivel chair with arms folded and an unimpressed expression. Behind him stands a manager in a suit with one hand on his chin, staring at a large wall monitor. The monitor shows three short lines of text, and in the corner a small thermal readout glows red.",
+      "image": "/images/2026-11-01.jpg",
+      "image_url": "/images/2026-11-01.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-10-31",
       "date": "2026-10-31",
       "date_display": "October 31, 2026",
