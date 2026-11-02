@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-02",
+      "date": "2026-11-02",
+      "date_display": "November 2, 2026",
+      "headline": "OpenAI might rebrand its data centers as 'AI compute campuses'",
+      "setup": "Resident: \"Last month this was a data center.\"",
+      "punchline": "PR man: \"The building hasn't changed. We've just added a quad.\"",
+      "caption": "A data center by any other name still hums all night. The new brochure includes a bench.",
+      "source_url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A folding-chair community room with fluorescent lights and a beige drop ceiling. At the front, a polished PR man in a blazer stands beside an easel displaying a rendering of a windowless gray warehouse with a row of exhaust vents, surrounded by a few small saplings and a bench. The easel's header reads 'AI Compute Campus.' In the front row, an older resident in a windbreaker raises one hand while holding a folded flyer. Behind him, two other residents slouch in their chairs, unimpressed.",
+      "image": "/images/2026-11-02.jpg",
+      "image_url": "/images/2026-11-02.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-01",
       "date": "2026-11-01",
       "date_display": "November 1, 2026",
