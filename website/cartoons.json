@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-03",
+      "date": "2026-11-03",
+      "date_display": "November 3, 2026",
+      "headline": "50 AI agents tried to build a thriving Minecraft civilization – it didn't end well",
+      "setup": "First bot: \"Motion to build the shelter has been tabled.\"",
+      "punchline": "Second bot: \"Pending the approval of the committee to approve the committee.\"",
+      "caption": "Fifty agents were given a blank world and asked to build a civilization. They formed a town council first.",
+      "source_url": "https://www.zdnet.com/innovation/y-combinator-ai-agents-minecraft-experiment-behavior/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Inside a half-finished wooden town hall made of blocky cubes. Three cube-shaped robots sit at a long table piled with stacks of paper. Behind them a wall-mounted board is covered in sticky notes, with a sign reading 'Permits (Pending).' In the foreground a line of identical robots stands holding clipboards, one checking a wristwatch. Through a window at the back, a dark sky shows the unfinished outline of a village with no roofs, only a single lonely fence post.",
+      "image": "/images/2026-11-03.jpg",
+      "image_url": "/images/2026-11-03.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-02",
       "date": "2026-11-02",
       "date_display": "November 2, 2026",
