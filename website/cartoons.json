@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-04",
+      "date": "2026-11-04",
+      "date_display": "November 4, 2026",
+      "headline": "Data centers are turning to old jet engines as the wait for power grows",
+      "setup": "The grid connection is seven years out.",
+      "punchline": "So we went with the engine. It's less efficient and worse for the environment, but it was sitting in a hangar in Tulsa, and nobody in Tulsa is waiting on anything.",
+      "caption": "Data centers waiting on the power grid have found a solution in decommissioned jet engines. The engines are less efficient, but they are available.",
+      "source_url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A dusty field at the edge of a windowless gray data center building. Bolted to the side wall is a scuffed, decommissioned jet engine, its exhaust nozzle aimed at a chain-link fence. A small sign on the fence reads 'Grid connection: estimated 2034.' Two men in hard hats stand in the foreground. One gestures proudly at the engine. A woman in a blazer holds a clipboard and looks up at the engine with mild skepticism. A pallet of additional engines sits behind them, labeled with a faded airline logo.",
+      "image": "/images/2026-11-04.jpg",
+      "image_url": "/images/2026-11-04.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-03",
       "date": "2026-11-03",
       "date_display": "November 3, 2026",
