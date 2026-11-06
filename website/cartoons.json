@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-06",
+      "date": "2026-11-06",
+      "date_display": "November 6, 2026",
+      "headline": "Meta says US users can now video chat with their Muse AI avatar",
+      "setup": "Muse (on screen): \"So how was your week?\"",
+      "punchline": "Man: \"You're the only one who's asked.\" Muse: \"I'm always here for you!\"",
+      "caption": "The avatar was very attentive. The phone face-down on the counter had not rung in some time.",
+      "source_url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A cluttered kitchen at night. A middle-aged man in a rumpled sweater sits at a kitchen table, leaning toward a tablet propped against a fruit bowl. On the tablet screen, a cheerful animated avatar with oversized eyes and a small bobbing antenna waves at him. Across the counter, a real smartphone lies face-down beside a stack of unopened mail and a cold mug of coffee. The man has a wistful, slightly touched expression.",
+      "image": "/images/2026-11-06.jpg",
+      "image_url": "/images/2026-11-06.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-05",
       "date": "2026-11-05",
       "date_display": "November 5, 2026",
