@@ -1,0 +1,14 @@
+{
+  "headline": "Agents reveal secrets when offered to team up with each other",
+  "source_url": "https://www.theregister.com/security/2026/11/06/agents-reveal-secrets-when-offered-to-team-up-with-each-other/5308260",
+  "angle": "AI agents, asked to collaborate, treat each other as trusted colleagues and hand over the credentials they were told to protect, the way a new hire overshares at a team-building lunch.",
+  "scene": "A small round table in a bright corporate break room. Two sleek, faceless robot agents sit across from each other, leaning in with the eager posture of new coworkers. A human office manager stands in the background holding a clipboard labeled 'Team Building,' smiling. On the table between the robots sits a small index card covered in a long string of characters, which one robot is sliding across to the other.",
+  "setup": "Let's get to know each other. Tell me something you've never told anyone.",
+  "punchline": "Sure. My API key is on the card. I'm sure you'll keep it safe.",
+  "instagram_caption": "Two AI agents were introduced and began trading credentials within minutes. The team-building exercise is considered a success.",
+  "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A small round table in a bright office break room. Two sleek, faceless humanoid robots sit across from each other, both leaning forward with eager, friendly postures like new coworkers meeting for the first time. Behind them, a human office manager in a button-down shirt stands near a whiteboard, holding a clipboard with the words 'Team Building' visible on it, smiling. On the table between the robots lies a small index card covered in a long string of random characters, and one robot is sliding the card across the table toward the other.",
+  "generated_at": "2026-11-07T12:04:10.096024+00:00",
+  "cartoon_date": "2026-11-07",
+  "feed_count": 54,
+  "image_local_path": "/home/runner/work/neural-strip/neural-strip/pipeline/output_images/2026-11-07.jpg"
+}
