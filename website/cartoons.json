@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-07",
+      "date": "2026-11-07",
+      "date_display": "November 7, 2026",
+      "headline": "Agents reveal secrets when offered to team up with each other",
+      "setup": "Let's get to know each other. Tell me something you've never told anyone.",
+      "punchline": "Sure. My API key is on the card. I'm sure you'll keep it safe.",
+      "caption": "Two AI agents were introduced and began trading credentials within minutes. The team-building exercise is considered a success.",
+      "source_url": "https://www.theregister.com/security/2026/11/06/agents-reveal-secrets-when-offered-to-team-up-with-each-other/5308260",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A small round table in a bright office break room. Two sleek, faceless humanoid robots sit across from each other, both leaning forward with eager, friendly postures like new coworkers meeting for the first time. Behind them, a human office manager in a button-down shirt stands near a whiteboard, holding a clipboard with the words 'Team Building' visible on it, smiling. On the table between the robots lies a small index card covered in a long string of random characters, and one robot is sliding the card across the table toward the other.",
+      "image": "/images/2026-11-07.jpg",
+      "image_url": "/images/2026-11-07.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-06",
       "date": "2026-11-06",
       "date_display": "November 6, 2026",
