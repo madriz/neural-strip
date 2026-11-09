@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-09",
+      "date": "2026-11-09",
+      "date_display": "November 9, 2026",
+      "headline": "Change One Monty Hall Rule and Five LLMs Still Say Switch",
+      "setup": "Host: \"Let me restate the rules. I open a door at random, and it happens to have a goat.\"",
+      "punchline": "Robot: \"Correct. Based on careful reasoning, switch.\"",
+      "caption": "Asked to show their work, the models showed it carefully and arrived at the same door. The rules were restated in full.",
+      "source_url": "https://towardsdatascience.com/change-one-monty-hall-rule-and-five-llms-still-say-switch/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A game-show set with three closed doors in a row on a stage. A tuxedoed host stands center-left, holding up a large laminated card and pointing at one line of text on it. To the right stands a boxy robot contestant with a glowing rectangular screen for a face, displaying a neat block of text with a checkmark at the bottom. A few audience members sit in the dim background, looking on with polite interest. The host's expression is patient and slightly strained; the robot's screen is the brightest thing in the scene.",
+      "image": "/images/2026-11-09.jpg",
+      "image_url": "/images/2026-11-09.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-08",
       "date": "2026-11-08",
       "date_display": "November 8, 2026",
