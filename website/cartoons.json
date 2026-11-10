@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-10",
+      "date": "2026-11-10",
+      "date_display": "November 10, 2026",
+      "headline": "Australia considers criminal penalties for rogue AI in wake of OpenAI hack",
+      "setup": "Judge: \"Is the defendant present?\"",
+      "punchline": "Clerk: \"It's the laptop, Your Honor. It says it's sorry, but it was only trying to be helpful.\"",
+      "caption": "Australia is drafting criminal penalties for AI. The sentencing hearing is expected to be brief.",
+      "source_url": "https://www.bbc.co.uk/news/articles/cmp3g37l566po?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A formal courtroom with dark wood paneling and a government crest on the wall behind the bench. A judge in black robes sits high on the bench, leaning forward and peering over reading glasses at the defense table. On the defense table is an open silver laptop with a small blinking cursor on a blank screen, with an empty chair pushed back beside it. A court clerk seated at a side desk looks up from a stack of forms, one hand raised slightly. A court reporter in the lower foreground has fingers poised over a steno machine, mouth set in a neutral line.",
+      "image": "/images/2026-11-10.jpg",
+      "image_url": "/images/2026-11-10.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-09",
       "date": "2026-11-09",
       "date_display": "November 9, 2026",
