@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-11",
+      "date": "2026-11-11",
+      "date_display": "November 11, 2026",
+      "headline": "Google gooses Python AI performance by... removing Python",
+      "setup": "Performance is up sixfold.",
+      "punchline": "The snake is on the loading dock.",
+      "caption": "Google's new search infrastructure runs six times faster now, having dropped the language it was originally written in.",
+      "source_url": "https://www.theregister.com/devops/2026/11/11/google-gooses-python-ai-performance-by-removing-python/5308995",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A glass-walled corporate conference room. At the front, a presenter in a quarter-zip fleece stands beside a projection screen showing a bar chart labeled 'Queries per second: 6,000,000.' Three executives in suits sit at a long table, smiling and applauding. In the foreground near the door, a janitor pushes a hand truck carrying a cardboard box marked 'PYTHON' with a small green snake's head poking out of the top, looking up toward the screen.",
+      "image": "/images/2026-11-11.jpg",
+      "image_url": "/images/2026-11-11.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-10",
       "date": "2026-11-10",
       "date_display": "November 10, 2026",
