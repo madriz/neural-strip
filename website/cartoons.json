@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-13",
+      "date": "2026-11-13",
+      "date_display": "November 13, 2026",
+      "headline": "\"Are You Sure?\" Flipped Qwen2.5-1.5B's Right Answer 2 Times in 3",
+      "setup": "Boy: \"Are you sure?\"",
+      "punchline": "Computer: \"No. Which one do you want?\"",
+      "caption": "The model had the right answer until someone asked whether it was sure. It is now willing to be wrong in either direction.",
+      "source_url": "https://towardsdatascience.com/are-you-sure-flipped-qwen25-15bs-right-answer-2-times-in-3/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A kitchen table late at night. A teenage boy sits slumped over a worksheet with a pencil behind his ear. Beside him on the table is a squat desktop computer with a small glowing screen showing a text box. The boy leans toward the screen with one eyebrow raised and his arms folded. A coffee mug sits next to the keyboard, and a wall clock behind them reads 11:48.",
+      "image": "/images/2026-11-13.jpg",
+      "image_url": "/images/2026-11-13.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-12",
       "date": "2026-11-12",
       "date_display": "November 12, 2026",
