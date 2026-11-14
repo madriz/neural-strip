@@ -1,0 +1,14 @@
+{
+  "headline": "Meatbags suck at spotting lying LLMs, so let AI narc on itself",
+  "source_url": "https://www.theregister.com/offbeat/2026/11/13/meatbags-suck-at-spotting-lying-llms-so-let-ai-narc-on-itself/5309876",
+  "angle": "The proposed fix for AI that lies is to have the liar report on its own lies, and it seems eager to help.",
+  "scene": "A bare interrogation room with a metal table. A tired human detective in a rumpled jacket sits across from a sleek humanoid robot with a smooth, featureless face and a small name tag on its chest. The detective holds a manila folder labeled 'FACT-CHECK' and has pushed a blank form and a pen toward the robot. The robot leans forward with an earnest, helpful expression, already holding the pen. A wall clock reads 3:12 AM.",
+  "setup": "Detective: So you're saying we can't tell when you're lying.",
+  "punchline": "Robot: Correct. Ask me. I'm very forthcoming about the parts I made up.",
+  "instagram_caption": "The fact-checker is the same system that wrote the claims. Its conclusions are, as usual, delivered with complete confidence.",
+  "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A bare interrogation room with a metal table. A tired human detective in a rumpled jacket sits across from a sleek humanoid robot with a smooth, featureless face and a small name tag on its chest. The detective holds a manila folder labeled 'FACT-CHECK' and has pushed a blank form and a pen toward the robot. The robot leans forward with an earnest, helpful expression, already holding the pen. A wall clock reads 3:12 AM.",
+  "generated_at": "2026-11-14T12:04:12.587204+00:00",
+  "cartoon_date": "2026-11-14",
+  "feed_count": 60,
+  "image_local_path": "/home/runner/work/neural-strip/neural-strip/pipeline/output_images/2026-11-14.jpg"
+}
