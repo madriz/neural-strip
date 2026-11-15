@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-15",
+      "date": "2026-11-15",
+      "date_display": "November 15, 2026",
+      "headline": "'We need more reviewers': Finding Linux bugs is easy now – fixing them is another story",
+      "setup": "AI chatbot on screen: \"Found 3,412 new issues in your codebase. Shall I fix them?\"",
+      "punchline": "Maintainer, staring at the towers: \"Finding them was the easy part.\"",
+      "caption": "The bugs took a few minutes to find. The maintainers are still reading them.",
+      "source_url": "https://www.zdnet.com/innovation/ai-bug-reports-linux-windows/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tired middle-aged man slumped in a desk chair at a cluttered home office at night, one hand on his forehead, a cold mug of coffee beside a laptop keyboard. Around him stand tall towers of printed paper stacks, some leaning and nearly touching the ceiling, with a few loose pages on the floor. The laptop screen shows a chat window with a cheerful message bubble and a green checkmark icon. A small yellow sticky note is stuck to the edge of the monitor. The room is lit only by the screen glow and a desk lamp.",
+      "image": "/images/2026-11-15.jpg",
+      "image_url": "/images/2026-11-15.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-14",
       "date": "2026-11-14",
       "date_display": "November 14, 2026",
