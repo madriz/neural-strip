@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-16",
+      "date": "2026-11-16",
+      "date_display": "November 16, 2026",
+      "headline": "South Korea's top scorer in tax accountancy exam admits cheating",
+      "setup": "Proctor: \"Your score is remarkable. The examiners are impressed.\"",
+      "punchline": "Man: \"They'll be less impressed when they audit it.\"",
+      "caption": "A near-perfect score on a tax exam, achieved with a shirt-button camera and a chatbot. The examiners are now reviewing the return.",
+      "source_url": "https://www.bbc.co.uk/news/articles/ckvg2ezvpe08o?at_medium=RSS&at_campaign=rss",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A bare exam room with a single desk and a wall clock. A stern proctor in a gray blazer stands beside the desk, holding up a small camera shaped like a shirt button between two fingers. Seated at the desk is a nervous young man in a rumpled button-down shirt, hands folded, with a phone taped under the desk edge and a score sheet on the desk reading 98. The proctor's expression is skeptical and flat. The man looks up past the camera toward the ceiling.",
+      "image": "/images/2026-11-16.jpg",
+      "image_url": "/images/2026-11-16.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-15",
       "date": "2026-11-15",
       "date_display": "November 15, 2026",
