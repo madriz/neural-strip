@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-17",
+      "date": "2026-11-17",
+      "date_display": "November 17, 2026",
+      "headline": "Up to 99% of UK civil servants rely on Microsoft for comms, minister admits",
+      "setup": "MINISTER: We are committed to supplier diversification across Whitehall.",
+      "punchline": "CLERK, TO HIS NEIGHBOR: Did he say which supplier the other one is?",
+      "caption": "Eighteen hours without email is a long time to be diversified. The government is working on it.",
+      "source_url": "https://www.theregister.com/software/2026/11/17/up-to-99-of-uk-civil-servants-rely-on-microsoft-for-comms-minister-admits/5310385",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A government press room. At the front, a minister in a dark suit stands at a lectern, one arm extended toward a large chart on an easel. The chart is a pie graph with one slice labeled 'Microsoft' filling almost the entire circle and a tiny sliver labeled 'Other'. In the foreground, a row of civil servants sits at desks with open laptops. Their screens show only the Microsoft logo on blank backgrounds. One clerk stares at his screen with a coffee cup halfway to his mouth. The clerk beside him leans over, squinting skeptically at the chart.",
+      "image": "/images/2026-11-17.jpg",
+      "image_url": "/images/2026-11-17.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-16",
       "date": "2026-11-16",
       "date_display": "November 16, 2026",
