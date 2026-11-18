@@ -140,6 +140,13 @@ STRICT RULES for image_prompt:
 - Describe only what the viewer sees: characters, setting, objects, expressions, spatial layout.
 - Do NOT include style instructions (line art, colors, palette, aesthetic, etc.). Style is applied separately.
 - Be specific and visual. The scene must be drawable from this description alone.
+- Any text that appears in the scene must be given as the exact words, in double quotes. \
+Example: a sign that reads "CLOSED". A mug that reads "WORLD'S BEST BOSS".
+- Never describe text indirectly, such as "a bubble with a reply", "a chart with a label", \
+"a screen showing an error message" or "a sign with a warning". The image model cannot \
+invent readable words; it renders the description itself as garbled text.
+- If the scene does not need text, do not mention text, words, labels or writing at all.
+- Maximum 2 text elements in the scene. Keep each one short.
 
 Output ONLY the JSON object. No markdown, no explanation."""
 
