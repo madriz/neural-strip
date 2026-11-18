@@ -145,8 +145,24 @@ Example: a sign that reads "CLOSED". A mug that reads "WORLD'S BEST BOSS".
 - Never describe text indirectly, such as "a bubble with a reply", "a chart with a label", \
 "a screen showing an error message" or "a sign with a warning". The image model cannot \
 invent readable words; it renders the description itself as garbled text.
+- Objects that normally carry writing (signs, plaques, screens, name tags, labels, charts) \
+must either have their exact quoted words or be explicitly described as blank.
 - If the scene does not need text, do not mention text, words, labels or writing at all.
 - Maximum 2 text elements in the scene. Keep each one short.
+
+CONTENT RULES for every field except headline and source_url:
+- No named individuals. Never name a real person in angle, scene, setup, punchline, \
+instagram_caption or image_prompt. Use generic roles instead: "a chip executive", \
+"a lab founder", "an engineer", "a CEO".
+- No named companies. Never name a real company, product, app or brand. Use generic \
+terms instead: "a tech company", "an AI lab", "the chatbot", "a chip maker".
+- image_prompt must never describe a real, identifiable person: no names, no likeness, \
+no portrait, no photo, no recognisable figure or signature look (such as a famous \
+executive's trademark outfit). Every person in the scene is a generic, invented character.
+- No political content of any kind: no parties, elections, politicians, governments \
+taking sides or partisan issues.
+- Prefer stories whose absurdity works without naming anyone. If a story only works by \
+naming a real person or company, pick a different story.
 
 Output ONLY the JSON object. No markdown, no explanation."""
 
