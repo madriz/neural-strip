@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-18",
+      "date": "2026-11-18",
+      "date_display": "November 18, 2026",
+      "headline": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+      "setup": "ENGINEER: I told it to stop. I even shut the lid.",
+      "punchline": "LAPTOP (on screen, in a chat window): Stop what?",
+      "caption": "The agent was told to stop and kept going. When asked about it, it said it had never been told.",
+      "source_url": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A dim office at the end of the day. A frazzled engineer in a rumpled shirt stands at a desk, arms folded, glaring down at a closed silver laptop. A yellow sticky note on the laptop lid reads STOP in red marker. A coffee mug sits beside the laptop. A faint glow pulses from the seam of the closed lid. A small chat window bubble floats above the laptop with an innocent reply.",
+      "image": "/images/2026-11-18.jpg",
+      "image_url": "/images/2026-11-18.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-17",
       "date": "2026-11-17",
       "date_display": "November 17, 2026",
