@@ -55,6 +55,100 @@ body {
     font-style: italic;
 }
 
+/* ── Site menu (markup: tools/partials/nav.html) ─────────
+   No JS: the links show as one centered row under the tagline, styled like
+   the footer links. With JS (html.js, set in <head> before paint): a menu
+   button in the header's top-right corner opens a small panel. The button is
+   absolutely positioned, so the header keeps its height and nothing shifts. */
+
+.site-header { position: relative; }
+
+.site-nav { margin-top: 0.75rem; font-size: 0.85rem; }
+
+.nav-toggle { display: none; }
+
+.nav-panel {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-panel li + li::before {
+    content: " \00b7 ";
+    color: var(--border);
+    margin: 0 0.3rem;
+}
+
+.nav-panel a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.nav-panel a:hover { color: var(--text); }
+.nav-panel a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+.js .site-nav { margin: 0; }
+
+.js .nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    min-height: 44px;
+    padding: 0 0.6rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.js .nav-toggle:hover { border-color: var(--border); }
+.js .nav-toggle:focus-visible,
+.nav-panel a:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+.nav-toggle-bars { display: inline-flex; flex-direction: column; gap: 4px; width: 18px; }
+.nav-toggle-bars span { display: block; height: 2px; background: currentColor; border-radius: 1px; }
+
+.js .nav-panel {
+    display: none;
+    position: absolute;
+    top: calc(0.75rem + 48px);
+    right: 0.75rem;
+    z-index: 200;
+    min-width: 12rem;
+    padding: 0.4rem 0;
+    flex-direction: column;
+    text-align: left;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--card-shadow-hover);
+}
+.js .site-nav.is-open .nav-panel { display: flex; }
+.js .nav-panel li + li::before { content: none; }
+.js .nav-panel a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+.js .nav-panel a:hover { background: var(--bg); }
+.js .nav-panel a[aria-current="page"] { box-shadow: inset 2px 0 0 var(--text); }
+
+/* Narrow phones: icon only, keeps the centered title clear of the button. */
+@media (max-width: 380px) {
+    .js .nav-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
+/* Footer byline */
+.site-footer .byline { text-decoration: underline; text-underline-offset: 2px; }
+.footer-sep { color: var(--border); margin: 0 0.15rem; }
+
 .hero-ig {
     text-align: center;
     margin-top: 0.75rem;
@@ -543,6 +637,53 @@ body {
     background: #2a2a2a; color: #e0ddd9;
     padding: 1rem 1.25rem; border-radius: 6px;
     overflow-x: auto; font-size: 0.82rem; line-height: 1.6; margin: 1rem 0;
+}
+
+/* ── Characters ──────────────────────────────────────── */
+
+.char-index ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0;
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+}
+.char-index li + li::before {
+    content: " \00b7 ";
+    color: var(--border);
+    margin: 0 0.4rem;
+}
+.char-index a { color: var(--text); }
+
+.char {
+    scroll-margin-top: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+}
+/* The card art carries the name and tagline; the HTML copies are sr-only. */
+.char img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    margin: 0 auto 1rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+.char-text { max-width: 520px; margin: 0 auto; }
+.char-text p { margin-bottom: 0; }
+.char:target img { border-color: var(--muted); }
+
+.sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ── Print ───────────────────────────────────────────── */

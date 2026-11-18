@@ -222,3 +222,7 @@ pipeline/lab/logs/
 *.safetensors
 *.ckpt
 *.gguf
+
+# SVG renderer test: local output only
+pipeline/svg-test/output/
+pipeline/svg-test/.venv/

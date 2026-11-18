@@ -1,0 +1,6 @@
+# Neural Strip: all crawlers welcome, AI crawlers included.
+User-agent: *
+Allow: /
+Disallow: /publish.html
+
+Sitemap: https://neuralstrip.com/sitemap.xml

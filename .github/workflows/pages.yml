@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ['website/**']
+    paths: ['website/**', 'tools/**']
   workflow_dispatch: {}
 
 permissions:
@@ -23,6 +23,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
+
+      # Stamp the shared nav, footer and head tags (tools/partials/) into every page,
+      # so a page edited without running the script still deploys with the current ones.
+      # Builds rather than checks, so it can never block a cartoon deploy.
+      - name: Stamp shared partials
+        run: python3 tools/build_site.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How it works - Neural Strip</title>
-    <meta name="description" content="How Neural Strip generates a daily AI cartoon, end to end. Fully automated.">
+    <meta name="description" content="How Neural Strip makes a daily AI cartoon: Claude writes the joke and the image prompt each morning, then the drawing is made and published by hand.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
@@ -12,13 +12,17 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://neuralstrip.com/how-it-works.html">
     <meta property="og:title" content="How Neural Strip Works">
-    <meta property="og:description" content="Fully automated. No human in the loop.">
+    <meta property="og:description" content="Written by AI every morning. Drawn and published by hand.">
     <meta property="og:image" content="https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-01.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@neuralstrip">
     <meta name="twitter:title" content="How Neural Strip Works">
-    <meta name="twitter:description" content="Fully automated. No human in the loop.">
+    <meta name="twitter:description" content="Written by AI every morning. Drawn and published by hand.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/madriz/neural-strip/main/images/2026-04-01.jpg">
+    <!-- partial:head -->
+<link rel="canonical" href="https://neuralstrip.com/how-it-works.html">
+    <script>document.documentElement.classList.add('js');</script>
+<!-- /partial:head -->
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-734R6EL9WH"></script>
     <script>
@@ -33,22 +37,44 @@
 <header class="site-header">
     <h1><a href="index.html" style="text-decoration:none;color:inherit;">Neural Strip</a></h1>
     <p class="tagline">AI Generated Humor about AI. Because, Why Not?</p>
+    <!-- partial:nav -->
+<nav class="site-nav" aria-label="Main">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-panel">
+            <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="nav-toggle-label">Menu</span>
+        </button>
+        <ul class="nav-panel" id="site-nav-panel">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="how-it-works.html" aria-current="page">How it works</a></li>
+        </ul>
+    </nav>
+<!-- /partial:nav -->
 </header>
 
 <div class="prose">
 
     <h1>How Neural Strip Works</h1>
-    <p class="subhead">Fully automated. No human in the loop.</p>
+    <p class="subhead">Written by AI every morning. Drawn and published by hand.</p>
 
     <h2>The process</h2>
     <p>Every morning at 7:00 AM Eastern, an automated pipeline:</p>
     <ol>
         <li>Scans 15 AI news sources for the day's most interesting stories</li>
         <li>Claude AI selects the best story and writes a New Yorker-style setup and punchline</li>
-        <li>Ideogram AI generates the cartoon illustration</li>
-        <li>The cartoon is automatically published to this site</li>
+        <li>Claude also writes the image prompt, a description of the panel to be drawn</li>
     </ol>
-    <p>No human reviews, edits, or approves the content before it goes live. What you see is what the machines made.</p>
+    <p>Then a person takes over for two steps:</p>
+    <ol start="4">
+        <li>The image prompt goes into Ideogram's free web tier, which draws four versions</li>
+        <li>I pick one and publish it to this site</li>
+    </ol>
+    <p>The story, the joke and the description of the drawing are still the machine's. The words are published as Claude wrote them. The human part is choosing the drawing and pressing publish.</p>
+
+    <h2>A short history</h2>
+    <p>From April 16 to November 18, 2026, Neural Strip ran with no human step at all. The pipeline wrote the joke, sent the image prompt to the Ideogram API, and published the result. About 200 cartoons went out that way without anyone watching.</p>
+    <p>In November 2026 the drawing moved back to a person. The reason is plain: generating images through the API cost money every day, and Ideogram's free web tier costs nothing as long as someone presses the button. So that is now my job. The automatic path is still in the code, switched off.</p>
 
     <h2>The pipeline</h2>
     <div class="pipeline-flow">
@@ -64,12 +90,12 @@
         <span class="pipeline-arrow">&rarr;</span>
         <div class="pipeline-step">
             <div class="step-label">Ideogram AI</div>
-            <div class="step-desc">Generates the cartoon</div>
+            <div class="step-desc">Draws it, by hand</div>
         </div>
         <span class="pipeline-arrow">&rarr;</span>
         <div class="pipeline-step">
             <div class="step-label">Web</div>
-            <div class="step-desc">Published daily</div>
+            <div class="step-desc">Published by hand</div>
         </div>
     </div>
 
@@ -84,12 +110,12 @@
             <div class="tool-desc">Picks the story, writes the joke, generates the image prompt</div>
         </div>
         <div class="tool-card">
-            <div class="tool-name">Ideogram API</div>
-            <div class="tool-desc">Generates the cartoon illustration from the prompt</div>
+            <div class="tool-name">Ideogram (free web tier)</div>
+            <div class="tool-desc">Draws the cartoon from Claude's prompt. I pick the best of four. Until November 2026 this was the Ideogram API, called by the pipeline</div>
         </div>
         <div class="tool-card">
             <div class="tool-name">GitHub Actions</div>
-            <div class="tool-desc">Runs the pipeline daily at 7:00 AM Eastern</div>
+            <div class="tool-desc">Runs the pipeline daily at 7:00 AM Eastern and opens a note with the day's image prompt</div>
         </div>
         <div class="tool-card">
             <div class="tool-name">GitHub Pages</div>
@@ -120,7 +146,7 @@
     another stares out the window with concern."
 }</pre>
 
-    <p>The image_prompt is sent to Ideogram, which returns the rendered cartoon. The pipeline commits it to the site. All of this happens without anyone watching.</p>
+    <p>The image_prompt is what I paste into Ideogram each morning. From April to November 2026 the pipeline sent it to the Ideogram API itself and committed the result to the site without anyone watching.</p>
 
     <h2>Why</h2>
     <p>We are living through the most absurd period in the history of technology. Companies are spending billions to build systems that confidently produce wrong answers, replacing workers with tools that require more workers to supervise them, and calling it progress. Someone should be writing this down. A cartoon seemed like the appropriate format. A machine writing the cartoon about the machines seemed even more appropriate.</p>
@@ -132,15 +158,18 @@
 
 </div>
 
+<!-- partial:footer -->
 <footer class="site-footer">
     <div class="footer-tagline">Neural Strip</div>
     <div class="footer-links">
-        <a href="index.html">Home</a>
         <a href="https://instagram.com/neural.strip" target="_blank" rel="noopener">@neural.strip</a>
     </div>
-    <div>&copy; 2026 Neural Strip</div>
+    <div>&copy; 2026 Neural Strip <span class="footer-sep">&middot;</span> by <a class="byline" href="https://madriz.ca" target="_blank" rel="noopener">Rodrigo Madriz</a></div>
+    <p class="footer-automated">AI Generated Humor about AI. Because, Why Not?</p>
     <p class="footer-opensource">Open source &middot; <a href="https://github.com/madriz/neural-strip" target="_blank" rel="noopener noreferrer">github.com/madriz/neural-strip</a></p>
 </footer>
+<script src="nav.js" defer></script>
+<!-- /partial:footer -->
 
 </body>
 </html>
