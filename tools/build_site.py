@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Stamp the shared head tags, nav and footer into every site page.
 
+Also cache-busts style.css and nav.js with a content hash (see asset_version).
+
 The nav, footer and canonical/JS-class head block are defined once, in tools/partials/.
 Each page carries marker comments, and this script replaces whatever sits between them:
 
@@ -16,6 +18,7 @@ Usage:
     python tools/build_site.py           # rewrite pages in place
     python tools/build_site.py --check   # exit 1 if any page is out of date
 """
+import hashlib
 import html
 import re
 import sys
@@ -47,9 +50,25 @@ def nav_items(current: str) -> str:
     return "\n".join(out)
 
 
+def asset_version(match: re.Match) -> str:
+    """{{v:style.css}} -> first 10 hex chars of the file's SHA-256.
+
+    Pages serves CSS/JS with max-age=600 and browsers may keep them longer, so a page
+    must never pair new HTML with a cached old style.css (Nov 18 2026: the new nav
+    rendered as a bare button plus an unstyled link list). The hash changes whenever
+    the file does, forcing a fresh download.
+    """
+    data = (SITE / match.group(1)).read_bytes().replace(b"\r\n", b"\n")  # same hash on Windows and CI
+    return hashlib.sha256(data).hexdigest()[:10]
+
+
 def render(name: str, page: str) -> str:
     text = (PARTIALS / f"{name}.html").read_text(encoding="utf-8").rstrip("\n")
-    return text.replace("{{items}}", nav_items(page)).replace("{{canonical}}", canonical(page))
+    text = text.replace("{{items}}", nav_items(page)).replace("{{canonical}}", canonical(page))
+    text = re.sub(r"\{\{v:([\w.-]+)\}\}", asset_version, text)
+    if "{{" in text:
+        raise SystemExit(f"{name}.html: unreplaced placeholder in {page}")
+    return text
 
 
 def stamp(source: str, page: str) -> str:
