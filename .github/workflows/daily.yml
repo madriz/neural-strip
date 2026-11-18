@@ -26,12 +26,17 @@ jobs:
     timeout-minutes: 5
     permissions:
       contents: write
+      issues: write
     outputs:
       skipped: ${{ steps.gen.outputs.skipped }}
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
       INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+      # Two-step mode since 2026-11-18: no Ideogram API call, image made by hand on the
+      # free web tier and published with publish.html. To go back to full automation, set
+      # this to 'true' AND remove "false &&" from the publish job's if (or revert the commit).
+      IDEOGRAM_ENABLED: 'false'
       IDEOGRAM_API_KEY: ${{ secrets.IDEOGRAM_API_KEY }}
 
     steps:
@@ -90,10 +95,58 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Morning notification: one issue per cartoon date with everything needed to make the
+      # image on a phone. Close it by hand after publishing. A rerun for the same date comments
+      # on the open issue instead of opening a second one.
+      - name: Open "Cartoon ready" issue
+        if: success() && steps.gen.outputs.skipped != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          DATE=$(python -c "import json; p = json.load(open('pipeline/pending_post.json', encoding='utf-8')); print(p.get('cartoon_date') or p['generated_at'][:10])")
+          python - <<'PY'
+          import json, os
+          p = json.load(open("pipeline/pending_post.json", encoding="utf-8"))
+          fence = "````"  # four backticks, so a stray ``` in the prompt cannot break the block
+          lines = [
+              f"**Headline:** {p.get('headline', '')}",
+              "",
+              f"**Setup:** {p.get('setup', '')}",
+              "",
+              f"**Punchline:** {p.get('punchline', '')}",
+              "",
+              "**Image prompt** (Ideogram free tier: style Illustration, aspect 1:1):",
+              "",
+              fence,
+              p.get("image_prompt", ""),
+              fence,
+              "",
+              f"Source: {p.get('source_url', '')}",
+              "",
+              "Then open publish.html, fetch the joke, drop the image, publish, and close this issue.",
+              "",
+              f"Run: {os.environ['RUN_URL']}",
+          ]
+          open("ready.md", "w", encoding="utf-8").write("\n".join(lines) + "\n")
+          PY
+          TITLE="Cartoon ready for ${DATE}"
+          EXISTING=$(gh issue list --repo "$REPO" --state open --search "\"${TITLE}\" in:title" --json number,title \
+            --jq ".[] | select(.title == \"${TITLE}\") | .number" | head -n 1)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "$REPO" --body-file ready.md
+            echo "Commented on open issue #${EXISTING}"
+          else
+            gh issue create --repo "$REPO" --title "$TITLE" --body-file ready.md
+          fi
+
+  # Disabled since 2026-11-18 (two-step mode): publishing is done by hand with publish.html.
+  # Remove "false &&" to re-enable automatic publishing (needs IDEOGRAM_ENABLED: 'true' too).
   publish:
     name: Publish cartoon to main
     needs: generate
-    if: needs.generate.outputs.skipped != 'true'
+    if: false && needs.generate.outputs.skipped != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

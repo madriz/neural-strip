@@ -15,7 +15,10 @@ Usage:
 
 Environment:
     ANTHROPIC_API_KEY   — required
-    IDEOGRAM_API_KEY    — optional; enables automatic cartoon image generation
+    IDEOGRAM_ENABLED    — "true" to generate the image via the Ideogram API. Default off
+                          since 2026-11-18: images are made by hand on Ideogram's free web
+                          tier and published with website/publish.html.
+    IDEOGRAM_API_KEY    — used only when IDEOGRAM_ENABLED is true
 """
 
 import argparse
@@ -401,6 +404,11 @@ def brand_safety_check(concept: dict) -> bool:
 
 # ── Ideogram image generation ────────────────────────────────────────────────
 
+def ideogram_enabled() -> bool:
+    """IDEOGRAM_ENABLED=true turns the Ideogram API step back on. Anything else, or unset, is off."""
+    return os.environ.get("IDEOGRAM_ENABLED", "").strip().lower() in ("1", "true", "yes")
+
+
 def generate_image(image_prompt: str, date_str: str) -> str:
     """
     Generate a cartoon image via Ideogram v3 and save as JPEG.
@@ -596,10 +604,15 @@ def main():
     concept["cartoon_date"] = cartoon_date
     concept["feed_count"] = len(items)
 
-    # Generate cartoon image via Ideogram (best-effort; pipeline continues on failure)
-    print("\n[3/3] Generating cartoon image via Ideogram...")
+    # Generate cartoon image via Ideogram (best-effort; pipeline continues on failure).
+    # Off unless IDEOGRAM_ENABLED is true: since 2026-11-18 the image is made by hand.
     image_prompt = concept.get("image_prompt", "")
-    concept["image_local_path"] = generate_image(image_prompt, cartoon_date) if image_prompt else ""
+    if ideogram_enabled():
+        print("\n[3/3] Generating cartoon image via Ideogram...")
+        concept["image_local_path"] = generate_image(image_prompt, cartoon_date) if image_prompt else ""
+    else:
+        print("\n[3/3] Ideogram API off (IDEOGRAM_ENABLED not true): image is made by hand, skipping")
+        concept["image_local_path"] = ""
 
     # Print result
     pretty = json.dumps(concept, indent=2, ensure_ascii=False)
