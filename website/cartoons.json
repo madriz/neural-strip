@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-19",
+      "date": "2026-11-19",
+      "date_display": "November 19, 2026",
+      "headline": "Sticky note on monitor provided keys to the company's kingdom",
+      "setup": "Auditor: \"That's the admin password, on a sticky note, on your monitor.\"",
+      "punchline": "Employee: \"It's fine. It's right under the one that says not to write passwords down.\"",
+      "caption": "A security audit found the admin password on a sticky note, placed just above a reminder not to write passwords down. The reminder was in good order.",
+      "source_url": "https://www.theregister.com/security/2026/11/19/sticky-note-on-monitor-provided-keys-to-the-companys-kingdom/5310908",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A tidy open-plan office with a monitor on a desk in the foreground. Two yellow sticky notes are stuck to the bezel of the monitor, one above the other. The top note reads \"ADMIN2026\" and the lower note reads \"NEVER WRITE PASSWORDS DOWN\". A security auditor in a grey suit stands beside the desk holding a clipboard, eyebrows raised, pointing at the notes. An employee in a cardigan sits in the chair, smiling calmly and holding a coffee mug. Behind them, other workers at desks glance over with mild interest.",
+      "image": "/images/2026-11-19.jpg",
+      "image_url": "/images/2026-11-19.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-18",
       "date": "2026-11-18",
       "date_display": "November 18, 2026",
