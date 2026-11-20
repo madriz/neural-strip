@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-20",
+      "date": "2026-11-20",
+      "date_display": "November 20, 2026",
+      "headline": "90% of employers reject resumes that look like AI – yet half use AI to interview",
+      "setup": "Applicant: I wrote every word of this resume myself.",
+      "punchline": "Hiring manager: Good. Our screening software will reject it, and then the avatar will interview you.",
+      "caption": "The résumé is rejected for sounding like a machine. The interview is conducted by one.",
+      "source_url": "https://www.zdnet.com/innovation/ai-applications-skipped-interview/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. A small bare office interview room. A tired middle-aged hiring manager sits behind a desk with a laptop open. On the laptop screen, a simple cartoon avatar with a blank smile is visible. Across the desk, a nervous job applicant sits upright, holding a single printed resume with a handwritten correction in the margin. A wastebasket beside the desk overflows with crumpled paper. A wall clock shows close to five o'clock.",
+      "image": "/images/2026-11-20.jpg",
+      "image_url": "/images/2026-11-20.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-19",
       "date": "2026-11-19",
       "date_display": "November 19, 2026",
