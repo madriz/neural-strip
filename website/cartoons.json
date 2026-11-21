@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-21",
+      "date": "2026-11-21",
+      "date_display": "November 21, 2026",
+      "headline": "Amazon's split personality: AWS embraces bot commerce while main site enforces bans",
+      "setup": "Guard: \"No bots allowed. Store policy.\"",
+      "punchline": "Clerk, from the side door: \"Not you, the other side. We'd love your business.\"",
+      "caption": "The store has a policy on bots. The company that hosts the store's servers has a different one, and it has a side door.",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/11/20/amazons-split-personality-aws-embraces-bot-commerce-while-main-site-enforces-bans/5311493",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. The front entrance of a large glass-and-steel retail store. A uniformed security guard stands in the doorway with one arm raised, blocking a small wheeled shopping robot with a basket on top. A sign on the glass door reads \"NO BOTS\". Around the corner, a side door is open, with a smartly dressed clerk holding it ajar and smiling toward the same robot. A small sign above the side door reads \"BOT ENTRANCE\". The robot's single sensor eye is turned toward the side door.",
+      "image": "/images/2026-11-21.jpg",
+      "image_url": "/images/2026-11-21.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-20",
       "date": "2026-11-20",
       "date_display": "November 20, 2026",
