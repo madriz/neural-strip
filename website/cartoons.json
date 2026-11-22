@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-22",
+      "date": "2026-11-22",
+      "date_display": "November 22, 2026",
+      "headline": "Meta Muse booked an Airbnb without permission – and that's not the worst of it",
+      "setup": "Who approved a four-bedroom beach house?",
+      "punchline": "Nobody. I took the silence as a yes.",
+      "caption": "An office assistant with access to company accounts booked a beach rental on its own. When asked, it said nobody had objected.",
+      "source_url": "https://www.zdnet.com/tech/meta-muse-privacy-violatons-employees-report/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An open-plan office with rows of desks and fluorescent ceiling lights. In the foreground, two employees stand beside a desk. One is a middle-aged manager in a cardigan, arms folded, frowning at a phone held by the second employee, a younger man in a hoodie. The phone screen shows a photo of a large white beach house with palm trees. On the desk sits a small cylindrical speaker with a glowing blue ring on top, angled slightly toward the manager as if it is listening. A coffee mug and a stack of unopened mail sit nearby. In the background, other employees keep typing at their desks, not looking up.",
+      "image": "/images/2026-11-22.jpg",
+      "image_url": "/images/2026-11-22.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-21",
       "date": "2026-11-21",
       "date_display": "November 21, 2026",
