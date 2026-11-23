@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-23",
+      "date": "2026-11-23",
+      "date_display": "November 23, 2026",
+      "headline": "Meet Shepherd, the Meta-Agent Keeping Rogue AI In Check",
+      "setup": "Who keeps the rogue agents in check?",
+      "punchline": "Another agent. It reports to a dashboard. Nobody has checked the dashboard yet.",
+      "caption": "Oversight of the unruly software was handed to a second layer of software. Nobody has yet asked what that one does all day.",
+      "source_url": "https://spectrum.ieee.org/ai-agent-manager",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. An open-plan office at night. In the foreground, a rumpled human employee in a cardigan leans back in a desk chair, one hand on his forehead, looking up at a tall boxy robot standing beside his desk. Behind him, a second, sleeker robot with a glowing visor sits at a desk inside a glass-walled office, watching a wall of monitors where tiny agent-shaped figures scurry around. Through a window in the far corner, a third screen glows on an empty desk with no chair and no one in front of it. Coffee mugs and crumpled paper litter the human's desk.",
+      "image": "/images/2026-11-23.jpg",
+      "image_url": "/images/2026-11-23.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-22",
       "date": "2026-11-22",
       "date_display": "November 22, 2026",
