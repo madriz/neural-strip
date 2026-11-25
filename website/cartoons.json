@@ -1,6 +1,22 @@
 {
   "cartoons": [
     {
+      "id": "2026-11-25",
+      "date": "2026-11-25",
+      "date_display": "November 25, 2026",
+      "headline": "Data centers are getting their own natural gas power plants",
+      "setup": "The grid connection will take ten years, so we're building our own power plant.",
+      "punchline": "Very forward-thinking. What's the plan for the carbon? That's a problem for the next board.",
+      "caption": "A data center that couldn't wait a decade for the grid decided to bring its own. The smokestack is part of the design.",
+      "source_url": "https://www.technologyreview.com/2026/11/24/1149622/data-centers-natural-gas/",
+      "image_prompt": "Single-panel cartoon, clean line art, thick black outlines, muted blue-gray pastel colors, white background, New Yorker magazine aesthetic, flat colors, no shading, no gradients, no signature. Outside a large windowless data center on flat farmland, two people in hard hats stand on a gravel lot. Behind them rises a tall industrial smokestack with a thin plume of smoke, next to a row of gas turbines. One person, a developer holding a clipboard, gestures proudly toward the turbines with a satisfied smile. The other, an engineer with arms folded, squints up at the smokestack with a skeptical frown. A small wooden fence post in the foreground holds a blank hand-painted sign.",
+      "image": "/images/2026-11-25.jpg",
+      "image_url": "/images/2026-11-25.jpg",
+      "instagram_url": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
       "id": "2026-11-23",
       "date": "2026-11-23",
       "date_display": "November 23, 2026",
